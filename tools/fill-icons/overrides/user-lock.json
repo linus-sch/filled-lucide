@@ -1,0 +1,9 @@
+{
+  "layers": [
+    { "units": [2], "mode": "fill" },
+    { "units": [1], "mode": "stroke" },
+    { "units": [0, 3], "mode": "carve", "gap": true },
+    { "units": [3], "mode": "fill" },
+    { "units": [0], "mode": "stroke" }
+  ]
+}

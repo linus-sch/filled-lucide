@@ -1,0 +1,1 @@
+{"noClose": true, "extra": ["M15 21v-5a1 1 0 0 1 1-1h5"], "layers": [{"units": [1], "mode": "fill"}, {"units": [2, 4], "mode": "cut"}, {"units": [0, 3], "mode": "stroke", "gap": true}]}

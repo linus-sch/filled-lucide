@@ -1,0 +1,9 @@
+{
+  "noClose": true,
+  "extra": ["M6 8v11.6", "M18 8v11.6"],
+  "close": [0, 1],
+  "layers": [
+    {"units": [0, 1], "mode": "fill"},
+    {"units": [4, 5, 2, 3], "mode": "cut"}
+  ]
+}

@@ -1,0 +1,1 @@
+{ "layers": [ { "units": [1], "mode": "fill" }, { "units": [3, 2], "mode": "cut" }, { "units": [0], "mode": "stroke" } ] }

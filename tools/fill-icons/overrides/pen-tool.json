@@ -1,0 +1,10 @@
+{
+  "noClose": true,
+  "close": [1],
+  "layers": [
+    { "units": [1], "mode": "fill" },
+    { "units": [2], "mode": "cut" },
+    { "units": [3], "mode": "carve" },
+    { "units": [0], "mode": "fill", "gap": true }
+  ]
+}

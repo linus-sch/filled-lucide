@@ -1,0 +1,15 @@
+{
+  "noClose": true,
+  "close": [3, 4, 7, 8],
+  "layers": [
+    { "units": [0, 1], "mode": "stroke" },
+    { "units": [2], "mode": "fill" },
+    { "units": [6], "mode": "fill", "gap": true },
+    { "units": [3], "mode": "fill", "gap": true },
+    { "units": [7], "mode": "fill", "gap": true },
+    { "units": [4], "mode": "fill", "gap": true },
+    { "units": [8], "mode": "fill", "gap": true },
+    { "units": [5], "mode": "fill", "gap": true },
+    { "units": [9], "mode": "stroke", "gap": true }
+  ]
+}

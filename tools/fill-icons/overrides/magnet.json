@@ -1,0 +1,8 @@
+{
+  "extra": ["M3 18L12.381 8.619a1 1 0 1 1 3 3L6 21z"],
+  "layers": [
+    { "units": [1], "mode": "fill" },
+    { "units": [3], "mode": "carve", "gap": -2 },
+    { "units": [0, 2], "mode": "cut" }
+  ]
+}

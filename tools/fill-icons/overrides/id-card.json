@@ -1,0 +1,12 @@
+{
+  "noClose": true,
+  "close": [2],
+  "extra": ["M9 8.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 1 0 0-5z"],
+  "layers": [
+    { "units": [4], "mode": "fill" },
+    { "units": [2], "mode": "carve" },
+    { "units": [5], "mode": "fill" },
+    { "units": [3], "mode": "carve" },
+    { "units": [0, 1], "mode": "cut" }
+  ]
+}

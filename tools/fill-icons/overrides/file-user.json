@@ -1,0 +1,10 @@
+{
+  "extra": ["M16 21a4 4 0 0 0-8 0z", "M12 11a4 4 0 1 0 0 8 4 4 0 1 0 0-8z"],
+  "layers": [
+    { "units": [0], "mode": "fill" },
+    { "units": [1], "mode": "cut" },
+    { "units": [4], "mode": "carve" },
+    { "units": [5], "mode": "fill" },
+    { "units": [3], "mode": "carve" }
+  ]
+}

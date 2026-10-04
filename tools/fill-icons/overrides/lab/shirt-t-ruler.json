@@ -1,0 +1,42 @@
+{
+ "noClose": true,
+ "close": [
+  {
+   "unit": 0,
+   "via": [
+    [
+     18,
+     17
+    ],
+    [
+     6,
+     17
+    ]
+   ]
+  }
+ ],
+ "layers": [
+  {
+   "units": [
+    0
+   ],
+   "mode": "fill"
+  },
+  {
+   "units": [
+    3
+   ],
+   "mode": "fill",
+   "gap": true
+  },
+  {
+   "units": [
+    1,
+    2,
+    4,
+    5
+   ],
+   "mode": "cut"
+  }
+ ]
+}

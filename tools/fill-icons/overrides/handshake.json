@@ -1,0 +1,1 @@
+{ "join": [[3, 4]], "close": [{ "unit": 3, "via": [[16, 8], [16, 14]] }, { "unit": 1, "via": [[20.4, 13.4], [19.5, 13.5], [15.62, 9.62], [13.2, 12]] }, 0, 2], "layers": [{ "units": [3], "mode": "fill" }, { "units": [0], "mode": "fill", "gap": true }, { "units": [1], "mode": "fill", "gap": true }, { "units": [2], "mode": "fill", "gap": true }] }

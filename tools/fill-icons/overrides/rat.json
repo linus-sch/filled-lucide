@@ -1,0 +1,10 @@
+{
+  "noClose": true,
+  "join": [[3, 4]],
+  "close": [{ "unit": 3, "via": [[14, 18]] }],
+  "layers": [
+    { "units": [3], "mode": "fill" },
+    { "units": [1, 2], "mode": "cut" },
+    { "units": [0], "mode": "stroke" }
+  ]
+}

@@ -1,0 +1,1 @@
+{"noClose":true,"join":[[0,2],[0,1],[0,5],[0,4],[0,3],[0,9]],"close":[{"unit":0,"via":[[18,21],[21,18]]}],"layers":[{"units":[0],"mode":"fill"},{"units":[8],"mode":"cut"},{"units":[7,10],"mode":"stroke","gap":true},{"units":[6],"mode":"stroke","gap":true}]}

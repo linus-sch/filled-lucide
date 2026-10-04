@@ -1,0 +1,21 @@
+{
+  "name": "@lucide-filled/fill-icons",
+  "description": "Converts stroke-based Lucide SVG icons into filled (solid) SVG icons.",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "main": "./index.mjs",
+  "scripts": {
+    "start": "node ./index.mjs",
+    "preview": "node ./preview.mjs"
+  },
+  "dependencies": {
+    "fit-curve": "^0.2.0",
+    "js-angusj-clipper": "^1.3.1",
+    "svgo": "^3.3.4",
+    "svgpath": "^2.6.0"
+  },
+  "devDependencies": {
+    "@resvg/resvg-js": "^2.6.2"
+  }
+}

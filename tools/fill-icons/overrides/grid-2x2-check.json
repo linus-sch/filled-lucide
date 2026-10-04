@@ -1,0 +1,12 @@
+{
+  "extra": [
+    "M5 3h14a2 2 0 0 1 2 2v6a1 1 0 0 1-1 1h-8v8a1 1 0 0 1-1 1H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2z",
+    "M12 2v20",
+    "M2 12h20"
+  ],
+  "layers": [
+    { "units": [2], "mode": "fill" },
+    { "units": [3, 4], "mode": "cut" },
+    { "units": [1], "mode": "stroke", "gap": true }
+  ]
+}

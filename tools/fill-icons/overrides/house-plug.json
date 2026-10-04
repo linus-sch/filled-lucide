@@ -1,0 +1,1 @@
+{ "close": [{ "unit": 3, "via": [[12, 21], [14, 21]] }], "layers": [{ "units": [3], "mode": "fill" }, { "units": [2], "mode": "carve" }, { "units": [0, 1], "mode": "cut" }] }

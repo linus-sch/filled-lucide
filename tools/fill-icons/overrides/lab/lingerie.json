@@ -1,0 +1,6 @@
+{
+  "noClose": true,
+  "join": [[0, 2], [0, 1]],
+  "close": [0],
+  "layers": [{ "units": [0], "mode": "fill" }, { "units": [3], "mode": "fill" }]
+}

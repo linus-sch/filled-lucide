@@ -1,0 +1,9 @@
+{
+  "extra": ["M11 15h2a2 2 0 0 0 1.732-1"],
+  "layers": [
+    { "units": [0, 1, 2], "mode": "fill" },
+    { "units": [5], "mode": "cut" },
+    { "units": [3], "mode": "fill", "gap": true },
+    { "units": [4], "mode": "fill", "gap": true }
+  ]
+}

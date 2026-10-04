@@ -1,0 +1,43 @@
+{
+ "noClose": true,
+ "join": [
+  [
+   1,
+   2
+  ]
+ ],
+ "close": [
+  0,
+  1,
+  3
+ ],
+ "layers": [
+  {
+   "units": [
+    3
+   ],
+   "mode": "fill"
+  },
+  {
+   "units": [
+    1
+   ],
+   "mode": "fill",
+   "gap": true
+  },
+  {
+   "units": [
+    0
+   ],
+   "mode": "fill",
+   "gap": true
+  },
+  {
+   "units": [
+    4
+   ],
+   "mode": "fill",
+   "gap": true
+  }
+ ]
+}

@@ -1,0 +1,7 @@
+{
+  "close": [{ "unit": 0, "via": [[21, 7]] }, { "unit": 1, "via": [[21, 7], [3, 7]] }],
+  "layers": [
+    { "units": [1], "mode": "fill" },
+    { "units": [0], "mode": "fill", "gap": true }
+  ]
+}

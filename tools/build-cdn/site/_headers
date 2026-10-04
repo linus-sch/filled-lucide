@@ -1,0 +1,26 @@
+# Icons are immutable content addressed by name; a week of freshness plus a
+# month of stale-while-revalidate keeps browsers and the edge from ever needing
+# to re-fetch during normal use, while still letting a redeploy roll out.
+/icons/*
+  Cache-Control: public, max-age=604800, stale-while-revalidate=2592000
+  Access-Control-Allow-Origin: *
+  Cross-Origin-Resource-Policy: cross-origin
+  X-Content-Type-Options: nosniff
+
+/lab/*
+  Cache-Control: public, max-age=604800, stale-while-revalidate=2592000
+  Access-Control-Allow-Origin: *
+  Cross-Origin-Resource-Policy: cross-origin
+  X-Content-Type-Options: nosniff
+
+/*.svg
+  Cache-Control: public, max-age=604800, stale-while-revalidate=2592000
+  Access-Control-Allow-Origin: *
+  Cross-Origin-Resource-Policy: cross-origin
+
+/*.json
+  Cache-Control: public, max-age=604800, stale-while-revalidate=2592000
+  Access-Control-Allow-Origin: *
+
+/
+  Cache-Control: public, max-age=300

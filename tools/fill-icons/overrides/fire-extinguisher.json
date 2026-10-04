@@ -1,0 +1,12 @@
+{
+  "stems": false,
+  "noClose": true,
+  "close": [0],
+  "layers": [
+    { "units": [5], "mode": "fill" },
+    { "units": [1], "mode": "cut" },
+    { "units": [3, 4], "mode": "stroke", "gap": true },
+    { "units": [0], "mode": "fill", "gap": true },
+    { "units": [2], "mode": "stroke" }
+  ]
+}

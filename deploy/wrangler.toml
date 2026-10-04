@@ -1,0 +1,11 @@
+# Static-assets-only Worker: there is no `main` script, so every request is
+# answered directly from Cloudflare's edge. Static asset requests are free and
+# unmetered on all plans, including Free — the site costs nothing to run no
+# matter how much traffic it takes.
+name = "lucide-filled"
+compatibility_date = "2025-09-01"
+
+[assets]
+directory = "./public"
+html_handling = "auto-trailing-slash"
+not_found_handling = "404-page"

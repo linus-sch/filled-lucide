@@ -1,0 +1,9 @@
+{
+  "noClose": true,
+  "close": [{ "unit": 0, "via": [[14, 11]] }, { "unit": 1, "via": [[10, 10]] }, { "unit": 2, "via": [[10, 14]] }, { "unit": 3, "via": [[6, 12], [18, 12]] }],
+  "extra": ["M10 0v10.5", "M14 0v10", "M18 0v11"],
+  "layers": [
+    { "units": [0, 1, 2, 3], "mode": "fill" },
+    { "units": [4, 5, 6], "mode": "cut", "gap": -0.4 }
+  ]
+}

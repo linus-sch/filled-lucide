@@ -1,0 +1,6 @@
+{
+  "noClose": true,
+  "close": [{ "unit": 1, "via": [[19, 7]] }],
+  "extra": ["M7 7h12"],
+  "layers": [{ "units": [1], "mode": "fill" }, { "units": [0, 2], "mode": "cut" }]
+}

@@ -1,0 +1,445 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1"
+    />
+    <title>Lucide Filled — solid icon CDN</title>
+    <meta
+      name="description"
+      content="A solid (filled) variant of every Lucide icon, served from the edge."
+    />
+    <link
+      rel="icon"
+      href="/icons/shapes.svg"
+      type="image/svg+xml"
+    />
+    <style>
+      :root {
+        color-scheme: light dark;
+        --bg: #fbfbfc;
+        --panel: #ffffff;
+        --ink: #14161a;
+        --muted: #6b7280;
+        --line: #e5e7eb;
+        --accent: #2563eb;
+        --radius: 10px;
+      }
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --bg: #0e1013;
+          --panel: #16191e;
+          --ink: #e8eaed;
+          --muted: #949aa4;
+          --line: #262b33;
+          --accent: #6ea8fe;
+        }
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        background: var(--bg);
+        color: var(--ink);
+        font:
+          15px/1.5 ui-sans-serif,
+          system-ui,
+          -apple-system,
+          'Segoe UI',
+          Roboto,
+          sans-serif;
+      }
+      header {
+        position: sticky;
+        top: 0;
+        z-index: 10;
+        background: color-mix(in srgb, var(--bg) 88%, transparent);
+        backdrop-filter: blur(10px);
+        border-bottom: 1px solid var(--line);
+      }
+      .bar {
+        max-width: 1180px;
+        margin: 0 auto;
+        padding: 14px 20px;
+        display: flex;
+        gap: 14px;
+        align-items: center;
+        flex-wrap: wrap;
+      }
+      .brand {
+        display: flex;
+        align-items: baseline;
+        gap: 10px;
+        font-weight: 650;
+        letter-spacing: -0.01em;
+      }
+      .brand small {
+        font-weight: 450;
+        color: var(--muted);
+      }
+      input[type='search'],
+      select {
+        font: inherit;
+        color: inherit;
+        background: var(--panel);
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        padding: 8px 12px;
+      }
+      input[type='search'] {
+        flex: 1 1 240px;
+        min-width: 180px;
+      }
+      input[type='search']:focus,
+      select:focus {
+        outline: 2px solid var(--accent);
+        outline-offset: 1px;
+      }
+      main {
+        max-width: 1180px;
+        margin: 0 auto;
+        padding: 22px 20px 80px;
+      }
+      .count {
+        color: var(--muted);
+        font-size: 13px;
+        margin-bottom: 14px;
+      }
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(104px, 1fr));
+        gap: 8px;
+      }
+      .cell {
+        all: unset;
+        cursor: pointer;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
+        padding: 16px 6px 10px;
+        border: 1px solid transparent;
+        border-radius: var(--radius);
+        content-visibility: auto;
+        contain-intrinsic-size: 104px 96px;
+      }
+      .cell:hover,
+      .cell:focus-visible {
+        border-color: var(--line);
+        background: var(--panel);
+      }
+      .ico {
+        width: 30px;
+        height: 30px;
+        background: currentColor;
+        -webkit-mask: no-repeat center / contain;
+        mask: no-repeat center / contain;
+      }
+      .cell span {
+        font-size: 11px;
+        color: var(--muted);
+        text-align: center;
+        word-break: break-word;
+        line-height: 1.25;
+      }
+      dialog {
+        border: 1px solid var(--line);
+        border-radius: 14px;
+        background: var(--panel);
+        color: var(--ink);
+        padding: 0;
+        width: min(560px, calc(100vw - 32px));
+      }
+      dialog::backdrop {
+        background: rgb(0 0 0 / 0.45);
+      }
+      .sheet {
+        padding: 20px;
+        display: grid;
+        gap: 14px;
+      }
+      .sheet h2 {
+        margin: 0;
+        font-size: 18px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+      .sheet h2 .ico {
+        width: 26px;
+        height: 26px;
+      }
+      pre {
+        margin: 0;
+        padding: 10px 12px;
+        background: var(--bg);
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        overflow-x: auto;
+        font:
+          12px/1.5 ui-monospace,
+          SFMono-Regular,
+          Menlo,
+          monospace;
+      }
+      .row {
+        display: grid;
+        gap: 6px;
+      }
+      .row b {
+        font-size: 11px;
+        text-transform: uppercase;
+        letter-spacing: 0.06em;
+        color: var(--muted);
+        font-weight: 600;
+      }
+      .actions {
+        display: flex;
+        gap: 8px;
+        justify-content: flex-end;
+      }
+      button.btn {
+        font: inherit;
+        cursor: pointer;
+        border: 1px solid var(--line);
+        background: var(--bg);
+        color: inherit;
+        border-radius: 8px;
+        padding: 7px 14px;
+      }
+      button.btn:hover {
+        border-color: var(--accent);
+      }
+      .empty {
+        color: var(--muted);
+        padding: 40px 0;
+        text-align: center;
+      }
+      footer {
+        max-width: 1180px;
+        margin: 0 auto;
+        padding: 0 20px 60px;
+        color: var(--muted);
+        font-size: 13px;
+      }
+      footer code {
+        background: var(--panel);
+        border: 1px solid var(--line);
+        border-radius: 5px;
+        padding: 1px 5px;
+      }
+      a {
+        color: var(--accent);
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="bar">
+        <div class="brand">Lucide Filled <small id="tally">loading…</small></div>
+        <input
+          type="search"
+          id="q"
+          placeholder="Search icons, tags, aliases…"
+          autocomplete="off"
+          spellcheck="false"
+        />
+        <select id="set">
+          <option value="icons">Main set</option>
+          <option value="lab">Lab</option>
+        </select>
+        <select id="cat">
+          <option value="">All categories</option>
+        </select>
+      </div>
+    </header>
+
+    <main>
+      <div
+        class="count"
+        id="count"
+      ></div>
+      <div
+        class="grid"
+        id="grid"
+      ></div>
+      <p
+        class="empty"
+        id="empty"
+        hidden
+      >
+        No icons match that search.
+      </p>
+    </main>
+
+    <footer>
+      <p>
+        Every icon is a static file on Cloudflare's edge:
+        <code>/icons/&lt;name&gt;.svg</code>. Machine-readable indexes live at
+        <a href="/icons.json">/icons.json</a> (name → path data),
+        <a href="/icons-index.json">/icons-index.json</a> (search metadata) and
+        <a href="/meta.json">/meta.json</a>. There is also a
+        <a href="/sprite.svg">symbol sprite</a> for same-origin <code>&lt;use&gt;</code>.
+      </p>
+    </footer>
+
+    <dialog id="dlg">
+      <div class="sheet">
+        <h2>
+          <i
+            class="ico"
+            id="dlgIcon"
+          ></i
+          ><span id="dlgName"></span>
+        </h2>
+        <div class="row">
+          <b>URL</b>
+          <pre id="sUrl"></pre>
+        </div>
+        <div class="row">
+          <b>Image tag</b>
+          <pre id="sImg"></pre>
+        </div>
+        <div class="row">
+          <b>CSS mask (takes currentColor)</b>
+          <pre id="sCss"></pre>
+        </div>
+        <div class="row">
+          <b>React</b>
+          <pre id="sReact"></pre>
+        </div>
+        <div class="actions">
+          <button
+            class="btn"
+            id="copySvg"
+          >
+            Copy SVG
+          </button>
+          <button
+            class="btn"
+            id="close"
+          >
+            Close
+          </button>
+        </div>
+      </div>
+    </dialog>
+
+    <script type="module">
+      const grid = document.getElementById('grid');
+      const q = document.getElementById('q');
+      const setSel = document.getElementById('set');
+      const catSel = document.getElementById('cat');
+      const countEl = document.getElementById('count');
+      const emptyEl = document.getElementById('empty');
+      const dlg = document.getElementById('dlg');
+
+      const state = { set: 'icons', items: [], cache: new Map() };
+
+      // Masks are only attached once a cell scrolls into view, so opening the
+      // page costs one small JSON fetch rather than 1,776 icon requests.
+      const io = new IntersectionObserver(
+        (entries) => {
+          for (const e of entries) {
+            if (!e.isIntersecting) continue;
+            const el = e.target;
+            const url = `url("/${state.set}/${el.dataset.name}.svg")`;
+            el.style.webkitMaskImage = url;
+            el.style.maskImage = url;
+            io.unobserve(el);
+          }
+        },
+        { rootMargin: '400px 0px' },
+      );
+
+      async function loadSet(name) {
+        if (!state.cache.has(name)) {
+          const res = await fetch(`/${name}-index.json`);
+          state.cache.set(name, await res.json());
+        }
+        state.set = name;
+        state.items = state.cache.get(name);
+        const cats = [...new Set(state.items.flatMap((i) => i.c))].sort();
+        catSel.innerHTML =
+          '<option value="">All categories</option>' +
+          cats.map((c) => `<option value="${c}">${c.replace(/-/g, ' ')}</option>`).join('');
+        document.getElementById('tally').textContent = `${state.items.length} icons`;
+        render();
+      }
+
+      function matches(icon, term, cat) {
+        if (cat && !icon.c.includes(cat)) return false;
+        if (!term) return true;
+        return (
+          icon.n.includes(term) ||
+          icon.a.some((a) => a.includes(term)) ||
+          icon.t.some((t) => t.includes(term))
+        );
+      }
+
+      function render() {
+        const term = q.value.trim().toLowerCase();
+        const cat = catSel.value;
+        const hits = state.items.filter((i) => matches(i, term, cat));
+        countEl.textContent = `${hits.length} of ${state.items.length}`;
+        emptyEl.hidden = hits.length > 0;
+
+        const frag = document.createDocumentFragment();
+        for (const icon of hits) {
+          const cell = document.createElement('button');
+          cell.className = 'cell';
+          cell.type = 'button';
+          cell.dataset.name = icon.n;
+          const i = document.createElement('i');
+          i.className = 'ico';
+          i.dataset.name = icon.n;
+          const label = document.createElement('span');
+          label.textContent = icon.n;
+          cell.append(i, label);
+          frag.append(cell);
+          io.observe(i);
+        }
+        grid.replaceChildren(frag);
+      }
+
+      const pascal = (name) => name.replace(/(^|-)([a-z0-9])/g, (_, __, c) => c.toUpperCase());
+
+      grid.addEventListener('click', (e) => {
+        const cell = e.target.closest('.cell');
+        if (!cell) return;
+        const name = cell.dataset.name;
+        const url = `${location.origin}/${state.set}/${name}.svg`;
+        document.getElementById('dlgName').textContent = name;
+        const icon = document.getElementById('dlgIcon');
+        icon.style.webkitMaskImage = `url("${url}")`;
+        icon.style.maskImage = `url("${url}")`;
+        document.getElementById('sUrl').textContent = url;
+        document.getElementById('sImg').textContent =
+          `<img src="${url}" width="24" height="24" alt="${name}">`;
+        document.getElementById('sCss').textContent =
+          `.icon-${name} {\n  background: currentColor;\n  -webkit-mask: url("${url}") center / contain no-repeat;\n  mask: url("${url}") center / contain no-repeat;\n}`;
+        document.getElementById('sReact').textContent =
+          `import { ${pascal(name)} } from 'lucide-filled-react';`;
+        dlg.dataset.url = url;
+        dlg.showModal();
+      });
+
+      document.getElementById('close').onclick = () => dlg.close();
+      document.getElementById('copySvg').onclick = async (e) => {
+        const svg = await (await fetch(dlg.dataset.url)).text();
+        await navigator.clipboard.writeText(svg);
+        e.target.textContent = 'Copied';
+        setTimeout(() => (e.target.textContent = 'Copy SVG'), 1200);
+      };
+
+      q.addEventListener('input', render);
+      catSel.addEventListener('change', render);
+      setSel.addEventListener('change', () => loadSet(setSel.value));
+
+      loadSet('icons');
+    </script>
+  </body>
+</html>

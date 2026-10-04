@@ -1,0 +1,8 @@
+{
+  "noClose": true,
+  "close": [1, 3],
+  "layers": [
+    { "units": [1, 3], "mode": "fill" },
+    { "units": [0, 2], "mode": "cut" }
+  ]
+}

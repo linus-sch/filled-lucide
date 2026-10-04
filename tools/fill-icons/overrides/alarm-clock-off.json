@@ -1,0 +1,10 @@
+{
+  "noClose": true,
+  "extra": ["M20 13a8 8 0 1 1-16 0a8 8 0 1 1 16 0z"],
+  "layers": [
+    { "units": [6], "mode": "fill" },
+    { "units": [3], "mode": "stroke" },
+    { "units": [2, 5], "mode": "stroke", "gap": true },
+    { "units": [4], "mode": "stroke", "gap": true }
+  ]
+}

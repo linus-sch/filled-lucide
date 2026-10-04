@@ -1,0 +1,26 @@
+{
+ "noClose": true,
+ "layers": [
+  {
+   "units": [
+    0
+   ],
+   "mode": "fill"
+  },
+  {
+   "units": [
+    1,
+    2,
+    3,
+    4
+   ],
+   "mode": "cut"
+  },
+  {
+   "units": [
+    0
+   ],
+   "mode": "stroke"
+  }
+ ]
+}

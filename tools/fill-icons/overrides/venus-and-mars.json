@@ -1,0 +1,6 @@
+{
+  "layers": [
+    { "units": [4], "mode": "fill" },
+    { "units": [0, 1, 2, 3], "mode": "stroke" }
+  ]
+}

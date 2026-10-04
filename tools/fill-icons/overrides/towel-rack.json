@@ -1,0 +1,12 @@
+{
+  "extra": [
+    "M9 3H6.5A2.5 2.5 0 0 0 4 5.5V17a1 1 0 0 0 1 1h4Z",
+    "M9 3h8.5A2.5 2.5 0 0 1 20 5.5V20a1 1 0 0 1-1 1h-9a1 1 0 0 1-1-1Z"
+  ],
+  "layers": [
+    { "units": [3], "mode": "fill" },
+    { "units": [2], "mode": "stroke", "gap": true },
+    { "units": [4], "mode": "fill", "gap": true },
+    { "units": [0], "mode": "stroke" }
+  ]
+}

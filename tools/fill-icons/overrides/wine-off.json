@@ -1,0 +1,10 @@
+{
+  "noClose": true,
+  "extra": ["M12 15a5 5 0 0 0 5-5c0-2-.5-4-2-8H9c-1.5 4-2 6-2 8a5 5 0 0 0 5 5Z", "M7 10h10"],
+  "layers": [
+    { "units": [7], "mode": "fill" },
+    { "units": [8], "mode": "cut" },
+    { "units": [0, 3], "mode": "stroke" },
+    { "units": [6], "mode": "stroke", "gap": true }
+  ]
+}

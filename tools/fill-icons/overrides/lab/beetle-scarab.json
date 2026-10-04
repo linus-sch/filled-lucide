@@ -1,0 +1,51 @@
+{
+  "noClose": true,
+  "close": [
+    2
+  ],
+  "layers": [
+    {
+      "units": [
+        0,
+        1
+      ],
+      "mode": "stroke"
+    },
+    {
+      "units": [
+        2
+      ],
+      "mode": "fill"
+    },
+    {
+      "units": [
+        5
+      ],
+      "mode": "stroke"
+    },
+    {
+      "units": [
+        3
+      ],
+      "mode": "fill",
+      "gap": true
+    },
+    {
+      "units": [
+        4,
+        8
+      ],
+      "mode": "cut"
+    },
+    {
+      "units": [
+        6,
+        7
+      ],
+      "mode": "stroke"
+    }
+  ],
+  "extra": [
+    "M5.4 11h13.2"
+  ]
+}
