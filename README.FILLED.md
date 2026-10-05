@@ -40,7 +40,7 @@ outline. Composition changes wherever that makes an icon read better solid:
   stay outlined where filling them would need hairline detail (the calendar's
   header).
 - **`-off` icons are prohibition signs**: the base icon, smaller, in a ring,
-  with the bar knocked out where it crosses the object.
+  crossed by one solid bar with the object cut back around it.
 - **File icons have no folded-corner line**; the clipped corner says "page".
 
 ## Using it

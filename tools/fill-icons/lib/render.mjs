@@ -1,9 +1,9 @@
 // Render one icon by name to a filled region: the source outline, its
 // override, and the set-wide composition rules that sit above single icons.
 //
-//   * `-off` icons are drawn as a prohibition sign: the base icon, redrawn
-//     smaller, inside a ring, with the bar knocked out of the object where it
-//     crosses it and solid where it doesn't. No white halo around the bar.
+//   * `-off` icons are drawn as a prohibition sign: the base icon, shrunk,
+//     inside a ring, crossed by one solid bar with the object cut back
+//     around it.
 //   * File icons lose the folded-corner line; the clipped corner of the page
 //     already says "document".
 //   * An override may start from another icon (`base`) and add layers on top,
@@ -11,7 +11,7 @@
 import { existsSync, readFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { parseIcon } from './parse.mjs';
-import { difference, intersection, scaleRegion, strokeRegion, union, unionAll } from './geom.mjs';
+import { difference, inflate, intersection, scaleRegion, strokeRegion, unionAll } from './geom.mjs';
 import { finish, solidify, STROKE_RADIUS } from './solidify.mjs';
 import { applyOverride, iconOptions } from './overrides.mjs';
 
@@ -19,6 +19,7 @@ import { applyOverride, iconOptions } from './overrides.mjs';
 const OFF_RING = 10;
 const OFF_SCALE = 0.68;
 const OFF_BAR = OFF_RING / Math.SQRT2;
+const OFF_GAP = 0.85;
 
 const scaleAbout = (s, [ox, oy] = [12, 12]) => ([x, y]) => [ox + (x - ox) * s, oy + (y - oy) * s];
 const compose = (f, g) => (f && g ? (p) => g(f(p)) : (f ?? g));
@@ -74,8 +75,9 @@ export function makeRenderer(src) {
         [{ pts: [[12 - OFF_BAR, 12 - OFF_BAR], [12 + OFF_BAR, 12 + OFF_BAR]].map(transform ?? ((p) => p)), closed: false }],
         STROKE_RADIUS,
       );
-      const crossed = union(difference(object, bar), difference(bar, object));
-      region = finish(unionAll([ring(), crossed]));
+      // The bar stays one solid stroke from rim to rim; the object is cut
+      // back around it rather than the bar flipping to white over the fill.
+      region = finish(unionAll([ring(), bar, difference(object, inflate(bar, OFF_GAP))]));
     } else {
       const svg = readFileSync(join(src, `${name}.svg`), 'utf8');
       const elements = applyOverride(name, parseIcon(svg));
