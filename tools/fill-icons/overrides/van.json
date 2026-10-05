@@ -1,10 +1,10 @@
 {
   "noClose": true,
   "close": [{ "unit": 0, "via": [[13, 18]] }, { "unit": 1, "via": [[19.58, 18]] }],
-  "extra": ["M13 6v5a1 1 0 0 0 1 1h5.58"],
+  "extra": ["M14 7.5h2.3a1 1 0 0 1 .95.68l.6 2.32H14z", "M7 18h.01", "M16 18h.01"],
   "layers": [
-    { "units": [0, 1, 2], "mode": "fill" },
-    { "units": [5], "mode": "cut" },
-    { "units": [3, 4], "mode": "fill", "gap": true }
+    { "units": [0, 1, 2, 3, 4], "mode": "fill" },
+    { "units": [5], "mode": "carve", "area": true },
+    { "units": [6, 7], "mode": "cut" }
   ]
 }

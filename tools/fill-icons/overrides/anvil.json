@@ -1,1 +1,8 @@
-{ "join": [[2, 3]], "close": [0, 2], "layers": [{ "units": [0, 1, 2, 4], "mode": "fill" }] }
+{
+  "join": [[2, 3]],
+  "close": [0, 2],
+  "layers": [
+    { "units": [0, 1, 4], "mode": "fill" },
+    { "units": [2], "mode": "stroke" }
+  ]
+}

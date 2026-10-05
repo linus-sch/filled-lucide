@@ -1,0 +1,6 @@
+{
+  "base": "clipboard",
+  "layers": [
+    { "units": [2], "mode": "cut" }
+  ]
+}

@@ -36,7 +36,7 @@ const TOUCH_AREA = 0.02;
 /** A mark overlapping the shell by more than this reads as a badge on top. */
 const BADGE_OVERLAP = 0.25;
 /** White gap left around a badge, in viewBox units. */
-const BADGE_GAP = 0.75;
+const BADGE_GAP = 1.25;
 /** More overlaid marks than this and they are parts of the shape, not badges. */
 const MAX_BADGES = 2;
 

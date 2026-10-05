@@ -1,0 +1,8 @@
+{
+  "close": [1],
+  "extra": ["M10 4.2h4v.6h-4z"],
+  "layers": [
+    { "units": [0, 1], "mode": "fill" },
+    { "units": [2], "mode": "carve", "area": true, "grow": 0.4 }
+  ]
+}

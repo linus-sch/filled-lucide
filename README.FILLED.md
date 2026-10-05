@@ -39,8 +39,9 @@ outline. Composition changes wherever that makes an icon read better solid:
 - **Real holes stay holes** — a handle keeps its finger hole — and parts may
   stay outlined where filling them would need hairline detail (the calendar's
   header).
-- **`-off` icons are prohibition signs**: the base icon, smaller, in a ring,
-  crossed by one solid bar with the object cut back around it.
+- **`-off` icons are slashed**: the base icon at full size, crossed by
+  Lucide's corner-to-corner slash as one solid bar. A gap runs along the
+  bar's upper-right edge only, so the bar reads as passing over the object.
 - **File icons have no folded-corner line**; the clipped corner says "page".
 
 ## Using it

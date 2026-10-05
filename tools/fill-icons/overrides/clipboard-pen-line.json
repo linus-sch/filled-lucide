@@ -1,8 +1,8 @@
 {
   "base": "clipboard",
-  "move": [{ "units": [3, 4], "to": [12, 14], "scale": 0.85 }],
+  "move": [{ "units": [3, 4], "to": [12, 14], "scale": 0.9 }],
   "layers": [
-    { "units": [4], "mode": "carve" },
+    { "units": [4], "mode": "carve", "area": true, "grow": 0.35 },
     { "units": [3], "mode": "cut" }
   ]
 }

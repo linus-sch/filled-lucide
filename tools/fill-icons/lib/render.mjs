@@ -1,9 +1,9 @@
 // Render one icon by name to a filled region: the source outline, its
 // override, and the set-wide composition rules that sit above single icons.
 //
-//   * `-off` icons are drawn as a prohibition sign: the base icon, shrunk,
-//     inside a ring, crossed by one solid bar with the object cut back
-//     around it.
+//   * `-off` icons are the base icon at full size, crossed by Lucide's own
+//     corner-to-corner slash as one solid bar. The object is cut back on the
+//     upper-right side of the bar only; below it, it runs into the bar.
 //   * File icons lose the folded-corner line; the clipped corner of the page
 //     already says "document".
 //   * An override may start from another icon (`base`) and add layers on top,
@@ -11,15 +11,14 @@
 import { existsSync, readFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { parseIcon } from './parse.mjs';
-import { difference, inflate, intersection, scaleRegion, strokeRegion, unionAll } from './geom.mjs';
+import { difference, fillRegion, inflate, intersection, strokeRegion, unionAll } from './geom.mjs';
 import { finish, solidify, STROKE_RADIUS } from './solidify.mjs';
 import { applyOverride, iconOptions } from './overrides.mjs';
 
-/** Prohibition sign geometry: ring radius, object scale, bar ends. */
-const OFF_RING = 10;
-const OFF_SCALE = 0.68;
-const OFF_BAR = OFF_RING / Math.SQRT2;
-const OFF_GAP = 0.85;
+/** The `-off` slash (Lucide's `m2 2 20 20`), the gap cut beside it, and the side it is cut on. */
+const OFF_BAR = [[2, 2], [22, 22]];
+const OFF_GAP = 1.5;
+const OFF_GAP_SIDE = [[-12, -12], [36, -12], [36, 36]];
 
 const scaleAbout = (s, [ox, oy] = [12, 12]) => ([x, y]) => [ox + (x - ox) * s, oy + (y - oy) * s];
 const compose = (f, g) => (f && g ? (p) => g(f(p)) : (f ?? g));
@@ -43,15 +42,6 @@ function offBase(name, src, rule) {
   return existsSync(join(src, `${base}.svg`)) ? base : null;
 }
 
-function ring() {
-  const n = 720;
-  const pts = Array.from({ length: n }, (_, i) => {
-    const a = (i / n) * Math.PI * 2;
-    return [12 + OFF_RING * Math.cos(a), 12 + OFF_RING * Math.sin(a)];
-  });
-  return strokeRegion([{ pts, closed: true }], STROKE_RADIUS);
-}
-
 export function makeRenderer(src) {
   const cache = new Map();
 
@@ -67,17 +57,14 @@ export function makeRenderer(src) {
 
     const off = offBase(name, src, rule);
     if (off) {
-      // The base drawing is shrunk as a whole — its line weight with it — so
-      // the object keeps its proportions, like the picture inside a sign.
-      const disc = strokeRegion([{ pts: [[12, 12], [12, 12]], closed: false }], OFF_RING - 2.25);
-      const object = intersection(scaleRegion(render(off, transform, seen), OFF_SCALE), disc);
-      const bar = strokeRegion(
-        [{ pts: [[12 - OFF_BAR, 12 - OFF_BAR], [12 + OFF_BAR, 12 + OFF_BAR]].map(transform ?? ((p) => p)), closed: false }],
-        STROKE_RADIUS,
-      );
-      // The bar stays one solid stroke from rim to rim; the object is cut
-      // back around it rather than the bar flipping to white over the fill.
-      region = finish(unionAll([ring(), bar, difference(object, inflate(bar, OFF_GAP))]));
+      const object = render(off, transform, seen);
+      const t = transform ?? ((p) => p);
+      const bar = strokeRegion([{ pts: OFF_BAR.map(t), closed: false }], STROKE_RADIUS);
+      // The bar stays one solid stroke from end to end. A gap runs along its
+      // upper-right edge where it crosses the object, so it reads as passing
+      // over it, rather than a white outline on both sides.
+      const gap = intersection(inflate(bar, OFF_GAP), fillRegion([{ pts: OFF_GAP_SIDE.map(t), closed: true }]));
+      region = finish(unionAll([bar, difference(object, gap)]));
     } else {
       const svg = readFileSync(join(src, `${name}.svg`), 'utf8');
       const elements = applyOverride(name, parseIcon(svg));
