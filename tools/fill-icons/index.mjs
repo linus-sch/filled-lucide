@@ -8,12 +8,18 @@
 // over already-filled output would solidify the silhouettes a second time.
 //
 // Runs across all CPU cores; each worker owns its own Clipper instance.
-import { readdir, writeFile } from 'node:fs/promises';
+//
+// Icons approved in the review page (`pnpm fill:review`) are never
+// regenerated: their approved drawing is kept in `approved/<set>/` and copied
+// back over the output instead. Unapprove an icon there to change it again.
+import { readdir, readFile, writeFile } from 'node:fs/promises';
 import { existsSync, mkdirSync } from 'node:fs';
 import { cpus } from 'node:os';
-import { basename, join, resolve } from 'node:path';
+import { basename, dirname, join, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { Worker, isMainThread, parentPort, workerData } from 'node:worker_threads';
+
+const APPROVED_DIR = join(dirname(fileURLToPath(import.meta.url)), 'approved');
 
 function parseArgs(argv) {
   const args = { src: './outline/icons', out: './icons', only: null, names: null, jobs: 0 };
@@ -93,12 +99,27 @@ if (!isMainThread) {
   if (!existsSync(out)) mkdirSync(out, { recursive: true });
 
   const all = (await readdir(src)).filter((f) => f.endsWith('.svg'));
-  let files = args.only ? all.filter((f) => f.includes(args.only)) : all;
-  if (args.names) files = files.filter((f) => args.names.has(basename(f, '.svg')));
-  if (!files.length) {
+  let matched = args.only ? all.filter((f) => f.includes(args.only)) : all;
+  if (args.names) matched = matched.filter((f) => args.names.has(basename(f, '.svg')));
+  if (!matched.length) {
     console.error(`No icons matched ${args.only}`);
     process.exit(1);
   }
+
+  // Approved icons are restored from their snapshot, never regenerated.
+  const approvedDir = join(APPROVED_DIR, basename(src));
+  const approved = new Set(existsSync(approvedDir) ? await readdir(approvedDir) : []);
+  const kept = matched.filter((f) => approved.has(f));
+  for (const f of kept) {
+    const snapshot = await readFile(join(approvedDir, f), 'utf8');
+    const target = join(out, f);
+    if (!existsSync(target) || (await readFile(target, 'utf8')) !== snapshot) {
+      await writeFile(target, snapshot, 'utf8');
+    }
+  }
+  if (kept.length) console.log(`Kept ${kept.length} approved icon(s) unchanged`);
+  const files = matched.filter((f) => !approved.has(f));
+  if (!files.length) process.exit(0);
 
   const jobs = Math.max(1, Math.min(args.jobs || cpus().length, files.length));
   const shards = Array.from({ length: jobs }, () => []);

@@ -2,4 +2,5 @@
 . "$(dirname -- "$0")/_/husky.sh"
 
 pnpm lint-staged
+node ./tools/fill-icons/check-approved.mjs
 pnpm checkIcons

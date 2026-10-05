@@ -200,6 +200,18 @@ node tools/fill-icons/preview.mjs --dir icons --out /tmp/check \
 `--compare` draws the outline original above each filled icon, which is how the
 set was reviewed.
 
+### Approving icons
+
+```bash
+pnpm fill:review   # http://localhost:4321
+```
+
+Click an icon to approve it (click again to unapprove), or drag a box over
+several, as in Finder, and approve or unapprove the selection at once. Approving saves the
+icon's current drawing to `tools/fill-icons/approved/<icons|lab>/NAME.svg`;
+`pnpm fill` and `pnpm fill:lab` then skip that icon and restore it from the
+snapshot, so it stays exactly as approved. Unapprove it to change it again.
+
 ## Deploying
 
 ```bash

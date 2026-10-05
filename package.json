@@ -6,6 +6,8 @@
     "fill": "node ./tools/fill-icons/index.mjs --src ./outline/icons --out ./icons && prettier --write \"icons/*.svg\" --log-level warn",
     "fill:lab": "node ./tools/fill-icons/index.mjs --src ./outline/lab --out ./lab && prettier --write \"lab/*.svg\" --log-level warn",
     "fill:preview": "node ./tools/fill-icons/preview.mjs --dir ./icons --out ./preview",
+    "fill:review": "node ./tools/fill-icons/review.mjs",
+    "fill:check": "node ./tools/fill-icons/check-approved.mjs",
     "cdn:build": "node ./tools/build-cdn/index.mjs --out ./deploy/public",
     "cdn:dev": "pnpm cdn:build && wrangler dev --config deploy/wrangler.toml",
     "cdn:deploy": "pnpm cdn:build && wrangler deploy --config deploy/wrangler.toml",
