@@ -1,7 +1,7 @@
 {
-  "close": [2],
+  "noClose": true,
   "layers": [
-    { "units": [2], "mode": "fill" },
-    { "units": [0, 1], "mode": "auto", "gap": true }
+    { "units": [2], "mode": "stroke" },
+    { "units": [0, 1], "mode": "auto" }
   ]
 }

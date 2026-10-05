@@ -1,0 +1,9 @@
+{
+  "extra": ["M10 15v2"],
+  "layers": [
+    { "units": [2], "mode": "fill" },
+    { "units": [0], "mode": "cut" },
+    { "units": [1], "mode": "fill" },
+    { "units": [3], "mode": "stroke" }
+  ]
+}

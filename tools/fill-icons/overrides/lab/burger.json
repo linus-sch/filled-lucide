@@ -1,1 +1,5 @@
-{ "close": [0, 1, 2], "layers": [ { "units": [2], "mode": "fill" }, { "units": [1], "mode": "fill", "gap": true }, { "units": [0], "mode": "fill", "gap": true } ] }
+{
+  "close": [0, 1, 2],
+  "extra": ["M3 12h18", "M3 16h18"],
+  "layers": [ {"units":[0,1,2],"mode":"fill"}, {"units":[3,4],"mode":"cut"} ]
+}

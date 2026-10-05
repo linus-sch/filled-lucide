@@ -1,0 +1,21 @@
+{
+  "close": [
+    0
+  ],
+  "layers": [
+    {
+      "units": [
+        0,
+        1
+      ],
+      "mode": "fill"
+    },
+    {
+      "units": [
+        2,
+        3
+      ],
+      "mode": "stroke"
+    }
+  ]
+}

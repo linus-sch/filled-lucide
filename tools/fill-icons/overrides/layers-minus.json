@@ -1,0 +1,7 @@
+{
+  "base": "layers",
+  "move": [{ "units": [1], "to": [12, 7], "scale": 0.7 }],
+  "layers": [
+    { "units": [1], "mode": "cut" }
+  ]
+}

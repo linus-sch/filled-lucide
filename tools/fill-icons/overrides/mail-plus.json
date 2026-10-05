@@ -1,0 +1,7 @@
+{
+  "base": "mail",
+  "move": [{ "units": [2, 3], "to": [12, 15.7], "scale": 0.85 }],
+  "layers": [
+    { "units": [2, 3], "mode": "cut" }
+  ]
+}

@@ -1,1 +1,1 @@
-{"noClose":true,"close":[3,{"unit":2,"via":[[20.3,7],[18,6],[4,6],[2,8]]}],"layers":[{"units":[3,5],"mode":"fill"},{"units":[2],"mode":"carve"},{"units":[3,0,1,2],"mode":"stroke"},{"units":[4,6],"mode":"fill","gap":true}]}
+{"noClose":true,"close":[3,{"unit":2,"via":[[20.3,7],[18,6],[4,6],[2,8]]}],"extra":["M7 18h.01","M16 18h.01"],"layers":[{"units":[3,5,4,6],"mode":"fill"},{"units":[2],"mode":"carve"},{"units":[3,0,1,2],"mode":"stroke"},{"units":[4,6],"mode":"fill"},{"units":[7,8],"mode":"cut"}]}

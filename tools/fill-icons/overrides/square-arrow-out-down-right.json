@@ -1,1 +1,1 @@
-{ "noClose": true, "close": [{ "unit": 0, "via": [[11,11]] }], "layers": [{ "units": [0], "mode": "fill" }, { "units": [1, 2], "mode": "stroke", "gap": true }] }
+{"noClose":true,"close":[{"unit":0,"via":[[11,11]]}],"extra":["M21 21l-6.5-6.5"],"layers":[{"units":[0],"mode":"fill"},{"units":[2,3],"mode":"stroke"}]}

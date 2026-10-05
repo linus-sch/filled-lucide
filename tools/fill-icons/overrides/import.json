@@ -1,0 +1,8 @@
+{
+  "close": [{ "unit": 2, "via": [[12, 5]] }],
+  "move": [{ "units": [0, 1], "to": [12, 12], "scale": 0.7 }],
+  "layers": [
+    { "units": [2], "mode": "fill" },
+    { "units": [0, 1], "mode": "cut" }
+  ]
+}

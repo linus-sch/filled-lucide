@@ -1,0 +1,7 @@
+{
+  "extra": ["M3 9h18v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"],
+  "layers": [
+    { "units": [2, 3, 0, 1], "mode": "stroke" },
+    { "units": [4], "mode": "fill" }
+  ]
+}

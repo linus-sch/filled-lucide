@@ -1,1 +1,29 @@
-{ "layers": [{ "units": [9], "mode": "fill" }, { "units": [6], "mode": "stroke" }, { "units": [10, 0, 1, 2, 3, 4, 5, 7, 8], "mode": "stroke", "gap": true }] }
+{
+  "extra": [
+    "M14 6.5a4 4 0 1 1-8 0a4 4 0 1 1 8 0z",
+    "M2 21a8 7 0 0 1 8-7V21z"
+  ],
+  "layers": [
+    {
+      "units": [
+        11,
+        12
+      ],
+      "mode": "fill"
+    },
+    {
+      "units": [
+        10,
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        7,
+        8
+      ],
+      "mode": "stroke"
+    }
+  ]
+}

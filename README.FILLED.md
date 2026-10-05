@@ -24,6 +24,25 @@ recoloured with `currentColor`, used as a CSS mask, or rasterised at any size.
 
 Average path is ~1.3 kB (the whole main set is 2.3 MB, ~460 kB over the wire).
 
+### Design rules
+
+The set is a filled icon family *in Lucide's style*, not a literal fill of each
+outline. Composition changes wherever that makes an icon read better solid:
+
+- **No halos.** Secondary symbols (a key on a book, a plus on a file, a check
+  on a calendar) sit centred on the main body as a cutout, rather than in a
+  corner with a white ring around them.
+- **Only lines that carry meaning.** Liquid levels, seams and extra rules that
+  only gave an outline icon some interior are dropped.
+- **Dividing lines divide.** A line across a body runs through its edge, with
+  the resulting corners very slightly rounded.
+- **Real holes stay holes** — a handle keeps its finger hole — and parts may
+  stay outlined where filling them would need hairline detail (the calendar's
+  header).
+- **`-off` icons are prohibition signs**: the base icon, smaller, in a ring,
+  with the bar knocked out where it crosses the object.
+- **File icons have no folded-corner line**; the clipped corner says "page".
+
 ## Using it
 
 ### From the CDN
@@ -142,7 +161,10 @@ output, and regenerating from a new upstream outline still works:
 
 | Key | Effect |
 | --- | --- |
-| `layers` | Replace the automatic solidify. Modes: `auto` (the automatic rules on just those units), `fill` (solid silhouette), `stroke` (2px line, never filled), `cut` (knock strokes out of what is below), `carve` (knock a solidified shape out). `gap` clears space around an added layer — the badge treatment. |
+| `layers` | Replace the automatic solidify. Modes: `auto` (the automatic rules on just those units), `fill` (solid silhouette), `stroke` (2px line, never filled), `cut` (knock strokes out of what is below; a line ending near an edge runs through it), `carve` (knock a solidified shape out), `xor` (strokes knocked out where they cross the shape, solid elsewhere). `gap` clears space around an added layer. |
+| `base` | Start from another icon's finished drawing — variants share their family base (`"base": "file"`). `baseScale` scales it about the centre. |
+| `move` | `[{ "units": [...], "to": [x, y], "scale": 1 }]` — relocate a group, e.g. a badge onto the middle of the body. |
+| `off` | For `-off` icons: the base icon's name when it isn't simply the name minus `-off`, or `false` to draw the icon yourself. |
 | `close` | Close open subpaths with a straight edge, or through `{ "unit", "via": [[x, y]] }` points (from the end back to the start). |
 | `mitre` | Close by running the end tangents on to their corner. |
 | `join` | Merge two open subpaths end to end before closing. |

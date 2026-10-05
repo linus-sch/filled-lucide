@@ -1,17 +1,1 @@
-{
-  "noClose": true,
-  "extra": [
-    "M5 15a4 4 0 0 0 .72 2.29",
-    "M12.6 6.9 16.5 10.2"
-  ],
-  "close": [
-    1,
-    {"unit": 4, "via": [[2, 10]]},
-    {"unit": 3, "via": [[2, 22], [4, 19.4], [6.14, 17.8]]}
-  ],
-  "layers": [
-    {"units": [4], "mode": "fill"},
-    {"units": [3, 1], "mode": "fill", "gap": true},
-    {"units": [0, 2, 6, 7], "mode": "cut"}
-  ]
-}
+{"noClose": true, "extra": ["M5 15a4 4 0 0 0 .72 2.29", "M12.6 6.9 16.5 10.2"], "close": [1, {"unit": 4, "via": [[2, 10]]}, {"unit": 3, "via": [[2, 22], [4, 19.4], [6.14, 17.8]]}], "layers": [{"units": [4, 3, 1], "mode": "fill"}, {"units": [0, 2, 6, 7], "mode": "cut"}, {"units": [5], "mode": "stroke"}]}

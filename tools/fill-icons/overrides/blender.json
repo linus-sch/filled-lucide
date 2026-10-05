@@ -1,0 +1,9 @@
+{
+  "noClose": true,
+  "extra": ["M7 2h10l-1 12H8.006z"],
+  "layers": [
+    { "units": [0, 6], "mode": "fill" },
+    { "units": [4], "mode": "stroke" },
+    { "units": [5], "mode": "cut" }
+  ]
+}

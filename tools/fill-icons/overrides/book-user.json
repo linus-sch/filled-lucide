@@ -1,1 +1,1 @@
-{ "layers": [{ "units": [1], "mode": "fill" }, { "units": [2], "mode": "carve", "gap": -0.6 }, { "units": [0], "mode": "cut" }] }
+{"base":"book","move":[{"units":[0,2],"to":[12,9]}],"layers":[{"units":[2],"mode":"carve"},{"units":[0],"mode":"cut"}]}

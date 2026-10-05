@@ -1,9 +1,27 @@
 {
-  "noClose": true,
-  "close": [{ "unit": 0, "via": [[6, 22], [4.586, 21.414], [4, 20]] }],
+  "base": "file",
+  "move": [
+    {
+      "units": [
+        2,
+        3,
+        4
+      ],
+      "to": [
+        12,
+        13.5
+      ],
+      "scale": 0.75
+    }
+  ],
   "layers": [
-    { "units": [0], "mode": "fill" },
-    { "units": [1], "mode": "cut" },
-    { "units": [2, 3, 4], "mode": "stroke", "gap": true }
+    {
+      "units": [
+        2,
+        3,
+        4
+      ],
+      "mode": "cut"
+    }
   ]
 }

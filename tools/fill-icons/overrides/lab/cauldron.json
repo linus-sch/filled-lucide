@@ -1,0 +1,5 @@
+{
+  "close": [6],
+  "move": [{"units": [1], "to": [14, 4], "scale": 0.6}],
+  "layers": [ {"units":[3,6],"mode":"fill"}, {"units":[1],"mode":"fill"}, {"units":[0,2,7,8],"mode":"stroke"} ]
+}

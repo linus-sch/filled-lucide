@@ -22,8 +22,7 @@
       "units": [
         0
       ],
-      "mode": "stroke",
-      "gap": true
+      "mode": "stroke"
     }
   ]
 }

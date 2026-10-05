@@ -1,1 +1,8 @@
-{"noClose":true,"close":[{"unit":2,"via":[[18,22],[19.41,21.41],[20,20],[20,6],[19.41,4.59],[18,4]]}],"layers":[{"units":[2,1,4],"mode":"fill"},{"units":[3,0],"mode":"auto","gap":true}]}
+{
+  "base": "clipboard",
+  "move": [{ "units": [0, 3], "to": [12, 14], "scale": 0.7 }],
+  "layers": [
+    { "units": [3], "mode": "carve" },
+    { "units": [0], "mode": "stroke" }
+  ]
+}

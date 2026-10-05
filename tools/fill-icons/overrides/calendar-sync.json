@@ -1,1 +1,1 @@
-{"noClose":true,"close":[{"unit":5,"via":[[21,21]]}],"extra":["M20 16a4 4 0 1 1-8 0a4 4 0 1 1 8 0z"],"layers":[{"units":[5],"mode":"fill"},{"units":[6],"mode":"cut"},{"units":[8],"mode":"carve"},{"units":[2,7],"mode":"stroke","gap":true},{"units":[0,1,3,4],"mode":"stroke","gap":true}]}
+{"base":"calendar","move":[{"units":[0,1,3,4],"to":[12,15.3],"scale":0.8}],"layers":[{"units":[0,1,3,4],"mode":"cut"}]}

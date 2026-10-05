@@ -1,10 +1,8 @@
 {
-  "noClose": true,
-  "close": [{ "unit": 9, "via": [[20, 3], [22, 5]] }],
+  "base": "monitor",
+  "move": [{ "units": [1, 2, 3, 4, 5, 6, 7, 8, 11], "to": [12, 10] }],
   "layers": [
-    { "units": [9], "mode": "fill" },
-    { "units": [0, 10], "mode": "stroke", "gap": true },
-    { "units": [11], "mode": "carve" },
-    { "units": [11, 1, 2, 3, 4, 5, 6, 7, 8], "mode": "stroke", "gap": true }
+    { "units": [11], "mode": "cut" },
+    { "units": [1, 2, 3, 4, 5, 6, 7, 8], "mode": "cut" }
   ]
 }

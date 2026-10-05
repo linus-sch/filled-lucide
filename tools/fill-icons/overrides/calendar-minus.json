@@ -1,1 +1,1 @@
-{"noClose":true,"close":[{"unit":2,"via":[[21,21]]}],"layers":[{"units":[2],"mode":"fill"},{"units":[3],"mode":"cut"},{"units":[1,4],"mode":"stroke","gap":true},{"units":[0],"mode":"stroke","gap":true}]}
+{"base":"calendar","move":[{"units":[0],"to":[12,15]}],"layers":[{"units":[0],"mode":"cut"}]}

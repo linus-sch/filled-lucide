@@ -1,0 +1,7 @@
+{
+  "extra": ["M6.5 17H20"],
+  "layers": [
+    { "units": [0], "mode": "fill" },
+    { "units": [1], "mode": "cut" }
+  ]
+}

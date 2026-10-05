@@ -1,1 +1,9 @@
-{ "noClose": true, "close": [{ "unit": 2, "via": [[18, 4.93], [18, 21], [6, 21], [6, 4.93]] }, { "unit": 3, "via": [[18, 21], [6, 21]] }], "layers": [{ "units": [3], "mode": "fill" }, { "units": [2], "mode": "fill", "gap": true }, { "units": [0, 5], "mode": "cut" }] }
+{
+  "noClose": true,
+  "extra": ["M6 11v10", "M18 11v10"],
+  "close": [{ "unit": 2, "via": [[18, 4.93], [18, 21], [6, 21], [6, 4.93]] }, { "unit": 3, "via": [[18, 21], [6, 21]] }],
+  "layers": [
+    { "units": [3, 2], "mode": "fill" },
+    { "units": [6, 7, 0, 5], "mode": "cut" }
+  ]
+}

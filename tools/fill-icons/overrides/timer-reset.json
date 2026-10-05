@@ -1,10 +1,1 @@
-{
-  "noClose": true,
-  "extra": ["M12 6a8 8 0 1 1 0 16 8 8 0 1 1 0-16z"],
-  "layers": [
-    { "units": [4], "mode": "fill" },
-    { "units": [1], "mode": "cut" },
-    { "units": [3], "mode": "stroke", "gap": true },
-    { "units": [0], "mode": "stroke" }
-  ]
-}
+{"extra":["M12 6a8 8 0 1 1 0 16a8 8 0 1 1 0-16z","M9.75 17.9A4.5 4.5 0 1 0 8.4 11.23","M7.2 13.3 6.9 10.4 9.6 11.9z"],"layers":[{"units":[4],"mode":"fill"},{"units":[0],"mode":"stroke"},{"units":[5],"mode":"cut"},{"units":[6],"mode":"carve"}]}

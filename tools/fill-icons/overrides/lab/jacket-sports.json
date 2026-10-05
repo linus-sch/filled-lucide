@@ -1,10 +1,6 @@
 {
   "noClose": true,
-  "close": [{ "unit": 3, "via": [[6, 9]] }, { "unit": 5, "via": [[18, 9]] }, { "unit": 4, "via": [[8, 3], [16, 3]] }],
-  "layers": [
-    { "units": [3, 5], "mode": "fill" },
-    { "units": [4], "mode": "fill", "gap": true },
-    { "units": [1, 2, 6, 7, 8], "mode": "cut" },
-    { "units": [0], "mode": "fill", "gap": true }
-  ]
+  "close": [{"unit":3,"via":[[6,9]]},{"unit":5,"via":[[18,9]]},{"unit":4,"via":[[8,3],[16,3]]}],
+  "extra": ["M8 4c0 1.1 1.8 2 4 2s4-.9 4-2"],
+  "layers": [ {"units":[3,5,4,0],"mode":"fill"}, {"units":[1,2,6,7,9],"mode":"cut"} ]
 }

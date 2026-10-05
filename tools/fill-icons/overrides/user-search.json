@@ -1,0 +1,21 @@
+{
+  "extra": [
+    "M3 21v-2a4 4 0 0 1 4-4h1a2 2 0 0 1 2 2v4z"
+  ],
+  "layers": [
+    {
+      "units": [
+        0,
+        4
+      ],
+      "mode": "fill"
+    },
+    {
+      "units": [
+        2,
+        3
+      ],
+      "mode": "stroke"
+    }
+  ]
+}

@@ -1,0 +1,4 @@
+{
+  "extra": ["M12.7 16.1 12.7 16.1c-.4.6-1 .9-1.7.9H4a2 2 0 0 0-2 2v1a2 2 0 0 0 2 2h2c1.6 0 3.1-.7 4.1-2.1z"],
+  "layers": [ {"units":[3],"mode":"fill"}, {"units":[2],"mode":"stroke"}, {"units":[0],"mode":"fill"}, {"units":[1],"mode":"stroke"} ]
+}

@@ -1,0 +1,7 @@
+{
+  "extra": ["M2 5.5l9.17 3.67a2 2 0 0 0 1.66 0L22 5.5"],
+  "layers": [
+    { "units": [1], "mode": "fill" },
+    { "units": [2], "mode": "cut" }
+  ]
+}

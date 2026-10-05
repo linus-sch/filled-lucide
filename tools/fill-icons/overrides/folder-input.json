@@ -1,0 +1,25 @@
+{
+  "base": "folder",
+  "move": [
+    {
+      "units": [
+        1,
+        2
+      ],
+      "to": [
+        12,
+        13
+      ],
+      "scale": 0.8
+    }
+  ],
+  "layers": [
+    {
+      "units": [
+        1,
+        2
+      ],
+      "mode": "cut"
+    }
+  ]
+}

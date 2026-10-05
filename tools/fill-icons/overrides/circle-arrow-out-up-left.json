@@ -1,1 +1,1 @@
-{"extra": ["M22 12a10 10 0 1 1-20 0a10 10 0 1 1 20 0z"], "layers": [{"units": [3], "mode": "fill"}, {"units": [1], "mode": "cut"}, {"units": [0], "mode": "stroke", "gap": true}]}
+{"base":"circle","move":[{"units":[0,1],"to":[12,12],"scale":0.7}],"layers":[{"units":[0,1],"mode":"cut"}]}

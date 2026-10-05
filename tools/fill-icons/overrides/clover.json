@@ -1,0 +1,9 @@
+{
+  "noClose": true,
+  "extra": ["M2 22l4.5-4.5"],
+  "layers": [
+    { "units": [1], "mode": "fill" },
+    { "units": [0, 2], "mode": "cut" },
+    { "units": [3], "mode": "stroke" }
+  ]
+}

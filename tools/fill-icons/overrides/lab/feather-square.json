@@ -1,0 +1,6 @@
+{
+  "noClose": true,
+  "close": [{"unit":0,"via":[[21,3]]}],
+  "move": [{"units":[1],"to":[12,12],"scale":0.75}],
+  "layers": [ {"units":[0],"mode":"fill"}, {"units":[1],"mode":"cut"} ]
+}

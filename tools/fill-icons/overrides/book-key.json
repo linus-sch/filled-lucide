@@ -1,8 +1,8 @@
 {
-  "close": [{ "unit": 0, "via": [[4, 18], [20, 18], [20, 2]] }],
+  "base": "book",
+  "move": [{ "units": [1, 2, 4], "to": [12, 9] }],
   "layers": [
-    { "units": [0, 3], "mode": "fill" },
-    { "units": [4], "mode": "carve", "gap": true },
-    { "units": [1, 2, 4], "mode": "stroke", "gap": true }
+    { "units": [4], "mode": "carve" },
+    { "units": [1, 2], "mode": "cut" }
   ]
 }

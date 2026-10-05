@@ -1,0 +1,9 @@
+{
+  "base": "shield",
+  "extra": ["M7.5 17.5a4.5 4 0 0 1 9 0z", "M12 5.5a3.5 3.5 0 1 0 0 7 3.5 3.5 0 1 0 0-7z", "M12 7.5a1.5 1.5 0 1 0 0 3 1.5 1.5 0 1 0 0-3z"],
+  "layers": [
+    { "units": [3], "mode": "carve" },
+    { "units": [4], "mode": "fill" },
+    { "units": [5], "mode": "carve" }
+  ]
+}

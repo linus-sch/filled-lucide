@@ -1,0 +1,4 @@
+{
+  "extra": ["M6 5h12a4 4 0 0 1 4 4v8a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V9a4 4 0 0 1 4-4z"],
+  "layers": [ {"units":[3],"mode":"fill"}, {"units":[1,2],"mode":"cut"} ]
+}

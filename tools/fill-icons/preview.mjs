@@ -10,6 +10,13 @@ import { basename, join, resolve } from 'node:path';
 import { Resvg } from '@resvg/resvg-js';
 
 const argv = process.argv.slice(2);
+if (argv.includes('--help') || argv.includes('-h')) {
+  console.log(
+    'preview.mjs [--dir icons] [--out DIR] [--cols 10] [--rows 10] [--cell 100] [--icon 56]\n' +
+      '            [--compare outline/icons] [--only substr] [--names a,b,c]',
+  );
+  process.exit(0);
+}
 const arg = (flag, fallback) => {
   const i = argv.indexOf(flag);
   return i === -1 ? fallback : argv[i + 1];

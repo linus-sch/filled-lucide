@@ -1,1 +1,9 @@
-{ "close": [{ "unit": 0, "via": [[22, 3]] }], "layers": [{ "units": [0], "mode": "fill" }, { "units": [1, 2], "mode": "stroke" }, { "units": [3, 4], "mode": "stroke", "gap": true }] }
+{
+  "extra": ["M4 3h16a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2z"],
+  "move": [{ "units": [3, 4], "to": [12, 10] }],
+  "layers": [
+    { "units": [5], "mode": "fill" },
+    { "units": [1, 2], "mode": "stroke" },
+    { "units": [3, 4], "mode": "cut" }
+  ]
+}

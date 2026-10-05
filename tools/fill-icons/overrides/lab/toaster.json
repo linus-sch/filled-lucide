@@ -1,0 +1,1 @@
+{"close": [2], "extra": ["M8 7V5.7A2 2 0 0 1 9 2h6a2 2 0 0 1 1 3.7V7z"], "move": [{"units": [3], "to": [8, 16], "scale": 0.6}], "layers": [{"units": [2], "mode": "fill"}, {"units": [1], "mode": "cut"}, {"units": [6], "mode": "fill"}, {"units": [3], "mode": "carve"}, {"units": [4, 5], "mode": "cut"}]}

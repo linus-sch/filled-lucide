@@ -1,0 +1,7 @@
+{
+  "close": [0],
+  "layers": [
+    { "units": [1], "mode": "fill" },
+    { "units": [0], "mode": "carve" }
+  ]
+}

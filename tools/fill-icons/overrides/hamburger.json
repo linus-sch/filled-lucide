@@ -1,1 +1,10 @@
-{ "close": [0, 1, 2], "layers": [{ "units": [1, 2], "mode": "fill" }, { "units": [0], "mode": "fill", "gap": true }, { "units": [3], "mode": "cut" }] }
+{
+  "extra": [
+    "M5 9a1 1 0 0 1-1-1 8 5.5 0 0 1 16 0 1 1 0 0 1-1 1z",
+    "M4 13h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2z",
+    "M4 19h16a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2z"
+  ],
+  "layers": [
+    { "units": [4, 5, 6], "mode": "fill" }
+  ]
+}

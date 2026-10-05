@@ -1,8 +1,23 @@
 {
-  "noClose": true,
-  "close": [{ "unit": 0, "via": [[4, 20], [2.586, 19.414], [2, 18]] }],
+  "base": "folder",
+  "move": [
+    {
+      "units": [
+        1
+      ],
+      "to": [
+        12,
+        13
+      ],
+      "scale": 0.85
+    }
+  ],
   "layers": [
-    { "units": [0], "mode": "fill" },
-    { "units": [1], "mode": "fill", "gap": true }
+    {
+      "units": [
+        1
+      ],
+      "mode": "carve"
+    }
   ]
 }

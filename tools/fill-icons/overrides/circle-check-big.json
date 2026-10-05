@@ -1,1 +1,1 @@
-{"noClose":true,"close":[{"unit":0,"via":[[18.018, 4.014], [18.947, 4.807], [19.771, 5.707], [20.48, 6.701], [21.063, 7.774], [21.511, 8.91]]}],"layers":[{"units":[0],"mode":"fill"},{"units":[1],"mode":"cut"}]}
+{"base":"circle","move":[{"units":[1],"to":[12,12],"scale":0.62}],"layers":[{"units":[1],"mode":"cut"}]}

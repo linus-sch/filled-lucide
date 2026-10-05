@@ -8,7 +8,7 @@
 // over already-filled output would solidify the silhouettes a second time.
 //
 // Runs across all CPU cores; each worker owns its own Clipper instance.
-import { readdir, readFile, writeFile } from 'node:fs/promises';
+import { readdir, writeFile } from 'node:fs/promises';
 import { existsSync, mkdirSync } from 'node:fs';
 import { cpus } from 'node:os';
 import { basename, join, resolve } from 'node:path';
@@ -45,12 +45,12 @@ const SVG_TEMPLATE = (d) => `<svg
 `;
 
 async function runWorker(files, { src, out }) {
-  const { parseIcon } = await import('./lib/parse.mjs');
   const { initGeom, area } = await import('./lib/geom.mjs');
-  const { solidify } = await import('./lib/solidify.mjs');
   const { regionToPathData } = await import('./lib/fit.mjs');
-  const { applyOverride, iconOptions, useLabOverrides } = await import('./lib/overrides.mjs');
+  const { useLabOverrides } = await import('./lib/overrides.mjs');
+  const { makeRenderer } = await import('./lib/render.mjs');
   useLabOverrides(basename(src) === 'lab');
+  const render = makeRenderer(src);
   const { optimize } = await import('svgo');
   await initGeom();
 
@@ -58,9 +58,7 @@ async function runWorker(files, { src, out }) {
   for (const file of files) {
     const name = basename(file, '.svg');
     try {
-      const svg = await readFile(join(src, file), 'utf8');
-      const elements = applyOverride(name, parseIcon(svg));
-      const region = solidify(elements, iconOptions(name));
+      const region = render(name);
       const d = regionToPathData(region);
       if (!d) throw new Error('empty result');
       // SVGO's relative-command packing takes about a third off the path data

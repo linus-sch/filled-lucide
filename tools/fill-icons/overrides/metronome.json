@@ -1,0 +1,9 @@
+{
+  "noClose": true,
+  "close": [2],
+  "layers": [
+    { "units": [2], "mode": "fill" },
+    { "units": [1], "mode": "xor" },
+    { "units": [3], "mode": "fill" }
+  ]
+}

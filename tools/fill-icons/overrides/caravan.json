@@ -1,1 +1,1 @@
-{"noClose":true,"close":[0,1,{"unit":2,"via":[[18,19],[21,19],[22,18]]}],"layers":[{"units":[0],"mode":"fill"},{"units":[1,2],"mode":"carve"},{"units":[0,2],"mode":"stroke"},{"units":[3],"mode":"fill","gap":true}]}
+{"noClose":true,"close":[0,1,{"unit":2,"via":[[18,19],[21,19],[22,18]]}],"extra":["M8 19h.01"],"layers":[{"units":[0,3],"mode":"fill"},{"units":[1,2],"mode":"carve"},{"units":[0,2],"mode":"stroke"},{"units":[3],"mode":"fill"},{"units":[4],"mode":"cut"}]}

@@ -1,1 +1,7 @@
-{"noClose":true,"close":[{"unit":1,"via":[[20,6],[19.41,4.59],[18,4]]}],"layers":[{"units":[1,2,0],"mode":"fill"},{"units":[3,4],"mode":"stroke","gap":true}]}
+{
+  "base": "clipboard",
+  "move": [{ "units": [3, 4], "to": [12, 14], "scale": 0.7 }],
+  "layers": [
+    { "units": [3, 4], "mode": "cut" }
+  ]
+}

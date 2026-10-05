@@ -1,0 +1,7 @@
+{
+  "layers": [
+    { "units": [1], "mode": "fill" },
+    { "units": [2], "mode": "xor" },
+    { "units": [0, 3], "mode": "fill" }
+  ]
+}

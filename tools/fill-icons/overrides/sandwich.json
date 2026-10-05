@@ -1,1 +1,9 @@
-{ "join": [[2, 1]], "close": [0, 2, 3], "layers": [{ "units": [2], "mode": "fill" }, { "units": [3], "mode": "fill", "gap": true }, { "units": [4], "mode": "fill", "gap": true }, { "units": [0], "mode": "fill", "gap": true }] }
+{
+  "noClose": true,
+  "close": [0, 3],
+  "extra": ["M3 15h18a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1v-2a1 1 0 0 1 1-1z", "M0 11.75h24", "M0 16h24"],
+  "layers": [
+    { "units": [0, 4, 5, 3], "mode": "fill" },
+    { "units": [6, 7], "mode": "cut" }
+  ]
+}

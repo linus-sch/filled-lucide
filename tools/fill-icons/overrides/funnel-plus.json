@@ -1,7 +1,25 @@
 {
-  "close": [{ "unit": 0, "via": [[20, 6.6], [17, 3]] }],
+  "base": "funnel",
+  "move": [
+    {
+      "units": [
+        1,
+        2
+      ],
+      "to": [
+        12,
+        7
+      ],
+      "scale": 0.7
+    }
+  ],
   "layers": [
-    { "units": [0], "mode": "fill" },
-    { "units": [1, 2], "mode": "stroke", "gap": true }
+    {
+      "units": [
+        1,
+        2
+      ],
+      "mode": "cut"
+    }
   ]
 }

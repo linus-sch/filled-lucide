@@ -1,0 +1,30 @@
+{
+  "base": "file",
+  "move": [
+    {
+      "units": [
+        0,
+        3
+      ],
+      "to": [
+        12,
+        13.5
+      ],
+      "scale": 0.85
+    }
+  ],
+  "layers": [
+    {
+      "units": [
+        0
+      ],
+      "mode": "carve"
+    },
+    {
+      "units": [
+        3
+      ],
+      "mode": "cut"
+    }
+  ]
+}

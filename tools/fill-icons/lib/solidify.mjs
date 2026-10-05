@@ -232,14 +232,76 @@ function solidifyGroup(els, stems = true) {
   }
 
   if (detail.length && region.length) {
-    const inner = solidifyGroup(
+    let inner = solidifyGroup(
       detail.map((i) => els[i]),
       stems,
     );
+    // Lines drawn across the body divide it: run them through the edge.
+    const through = detail.filter((i) => els[i].subpaths.length === 1 && !els[i].subpaths[0].closed);
+    if (through.length) {
+      inner = union(inner, unionAll(through.map((i) => throughStroke(els[i], region))));
+    }
     if (inner.length) region = difference(region, inner);
   }
   return region;
 }
+
+/**
+ * Radius by which every convex corner of the result is rounded. Boolean cuts
+ * leave razor corners where a dividing line meets an edge; this softens them
+ * just enough to match Lucide's round joins, and drops anything thinner.
+ */
+const CORNER_ROUND = 0.35;
+
+/** How far past a line's end an edge may be for the line to cut through it. */
+const THROUGH_REACH = 2.1;
+
+const pointIn = (region, p) => area(intersection(dotAt(p, 0.01), region)) > 0;
+
+/**
+ * The stroke of open line `el`, with each end that nearly reaches the edge of
+ * `region` run on past it — so a dividing line splits a body cleanly instead
+ * of stopping in a rounded cap just short of the edge.
+ */
+function throughStroke(el, region) {
+  const sub = el.subpaths[0];
+  if (el.subpaths.length !== 1 || sub.closed || sub.pts.length < 2 || !region.length) {
+    return el.stroke;
+  }
+  const pts = sub.pts.slice();
+  let extended = false;
+  const extend = (tip, from) => {
+    const dx = tip[0] - from[0];
+    const dy = tip[1] - from[1];
+    const l = Math.hypot(dx, dy);
+    if (l < 1e-6) return null;
+    const probe = [tip[0] + (dx / l) * THROUGH_REACH, tip[1] + (dy / l) * THROUGH_REACH];
+    if (pointIn(region, probe)) return null;
+    extended = true;
+    return [tip[0] + (dx / l) * 4, tip[1] + (dy / l) * 4];
+  };
+  const tail = extend(pts.at(-1), pts.at(-2));
+  const head = extend(pts[0], pts[1]);
+  if (!extended) return el.stroke;
+  const run = [...(head ? [head] : []), ...pts, ...(tail ? [tail] : [])];
+  return strokeRegion([{ pts: run, closed: false }], STROKE_RADIUS);
+}
+
+/**
+ * Round off convex corners sharper than CORNER_ROUND. Only the trimmed corner
+ * pieces are subtracted, so every other edge keeps its original vertices and
+ * the curve fitting downstream sees the same geometry as before.
+ */
+function roundCorners(region) {
+  if (!region.length) return region;
+  const opened = inflate(inflate(region, -CORNER_ROUND), CORNER_ROUND);
+  if (!opened.length) return region;
+  // Arc re-tessellation leaves microscopic slivers along every curve; a real
+  // corner piece has some thickness to it.
+  const trimmed = components(difference(region, opened)).filter((p) => area(inflate(p, -0.01)) > 0);
+  return trimmed.length ? denoise(difference(region, unionAll(trimmed)), 0.004) : region;
+}
+
 
 /** Drop hairline slivers and specks left behind by boolean ops. */
 function tidy(region) {
@@ -249,6 +311,8 @@ function tidy(region) {
   const keep = parts.filter((p) => area(inflate(p, -0.16)) > 0.004);
   return keep.length ? unionAll(keep) : cleaned;
 }
+
+export const finish = (region) => roundCorners(tidy(region));
 
 /** One subpath per unit: a single `<path>` often draws a shape and its rules. */
 export function toUnits(elements) {
@@ -298,19 +362,29 @@ function closeUnit(unit, mitre, via = null) {
  *   auto   the automatic shell/detail/badge solidify (the default)
  *   fill   the units' outline filled solid, no detail knocked out
  *   stroke the units' strokes only, never filled
- *   cut    knock the units' strokes out of everything below
+ *   cut    knock the units' strokes out of everything below; a line whose end
+ *          nearly reaches the edge is run through it so it divides cleanly
  *   carve  knock the units' solidified shape out of everything below
+ *   xor    the units' strokes knocked out where they cross the shape, drawn
+ *          solid where they don't
  * `gap` (viewBox units, `true` = BADGE_GAP) clears space around the layer
  * before it is laid down, as for a badge.
  */
 function renderLayer(region, layer, els, stems) {
-  const members = els.filter((e) => layer.units.includes(e.index));
+  const members = els.filter((e) => (layer.units ?? []).includes(e.index));
   if (!members.length) return region;
   const mode = layer.mode ?? 'auto';
   let shape;
   if (mode === 'auto') shape = solidifyGroup(members, stems);
   else if (mode === 'fill') shape = fillHoles(unionAll(members.map((e) => e.solid)));
-  else if (mode === 'stroke' || mode === 'cut') shape = unionAll(members.map((e) => e.stroke));
+  else if (mode === 'stroke') shape = unionAll(members.map((e) => e.stroke));
+  else if (mode === 'cut') shape = unionAll(members.map((e) => throughStroke(e, region)));
+  else if (mode === 'xor') {
+    // Where the strokes cross the shape they are knocked out, elsewhere drawn:
+    // a prohibition bar that is white on the object and solid off it.
+    const bar = unionAll(members.map((e) => e.stroke));
+    return union(difference(region, bar), difference(bar, region));
+  }
   else if (mode === 'carve') shape = solidifyGroup(members, stems);
   else throw new Error(`unknown layer mode ${mode}`);
   if (mode === 'cut' || mode === 'carve') {
@@ -333,28 +407,61 @@ function renderLayer(region, layer, els, stems) {
  */
 export function solidify(
   elements,
-  { keepOutline = false, noClose = false, forceClose = false, rule = {} } = {},
+  {
+    keepOutline = false,
+    noClose = false,
+    forceClose = false,
+    rule = {},
+    transform = null,
+    start = null,
+    drop = null,
+  } = {},
 ) {
   const units = toUnits(elements);
   const referenced = [
     ...(rule.join ?? []).flat(),
     ...(rule.close ?? []).map((c) => (typeof c === 'number' ? c : c.unit)),
     ...(rule.mitre ?? []),
-    ...(rule.layers ?? []).flatMap((l) => l.units),
+    ...(rule.layers ?? []).flatMap((l) => l.units ?? []),
+    ...(rule.move ?? []).flatMap((m) => m.units),
   ];
   const bad = referenced.filter((i) => !Number.isInteger(i) || !units[i]);
   if (bad.length) throw new Error(`override references missing units ${bad.join(', ')}`);
   for (const [a, b] of rule.join ?? []) joinUnits(units, a, b);
-  const live = units.filter(Boolean);
+  const live = units.filter(Boolean).filter((u) => !drop?.(u));
   if (!noClose && !rule.noClose) closeBadgeGaps(live, { force: forceClose });
   for (const c of rule.close ?? []) {
     if (typeof c === 'number') closeUnit(units[c], false);
     else closeUnit(units[c.unit], false, c.via);
   }
   for (const i of rule.mitre ?? []) closeUnit(units[i], true);
+  for (const m of rule.move ?? []) moveUnits(m.units.map((i) => units[i]).filter(Boolean), m);
+  if (transform) for (const u of live) u.subpaths[0].pts = u.subpaths[0].pts.map(transform);
   const els = live.map(buildElement).filter((e) => e.solidArea > 0);
-  if (!els.length) return [];
-  if (keepOutline) return tidy(unionAll(els.map((e) => e.stroke)));
-  if (rule.layers) return tidy(rule.layers.reduce((r, layer) => renderLayer(r, layer, els, rule.stems ?? true), []));
-  return tidy(solidifyGroup(els, rule.stems ?? true));
+  if (!els.length) return start ?? [];
+  if (keepOutline) return finish(unionAll(els.map((e) => e.stroke)));
+  const stems = rule.stems ?? true;
+  if (rule.layers) {
+    return finish(rule.layers.reduce((r, layer) => renderLayer(r, layer, els, stems), start ?? []));
+  }
+  const region = solidifyGroup(els, stems);
+  return finish(start ? union(start, region) : region);
+}
+
+/**
+ * Relocate a group of units — a badge moved onto the middle of the body it
+ * used to sit beside. `to` is where the group's bounding-box centre goes,
+ * `translate` an explicit offset, `scale` resizes the geometry about that
+ * centre (stroke width stays 2, as everywhere in Lucide).
+ */
+function moveUnits(group, { to, translate, scale = 1 }) {
+  if (!group.length) return;
+  const pts = group.flatMap((u) => u.subpaths[0].pts);
+  const cx = (Math.min(...pts.map((p) => p[0])) + Math.max(...pts.map((p) => p[0]))) / 2;
+  const cy = (Math.min(...pts.map((p) => p[1])) + Math.max(...pts.map((p) => p[1]))) / 2;
+  const [tx, ty] = to ? [to[0] - cx, to[1] - cy] : (translate ?? [0, 0]);
+  for (const u of group) {
+    const s = u.subpaths[0];
+    s.pts = s.pts.map(([x, y]) => [cx + (x - cx) * scale + tx, cy + (y - cy) * scale + ty]);
+  }
 }

@@ -1,9 +1,0 @@
-{
-  "noClose": true,
-  "join": [[2, 1], [2, 0]],
-  "close": [{ "unit": 2, "via": [[6.6, 3.6], [6.6, 6.6], [19.66, 19.66]] }, { "unit": 3, "via": [[6, 6], [6, 14]] }],
-  "layers": [
-    { "units": [2, 3], "mode": "fill" },
-    { "units": [5], "mode": "stroke", "gap": true }
-  ]
-}

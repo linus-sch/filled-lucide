@@ -1,10 +1,1 @@
-{
-  "noClose": true,
-  "close": [{ "unit": 3, "via": [[16.93, 14]] }],
-  "extra": ["M2 14a8 8 0 0 1 16 0Z", "M6 14l2-4h4l2 4"],
-  "layers": [
-    { "units": [0, 4], "mode": "fill" },
-    { "units": [3], "mode": "fill" },
-    { "units": [1, 2, 5], "mode": "cut" }
-  ]
-}
+{"close":[3],"extra":["M3 14h14"],"layers":[{"units":[0,3],"mode":"fill"},{"units":[4],"mode":"cut"}]}

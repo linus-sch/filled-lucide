@@ -1,0 +1,26 @@
+{
+  "base": "folder",
+  "close": [
+    0
+  ],
+  "move": [
+    {
+      "units": [
+        0
+      ],
+      "to": [
+        12,
+        13
+      ],
+      "scale": 0.9
+    }
+  ],
+  "layers": [
+    {
+      "units": [
+        0
+      ],
+      "mode": "carve"
+    }
+  ]
+}

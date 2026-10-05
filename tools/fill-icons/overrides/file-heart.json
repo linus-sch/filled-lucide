@@ -1,1 +1,22 @@
-{"noClose":true,"close":[{"unit":0,"via":[[4,18],[6.5,21],[9,22]]}],"layers":[{"units":[0],"mode":"fill"},{"units":[1],"mode":"cut"},{"units":[2],"mode":"fill","gap":true}]}
+{
+  "base": "file",
+  "move": [
+    {
+      "units": [
+        2
+      ],
+      "to": [
+        12,
+        13.5
+      ]
+    }
+  ],
+  "layers": [
+    {
+      "units": [
+        2
+      ],
+      "mode": "carve"
+    }
+  ]
+}

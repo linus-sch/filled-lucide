@@ -1,1 +1,8 @@
-{"noClose":true,"close":[1],"layers":[{"units":[1],"mode":"fill"},{"units":[0],"mode":"fill","gap":1.25}]}
+{
+  "noClose": true,
+  "extra": ["M3 5v14a9 3 0 0 0 18 0V5a9 3 0 0 0-18 0z", "M3 5a9 3 0 0 0 18 0"],
+  "layers": [
+    { "units": [2], "mode": "fill" },
+    { "units": [3], "mode": "cut" }
+  ]
+}

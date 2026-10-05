@@ -1,9 +1,12 @@
 {
   "noClose": true,
-  "close": [{ "unit": 1, "via": [[13, 2], [15.8, 3.3], [18.3, 6.1], [19, 9]] }],
+  "extra": [
+    "M12 2a7 7 0 0 1 7 7v6a7 7 0 0 1-14 0V9a7 7 0 0 1 7-7z",
+    "M12 2a7 7 0 0 0-7 7v6a7 7 0 0 0 14 0v-5h-7z",
+    "M19 10h-7V2"
+  ],
   "layers": [
-    { "units": [1], "mode": "fill" },
-    { "units": [0], "mode": "cut" },
-    { "units": [2], "mode": "fill", "gap": true }
+    { "units": [4], "mode": "fill" },
+    { "units": [3, 5], "mode": "stroke" }
   ]
 }

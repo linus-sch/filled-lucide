@@ -1,1 +1,1 @@
-{ "close": [3], "layers": [{ "units": [3], "mode": "fill" }, { "units": [0, 4, 6], "mode": "cut" }, { "units": [3, 2, 1, 5], "mode": "stroke" }] }
+{ "close": [3], "extra": ["M14.78 13 13.72 22.5", "M9.22 13 10.28 22.5"], "layers": [{ "units": [3], "mode": "fill" }, { "units": [7, 8], "mode": "cut" }, { "units": [3, 2, 1, 5], "mode": "stroke" }] }

@@ -1,0 +1,5 @@
+{
+  "close": [0, {"unit":2,"via":[[10,6]]}],
+  "move": [{"units":[1],"to":[12,7.5],"scale":0.6}],
+  "layers": [ {"units":[0,2],"mode":"fill"}, {"units":[1],"mode":"carve"}, {"units":[3],"mode":"stroke"}, {"units":[4,5],"mode":"fill"} ]
+}

@@ -1,0 +1,32 @@
+{
+  "extra": [
+    "M6.5 6h1.5"
+  ],
+  "layers": [
+    {
+      "units": [
+        2
+      ],
+      "mode": "fill"
+    },
+    {
+      "units": [
+        3
+      ],
+      "mode": "carve"
+    },
+    {
+      "units": [
+        5,
+        1
+      ],
+      "mode": "cut"
+    },
+    {
+      "units": [
+        4
+      ],
+      "mode": "stroke"
+    }
+  ]
+}

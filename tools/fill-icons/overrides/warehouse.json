@@ -1,0 +1,28 @@
+{
+  "extra": [
+    "M6 21V10a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v11z",
+    "M5 13h14",
+    "M5 17h14"
+  ],
+  "layers": [
+    {
+      "units": [
+        1
+      ],
+      "mode": "fill"
+    },
+    {
+      "units": [
+        4
+      ],
+      "mode": "carve"
+    },
+    {
+      "units": [
+        5,
+        6
+      ],
+      "mode": "stroke"
+    }
+  ]
+}

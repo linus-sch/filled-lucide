@@ -152,3 +152,12 @@ export function components(region) {
   walk(tree);
   return out;
 }
+
+/** Scale a region about a point (geometry and stroke weight alike). */
+export function scaleRegion(region, s, [ox, oy] = [12, 12]) {
+  const cx = ox * SCALE;
+  const cy = oy * SCALE;
+  return (region ?? EMPTY).map((path) =>
+    path.map((p) => ({ x: Math.round(cx + (p.x - cx) * s), y: Math.round(cy + (p.y - cy) * s) })),
+  );
+}
