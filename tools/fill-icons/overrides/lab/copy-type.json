@@ -1,1 +1,38 @@
-{"noClose":true,"layers":[{"units":[0],"mode":"fill"},{"units":[1],"mode":"stroke"},{"units":[2,3,4],"mode":"cut"}]}
+{
+  "noClose": true,
+  "extra": [
+    "M10 8h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2h-8a2 2 0 0 1-2-2v-8a2 2 0 0 1 2-2z",
+    "M16 6V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h1V8a2 2 0 0 1 2-2z"
+  ],
+  "move": [
+    {
+      "units": [
+        2,
+        3,
+        4
+      ],
+      "to": [
+        14,
+        14
+      ]
+    }
+  ],
+  "layers": [
+    {
+      "units": [
+        5,
+        6
+      ],
+      "mode": "fill",
+      "area": true
+    },
+    {
+      "units": [
+        2,
+        3,
+        4
+      ],
+      "mode": "cut"
+    }
+  ]
+}

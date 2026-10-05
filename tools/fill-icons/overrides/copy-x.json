@@ -1,1 +1,24 @@
-{ "base": "copy", "layers": [{ "units": [0, 1], "mode": "cut" }] }
+{
+  "base": "copy",
+  "move": [
+    {
+      "units": [
+        0,
+        1
+      ],
+      "to": [
+        14,
+        14
+      ]
+    }
+  ],
+  "layers": [
+    {
+      "units": [
+        0,
+        1
+      ],
+      "mode": "cut"
+    }
+  ]
+}

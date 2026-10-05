@@ -367,6 +367,8 @@ function closeUnit(unit, mitre, via = null) {
  *   carve  knock the units' solidified shape out of everything below
  *   xor    the units' strokes knocked out where they cross the shape, drawn
  *          solid where they don't
+ * `area: true` (fill / carve) uses the closed subpaths' exact area instead of
+ * their 2-wide stroke outline, grown by `grow` if given.
  * `gap` (viewBox units, `true` = BADGE_GAP) clears space around the layer
  * before it is laid down, as for a badge.
  */
@@ -375,6 +377,14 @@ function renderLayer(region, layer, els, stems) {
   if (!members.length) return region;
   const mode = layer.mode ?? 'auto';
   let shape;
+  if (layer.area && (mode === 'fill' || mode === 'carve')) {
+    // Exact area of the closed subpaths, no 2-wide stroke: for shapes drawn
+    // as filled geometry rather than Lucide strokes. `grow` thickens them.
+    const fill = unionAll(members.map((e) => fillRegion(e.subpaths)));
+    shape = layer.grow ? inflate(fill, layer.grow) : fill;
+    if (mode === 'carve') return difference(region, shape);
+    return region.length ? union(region, shape) : shape;
+  }
   if (mode === 'auto') shape = solidifyGroup(members, stems);
   else if (mode === 'fill') shape = fillHoles(unionAll(members.map((e) => e.solid)));
   else if (mode === 'stroke') shape = unionAll(members.map((e) => e.stroke));
