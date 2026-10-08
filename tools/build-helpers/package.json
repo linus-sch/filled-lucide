@@ -1,5 +1,5 @@
 {
-  "name": "@lucide-filled/helpers",
+  "name": "@filled-lucide/helpers",
   "private": true,
   "version": "1.0.0",
   "description": "A internal used package with helpers.",

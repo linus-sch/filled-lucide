@@ -1,7 +1,7 @@
 import path from 'path';
 import { babel } from '@rollup/plugin-babel';
 import esbuild from 'esbuild';
-import plugins from '@lucide-filled/rollup-plugins';
+import plugins from '@filled-lucide/rollup-plugins';
 import ts from 'typescript';
 
 import pkg from './package.json' with { type: 'json' };
@@ -81,7 +81,7 @@ const configs = bundles
                           const modulePath = path.join(args.resolveDir, args.path);
                           if (
                             args.kind === 'import-statement' &&
-                            args.path !== '@lucide-filled/shared' &&
+                            args.path !== '@filled-lucide/shared' &&
                             !modulePath.includes('packages/shared')
                           ) {
                             return { path: args.path, external: true };

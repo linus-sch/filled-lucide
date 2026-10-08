@@ -1,5 +1,5 @@
 import path from 'path';
-import { readSvgDirectory } from '@lucide-filled/helpers';
+import { readSvgDirectory } from '@filled-lucide/helpers';
 import { type Path } from '../types.ts';
 
 async function getAliases(iconDirectory: Path) {

@@ -1,5 +1,5 @@
 import { computed, type FunctionalComponent, h } from 'vue';
-import { isEmptyString, mergeClasses, toKebabCase, toPascalCase } from '@lucide-filled/shared';
+import { isEmptyString, mergeClasses, toKebabCase, toPascalCase } from '@filled-lucide/shared';
 import defaultAttributes from './defaultAttributes';
 import { IconNode, LucideProps } from './types';
 import { useLucideProps } from './context';

@@ -1,4 +1,4 @@
-import base64SVG from '@lucide-filled/build-icons/utils/base64SVG';
+import base64SVG from '@filled-lucide/build-icons/utils/base64SVG';
 
 export default async ({
   componentName,

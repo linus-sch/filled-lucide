@@ -2,7 +2,7 @@
 # answered directly from Cloudflare's edge. Static asset requests are free and
 # unmetered on all plans, including Free — the site costs nothing to run no
 # matter how much traffic it takes.
-name = "lucide-filled"
+name = "filled-lucide"
 compatibility_date = "2025-09-01"
 
 [assets]

@@ -1,5 +1,6 @@
 {
-  "name": "@lucide-filled/build-icons",
+  "name": "@filled-lucide/build-icons",
+  "private": true,
   "description": "A internal used package to build icon code files for the Lucide icon library packages.",
   "version": "1.1.0",
   "main": "index.ts",
@@ -35,7 +36,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@lucide-filled/helpers": "workspace:*",
+    "@filled-lucide/helpers": "workspace:*",
     "@types/minimist": "^1.2.5",
     "@types/node": "^22.20.1"
   },
@@ -46,6 +47,6 @@
     "svgson": "^5.3.1"
   },
   "peerDependencies": {
-    "@lucide-filled/helpers": "*"
+    "@filled-lucide/helpers": "*"
   }
 }

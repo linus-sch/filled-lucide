@@ -1,5 +1,5 @@
 import { h, type JSX } from 'preact';
-import { mergeClasses, toKebabCase, toPascalCase } from '@lucide-filled/shared';
+import { mergeClasses, toKebabCase, toPascalCase } from '@filled-lucide/shared';
 import Icon from './Icon';
 import type { IconNode, LucideIcon, LucideProps } from './types';
 

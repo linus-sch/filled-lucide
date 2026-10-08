@@ -114,7 +114,7 @@ async function main() {
   await writeFile(
     join(out, 'meta.json'),
     JSON.stringify(
-      { name: 'lucide-filled', total, sets: summary, generated: new Date().toISOString() },
+      { name: 'filled-lucide', total, sets: summary, generated: new Date().toISOString() },
       null,
       2,
     ),

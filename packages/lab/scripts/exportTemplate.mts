@@ -1,6 +1,6 @@
-import base64SVG from '@lucide-filled/build-icons/utils/base64SVG';
-import defineExportTemplate from '@lucide-filled/build-icons/utils/defineExportTemplate';
-import { toCamelCase } from '@lucide-filled/helpers';
+import base64SVG from '@filled-lucide/build-icons/utils/base64SVG';
+import defineExportTemplate from '@filled-lucide/build-icons/utils/defineExportTemplate';
+import { toCamelCase } from '@filled-lucide/helpers';
 
 export default defineExportTemplate(
   async ({ componentName, iconName, children, getSvg, deprecated, deprecationReason }) => {

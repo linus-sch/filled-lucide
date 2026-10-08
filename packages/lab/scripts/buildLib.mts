@@ -1,6 +1,6 @@
 import path from 'path';
 
-import { readSvgDirectory, getCurrentDirPath } from '@lucide-filled/helpers';
+import { readSvgDirectory, getCurrentDirPath } from '@filled-lucide/helpers';
 import readSvgs from './readSvgs.mts';
 import generateIconNodes from './generateIconNodes.mts';
 import copyIcons from './copyIcons.mts';

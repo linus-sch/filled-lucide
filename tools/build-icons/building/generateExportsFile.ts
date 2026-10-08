@@ -1,5 +1,5 @@
 import path from 'path';
-import { toPascalCase, toCamelCase, resetFile, appendFile } from '@lucide-filled/helpers';
+import { toPascalCase, toCamelCase, resetFile, appendFile } from '@filled-lucide/helpers';
 import type { INode } from 'svgson';
 
 export default async function generateExportFile(

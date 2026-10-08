@@ -1,4 +1,4 @@
-import { writeFile } from '@lucide-filled/helpers';
+import { writeFile } from '@filled-lucide/helpers';
 import { type SVGFile } from './readSvgs.mts';
 
 export default async function generateIconNodes(parsedSvgs: SVGFile[], packageDir: string) {

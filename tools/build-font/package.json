@@ -20,7 +20,7 @@
     "svgtofont": "^6.5.3"
   },
   "devDependencies": {
-    "@lucide-filled/helpers": "workspace:*",
+    "@filled-lucide/helpers": "workspace:*",
     "@types/fs-extra": "^11.0.4",
     "@types/minimist": "^1.2.5",
     "@types/node": "^22.20.1"

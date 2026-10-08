@@ -1,4 +1,4 @@
-import { type IconAliases } from '@lucide-filled/helpers';
+import { type IconAliases } from '@filled-lucide/helpers';
 import { put } from '@vercel/blob';
 
 const VERCEL_BLOB_CODEPOINTS_PATH = 'latest/font/codepoints.json';

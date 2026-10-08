@@ -1,15 +1,14 @@
 {
-  "name": "@lucide-filled/astro",
-  "version": "0.470.0",
-  "author": "Moustapha Kebe",
+  "name": "@filled-lucide/astro",
+  "version": "1.52.0",
   "description": "A Filled Lucide icon library package for Astro applications.",
   "license": "ISC",
-  "homepage": "https://lucide.dev",
-  "bugs": "https://github.com/lucide-icons/lucide/issues",
+  "homepage": "https://filledlucide.dev",
+  "bugs": "https://github.com/linus-sch/filled-lucide/issues",
   "type": "module",
   "repository": {
     "type": "git",
-    "url": "https://github.com/lucide-icons/lucide.git",
+    "url": "https://github.com/linus-sch/filled-lucide.git",
     "directory": "packages/astro"
   },
   "keywords": [
@@ -49,7 +48,7 @@
   },
   "devDependencies": {
     "@astrojs/ts-plugin": "^1.10.10",
-    "@lucide-filled/build-icons": "workspace:*",
+    "@filled-lucide/build-icons": "workspace:*",
     "@testing-library/dom": "^10.4.1",
     "@testing-library/jest-dom": "^6.9.1",
     "astro": "^7.1.0",

@@ -40,7 +40,7 @@ describe('Using lucide icon components', () => {
     const SVGElement = container.firstElementChild;
 
     expect(SVGElement).toHaveAttribute('width', '48');
-    expect(SVGElement).toHaveAttribute('stroke', 'red');
+    expect(SVGElement).toHaveAttribute('fill', 'red');
     expect(SVGElement).toHaveAttribute('stroke-width', '4');
 
     expect(container).toMatchSnapshot();
@@ -164,7 +164,7 @@ describe('Using lucide icon components', () => {
     const icon = container.firstElementChild;
 
     expect(icon).toHaveAttribute('width', '48');
-    expect(icon).toHaveAttribute('stroke', 'red');
+    expect(icon).toHaveAttribute('fill', 'red');
     expect(icon).toHaveAttribute('stroke-width', '1');
   });
 
@@ -180,7 +180,7 @@ describe('Using lucide icon components', () => {
     const icon = container.firstElementChild;
 
     expect(icon).toHaveAttribute('width', '48');
-    expect(icon).toHaveAttribute('stroke', 'red');
+    expect(icon).toHaveAttribute('fill', 'red');
     expect(icon).toHaveAttribute('stroke-width', '1');
   });
 
@@ -197,7 +197,7 @@ describe('Using lucide icon components', () => {
     const icon = container.firstElementChild;
 
     expect(icon).toHaveAttribute('width', '48');
-    expect(icon).toHaveAttribute('stroke', 'red');
+    expect(icon).toHaveAttribute('fill', 'red');
     expect(icon).toHaveAttribute('stroke-width', '1');
   });
 });

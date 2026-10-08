@@ -1,8 +1,8 @@
-import plugins from '@lucide-filled/rollup-plugins';
+import plugins from '@filled-lucide/rollup-plugins';
 import dts from 'rollup-plugin-dts';
 import pkg from './package.json' with { type: 'json' };
 
-const outputFileName = pkg.name;
+const outputFileName = 'lucide-static';
 const outputDir = 'dist';
 const inputs = ['src/lucide-static.ts'];
 const bundles = [

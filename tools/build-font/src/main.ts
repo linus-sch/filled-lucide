@@ -2,7 +2,7 @@ import getArgumentOptions from 'minimist';
 import path from 'path';
 import { promises as fs } from 'fs';
 
-import { getAllIconAliases } from '@lucide-filled/helpers';
+import { getAllIconAliases } from '@filled-lucide/helpers';
 import { outlineSVG } from './outlineSVGs.ts';
 import { allocateCodePoints } from './allocateCodepoints.ts';
 import { buildFont } from './buildFont.ts';

@@ -1,6 +1,6 @@
 import { forwardRef, createElement } from 'react';
 import { IconNode, LucideProps } from './types';
-import { toPascalCase } from '@lucide-filled/shared';
+import { toPascalCase } from '@filled-lucide/shared';
 import Icon from './Icon';
 
 /**

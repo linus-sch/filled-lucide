@@ -1,13 +1,13 @@
 {
-  "name": "@lucide-filled/svelte",
+  "name": "@filled-lucide/svelte",
   "description": "A Filled Lucide icon library package for Svelte applications.",
-  "version": "0.1.0",
+  "version": "1.52.0",
   "license": "ISC",
-  "homepage": "https://lucide.dev",
-  "bugs": "https://github.com/lucide-icons/lucide/issues",
+  "homepage": "https://filledlucide.dev",
+  "bugs": "https://github.com/linus-sch/filled-lucide/issues",
   "repository": {
     "type": "git",
-    "url": "https://github.com/lucide-icons/lucide.git",
+    "url": "https://github.com/linus-sch/filled-lucide.git",
     "directory": "packages/svelte"
   },
   "keywords": [
@@ -21,7 +21,6 @@
     "Fontawesome",
     "Font Awesome"
   ],
-  "author": "Eric Fennis",
   "type": "module",
   "main": "dist/lucide-svelte.js",
   "exports": {
@@ -58,8 +57,8 @@
     "typecheck": "pnpm copy:license && pnpm copy:utils && pnpm build:icons && svelte-check --tsconfig ./tsconfig.json"
   },
   "devDependencies": {
-    "@lucide-filled/build-icons": "workspace:*",
-    "@lucide-filled/helpers": "workspace:*",
+    "@filled-lucide/build-icons": "workspace:*",
+    "@filled-lucide/helpers": "workspace:*",
     "@sveltejs/package": "^2.5.8",
     "@sveltejs/vite-plugin-svelte": "^7.3.0",
     "@testing-library/jest-dom": "^6.9.1",

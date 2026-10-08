@@ -422,7 +422,7 @@
         document.getElementById('sCss').textContent =
           `.icon-${name} {\n  background: currentColor;\n  -webkit-mask: url("${url}") center / contain no-repeat;\n  mask: url("${url}") center / contain no-repeat;\n}`;
         document.getElementById('sReact').textContent =
-          `import { ${pascal(name)} } from 'lucide-filled-react';`;
+          `import { ${pascal(name)} } from '@filled-lucide/react';`;
         dlg.dataset.url = url;
         dlg.showModal();
       });

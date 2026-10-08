@@ -4,9 +4,10 @@ exports[`Using Icon Component > should render icon and match snapshot 1`] = `
 <svg
   aria-hidden="true"
   class="lucide-icon lucide"
-  fill="none"
+  fill="red"
+  fill-rule="evenodd"
   height="48"
-  stroke="red"
+  stroke="none"
   stroke-linecap="round"
   stroke-linejoin="round"
   stroke-width="1"

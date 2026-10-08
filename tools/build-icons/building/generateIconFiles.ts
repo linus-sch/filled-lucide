@@ -1,7 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 import prettier from 'prettier';
-import { readSvg, toPascalCase } from '@lucide-filled/helpers';
+import { readSvg, toPascalCase } from '@filled-lucide/helpers';
 import deprecationReasonTemplate from '../utils/deprecationReasonTemplate.ts';
 import type { IconMetadata, IconNode, Path, TemplateFunction } from '../types.ts';
 import { type INode } from 'svgson';

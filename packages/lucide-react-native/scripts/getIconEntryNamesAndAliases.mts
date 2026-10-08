@@ -1,6 +1,6 @@
 import path from 'path';
-import { readSvgDirectory } from '@lucide-filled/helpers';
-import getIconMetaData from '@lucide-filled/build-icons/utils/getIconMetaData';
+import { readSvgDirectory } from '@filled-lucide/helpers';
+import getIconMetaData from '@filled-lucide/build-icons/utils/getIconMetaData';
 
 const ICONS_DIR = path.resolve(process.cwd(), '../../icons');
 

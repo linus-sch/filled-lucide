@@ -17,7 +17,7 @@ describe('Using lucide icon context', () => {
 
     expect(IconComponent).toHaveAttribute('width', '48');
     expect(IconComponent).toHaveAttribute('height', '48');
-    expect(IconComponent).toHaveAttribute('stroke', 'red');
+    expect(IconComponent).toHaveAttribute('fill', 'red');
     expect(IconComponent).toHaveAttribute('stroke-width', '4');
   });
 
@@ -27,7 +27,7 @@ describe('Using lucide icon context', () => {
     const IconComponent = container.firstElementChild;
     expect(IconComponent).toHaveAttribute('width', '48');
     expect(IconComponent).toHaveAttribute('height', '48');
-    expect(IconComponent).toHaveAttribute('stroke', 'red');
+    expect(IconComponent).toHaveAttribute('fill', 'red');
     expect(IconComponent).toHaveAttribute('stroke-width', '4');
   });
 
@@ -44,7 +44,7 @@ describe('Using lucide icon context', () => {
 
     expect(IconComponent).toHaveAttribute('width', '24');
     expect(IconComponent).toHaveAttribute('height', '24');
-    expect(IconComponent).toHaveAttribute('stroke', 'blue');
+    expect(IconComponent).toHaveAttribute('fill', 'blue');
     expect(IconComponent).toHaveAttribute('stroke-width', '1');
   });
 

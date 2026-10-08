@@ -42,8 +42,8 @@ describe('buildLucideIconNode', () => {
   it('should override color', () => {
     const HouseSVG = buildLucideIconNode(House, { color: 'pink' });
 
-    expect(HouseSVG[1]['stroke']).toBe('pink');
-    expect(HouseSVG[1]['fill']).toBe('none');
+    expect(HouseSVG[1]['fill']).toBe('pink');
+    expect(HouseSVG[1]['stroke']).toBe('none');
   });
 
   it('should override stroke width', () => {

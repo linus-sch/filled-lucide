@@ -1,13 +1,13 @@
 {
-  "name": "lucide-filled-react-native",
+  "name": "@filled-lucide/react-native",
   "description": "A Filled Lucide icon library package for React Native applications.",
-  "version": "0.0.1",
+  "version": "1.52.0",
   "license": "ISC",
-  "homepage": "https://lucide.dev",
-  "bugs": "https://github.com/lucide-icons/lucide/issues",
+  "homepage": "https://filledlucide.dev",
+  "bugs": "https://github.com/linus-sch/filled-lucide/issues",
   "repository": {
     "type": "git",
-    "url": "https://github.com/lucide-icons/lucide.git",
+    "url": "https://github.com/linus-sch/filled-lucide.git",
     "directory": "packages/lucide-react-native"
   },
   "keywords": [
@@ -21,7 +21,6 @@
     "Fontawesome",
     "Font Awesome"
   ],
-  "author": "Eric Fennis",
   "amdName": "lucide-react-native",
   "main": "dist/cjs/lucide-react-native.js",
   "module": "dist/esm/lucide-react-native.mjs",
@@ -64,10 +63,10 @@
     "test:watch": "vitest watch"
   },
   "devDependencies": {
-    "@lucide-filled/build-icons": "workspace:*",
-    "@lucide-filled/helpers": "workspace:*",
-    "@lucide-filled/rollup-plugins": "workspace:*",
-    "@lucide-filled/shared": "workspace:*",
+    "@filled-lucide/build-icons": "workspace:*",
+    "@filled-lucide/helpers": "workspace:*",
+    "@filled-lucide/rollup-plugins": "workspace:*",
+    "@filled-lucide/shared": "workspace:*",
     "@testing-library/jest-dom": "^6.9.1",
     "@testing-library/react": "^14.3.1",
     "@types/prop-types": "^15.7.15",

@@ -3,7 +3,7 @@
 import { createElement, forwardRef } from 'react';
 import defaultAttributes from './defaultAttributes';
 import { IconNode, LucideProps } from './types';
-import { mergeClasses, hasA11yProp } from '@lucide-filled/shared';
+import { mergeClasses, hasA11yProp } from '@filled-lucide/shared';
 import { useLucideContext } from './context';
 
 interface IconComponentProps extends LucideProps {

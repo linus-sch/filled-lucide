@@ -1,5 +1,5 @@
 {
-  "name": "@lucide-filled/fill-icons",
+  "name": "@filled-lucide/fill-icons",
   "description": "Converts stroke-based Lucide SVG icons into filled (solid) SVG icons.",
   "version": "1.0.0",
   "private": true,

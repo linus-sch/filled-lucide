@@ -108,12 +108,12 @@ describe('LucideIconBase', () => {
   describe('color', () => {
     it('should default to currentColor', () => {
       fixture.detectChanges();
-      expect(getSvgAttribute('stroke')).toBe('currentColor');
+      expect(getSvgAttribute('fill')).toBe('currentColor');
     });
     it('should set color', () => {
       color.set('red');
       fixture.detectChanges();
-      expect(getSvgAttribute('stroke')).toBe('red');
+      expect(getSvgAttribute('fill')).toBe('red');
     });
   });
 
@@ -218,12 +218,12 @@ describe('LucideIconBase', () => {
     describe('color', () => {
       it('should use color from config', () => {
         fixture.detectChanges();
-        expect(getSvgAttribute('stroke')).toBe('red');
+        expect(getSvgAttribute('fill')).toBe('red');
       });
       it('should use override color from config', () => {
         color.set('pink');
         fixture.detectChanges();
-        expect(getSvgAttribute('stroke')).toBe('pink');
+        expect(getSvgAttribute('fill')).toBe('pink');
       });
     });
     describe('strokeWidth', () => {

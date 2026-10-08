@@ -1,6 +1,6 @@
 import { basename } from 'path';
 import { type INode, parseSync } from 'svgson';
-import { generateHashedKey, readSvg, hasDuplicatedChildren } from '@lucide-filled/helpers';
+import { generateHashedKey, readSvg, hasDuplicatedChildren } from '@filled-lucide/helpers';
 
 /**
  * Build an object in the format: `{ <name>: <contents> }`.

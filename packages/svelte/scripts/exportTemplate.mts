@@ -1,6 +1,6 @@
-import base64SVG from '@lucide-filled/build-icons/utils/base64SVG';
+import base64SVG from '@filled-lucide/build-icons/utils/base64SVG';
 import { getHTMLBanner } from './license.mts';
-import defineExportTemplate from '@lucide-filled/build-icons/utils/defineExportTemplate';
+import defineExportTemplate from '@filled-lucide/build-icons/utils/defineExportTemplate';
 
 export default defineExportTemplate(
   async ({ iconName, children, getSvg, deprecated, deprecationReason }) => {

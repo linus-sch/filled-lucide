@@ -128,15 +128,18 @@ importers:
 
   docs:
     dependencies:
+      '@filled-lucide/react':
+        specifier: workspace:*
+        version: link:../packages/lucide-react
+      '@filled-lucide/vue':
+        specifier: workspace:*
+        version: link:../packages/vue
       '@floating-ui/vue':
         specifier: ^1.1.11
         version: 1.1.11(vue@3.5.41(typescript@6.0.3))
       '@headlessui/vue':
         specifier: ^1.7.23
         version: 1.7.23(vue@3.5.41(typescript@6.0.3))
-      '@lucide-filled/vue':
-        specifier: workspace:*
-        version: link:../packages/vue
       '@vueuse/components':
         specifier: ^14.3.0
         version: 14.3.0(vue@3.5.41(typescript@6.0.3))
@@ -149,6 +152,9 @@ importers:
       element-to-path:
         specifier: ^1.2.1
         version: 1.2.1
+      filled-lucide:
+        specifier: workspace:*
+        version: link:../packages/lucide
       fuse.js:
         specifier: ^7.5.0
         version: 7.5.0
@@ -158,12 +164,6 @@ importers:
       lodash-es:
         specifier: ^4.18.1
         version: 4.18.1
-      lucide-filled:
-        specifier: workspace:*
-        version: link:../packages/lucide
-      lucide-filled-react:
-        specifier: workspace:*
-        version: link:../packages/lucide-react
       motion-v:
         specifier: 1.10.3
         version: 1.10.3(@vueuse/core@14.3.0(vue@3.5.41(typescript@6.0.3)))(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(vue@3.5.41(typescript@6.0.3))
@@ -180,13 +180,13 @@ importers:
         specifier: ^3.5.41
         version: 3.5.41(typescript@6.0.3)
     devDependencies:
-      '@lucide-filled/build-icons':
+      '@filled-lucide/build-icons':
         specifier: workspace:*
         version: link:../tools/build-icons
-      '@lucide-filled/helpers':
+      '@filled-lucide/helpers':
         specifier: workspace:*
         version: link:../tools/build-helpers
-      '@lucide-filled/shared':
+      '@filled-lucide/shared':
         specifier: workspace:*
         version: link:../packages/shared
       '@rollup/plugin-replace':
@@ -282,10 +282,10 @@ importers:
       '@angular/router':
         specifier: ^21.2.19
         version: 21.2.19(@angular/common@21.2.19(@angular/core@21.2.19(@angular/compiler@21.2.19)(rxjs@7.8.2))(rxjs@7.8.2))(@angular/core@21.2.19(@angular/compiler@21.2.19)(rxjs@7.8.2))(@angular/platform-browser@21.2.19(@angular/common@21.2.19(@angular/core@21.2.19(@angular/compiler@21.2.19)(rxjs@7.8.2))(rxjs@7.8.2))(@angular/core@21.2.19(@angular/compiler@21.2.19)(rxjs@7.8.2)))(rxjs@7.8.2)
-      '@lucide-filled/build-icons':
+      '@filled-lucide/build-icons':
         specifier: workspace:*
         version: link:../../tools/build-icons
-      '@lucide-filled/helpers':
+      '@filled-lucide/helpers':
         specifier: workspace:*
         version: link:../../tools/build-helpers
       '@vitest/browser-playwright':
@@ -313,7 +313,7 @@ importers:
       '@astrojs/ts-plugin':
         specifier: ^1.10.10
         version: 1.10.10(typescript@5.9.3)
-      '@lucide-filled/build-icons':
+      '@filled-lucide/build-icons':
         specifier: workspace:*
         version: link:../../tools/build-icons
       '@testing-library/dom':
@@ -346,13 +346,13 @@ importers:
 
   packages/icons:
     devDependencies:
-      '@lucide-filled/build-icons':
+      '@filled-lucide/build-icons':
         specifier: workspace:*
         version: link:../../tools/build-icons
-      '@lucide-filled/helpers':
+      '@filled-lucide/helpers':
         specifier: workspace:*
         version: link:../../tools/build-helpers
-      '@lucide-filled/rollup-plugins':
+      '@filled-lucide/rollup-plugins':
         specifier: workspace:*
         version: link:../../tools/rollup-plugins
       '@rollup/plugin-replace':
@@ -385,13 +385,13 @@ importers:
 
   packages/lab:
     devDependencies:
-      '@lucide-filled/build-icons':
+      '@filled-lucide/build-icons':
         specifier: workspace:*
         version: link:../../tools/build-icons
-      '@lucide-filled/helpers':
+      '@filled-lucide/helpers':
         specifier: workspace:*
         version: link:../../tools/build-helpers
-      '@lucide-filled/rollup-plugins':
+      '@filled-lucide/rollup-plugins':
         specifier: workspace:*
         version: link:../../tools/rollup-plugins
       '@types/node':
@@ -415,13 +415,13 @@ importers:
 
   packages/lucide:
     devDependencies:
-      '@lucide-filled/build-icons':
+      '@filled-lucide/build-icons':
         specifier: workspace:*
         version: link:../../tools/build-icons
-      '@lucide-filled/rollup-plugins':
+      '@filled-lucide/rollup-plugins':
         specifier: workspace:*
         version: link:../../tools/rollup-plugins
-      '@lucide-filled/shared':
+      '@filled-lucide/shared':
         specifier: workspace:*
         version: link:../shared
       '@rollup/plugin-replace':
@@ -448,13 +448,13 @@ importers:
 
   packages/lucide-preact:
     devDependencies:
-      '@lucide-filled/build-icons':
+      '@filled-lucide/build-icons':
         specifier: workspace:*
         version: link:../../tools/build-icons
-      '@lucide-filled/rollup-plugins':
+      '@filled-lucide/rollup-plugins':
         specifier: workspace:*
         version: link:../../tools/rollup-plugins
-      '@lucide-filled/shared':
+      '@filled-lucide/shared':
         specifier: workspace:*
         version: link:../shared
       '@preact/preset-vite':
@@ -487,13 +487,13 @@ importers:
 
   packages/lucide-react:
     devDependencies:
-      '@lucide-filled/build-icons':
+      '@filled-lucide/build-icons':
         specifier: workspace:*
         version: link:../../tools/build-icons
-      '@lucide-filled/rollup-plugins':
+      '@filled-lucide/rollup-plugins':
         specifier: workspace:*
         version: link:../../tools/rollup-plugins
-      '@lucide-filled/shared':
+      '@filled-lucide/shared':
         specifier: workspace:*
         version: link:../shared
       '@testing-library/jest-dom':
@@ -535,16 +535,16 @@ importers:
 
   packages/lucide-react-native:
     devDependencies:
-      '@lucide-filled/build-icons':
+      '@filled-lucide/build-icons':
         specifier: workspace:*
         version: link:../../tools/build-icons
-      '@lucide-filled/helpers':
+      '@filled-lucide/helpers':
         specifier: workspace:*
         version: link:../../tools/build-helpers
-      '@lucide-filled/rollup-plugins':
+      '@filled-lucide/rollup-plugins':
         specifier: workspace:*
         version: link:../../tools/rollup-plugins
-      '@lucide-filled/shared':
+      '@filled-lucide/shared':
         specifier: workspace:*
         version: link:../shared
       '@testing-library/jest-dom':
@@ -601,13 +601,13 @@ importers:
       '@babel/preset-typescript':
         specifier: ^7.29.7
         version: 7.29.7(@babel/core@7.29.7(supports-color@10.2.2))(supports-color@10.2.2)
-      '@lucide-filled/build-icons':
+      '@filled-lucide/build-icons':
         specifier: workspace:*
         version: link:../../tools/build-icons
-      '@lucide-filled/rollup-plugins':
+      '@filled-lucide/rollup-plugins':
         specifier: workspace:*
         version: link:../../tools/rollup-plugins
-      '@lucide-filled/shared':
+      '@filled-lucide/shared':
         specifier: workspace:*
         version: link:../shared
       '@rollup/plugin-babel':
@@ -646,13 +646,13 @@ importers:
 
   packages/lucide-static:
     devDependencies:
-      '@lucide-filled/build-icons':
+      '@filled-lucide/build-icons':
         specifier: workspace:*
         version: link:../../tools/build-icons
-      '@lucide-filled/helpers':
+      '@filled-lucide/helpers':
         specifier: workspace:*
         version: link:../../tools/build-helpers
-      '@lucide-filled/rollup-plugins':
+      '@filled-lucide/rollup-plugins':
         specifier: workspace:*
         version: link:../../tools/rollup-plugins
       '@types/node':
@@ -679,10 +679,10 @@ importers:
 
   packages/svelte:
     devDependencies:
-      '@lucide-filled/build-icons':
+      '@filled-lucide/build-icons':
         specifier: workspace:*
         version: link:../../tools/build-icons
-      '@lucide-filled/helpers':
+      '@filled-lucide/helpers':
         specifier: workspace:*
         version: link:../../tools/build-helpers
       '@sveltejs/package':
@@ -724,13 +724,13 @@ importers:
 
   packages/vue:
     devDependencies:
-      '@lucide-filled/build-icons':
+      '@filled-lucide/build-icons':
         specifier: workspace:*
         version: link:../../tools/build-icons
-      '@lucide-filled/rollup-plugins':
+      '@filled-lucide/rollup-plugins':
         specifier: workspace:*
         version: link:../../tools/rollup-plugins
-      '@lucide-filled/shared':
+      '@filled-lucide/shared':
         specifier: workspace:*
         version: link:../shared
       '@testing-library/jest-dom':
@@ -781,7 +781,7 @@ importers:
         specifier: ^6.5.3
         version: 6.5.3(@types/svg2ttf@5.0.1)(chokidar@3.6.0)(supports-color@10.2.2)
     devDependencies:
-      '@lucide-filled/helpers':
+      '@filled-lucide/helpers':
         specifier: workspace:*
         version: link:../build-helpers
       '@types/fs-extra':
@@ -815,7 +815,7 @@ importers:
         specifier: ^5.3.1
         version: 5.3.1
     devDependencies:
-      '@lucide-filled/helpers':
+      '@filled-lucide/helpers':
         specifier: workspace:*
         version: link:../build-helpers
       '@types/minimist':

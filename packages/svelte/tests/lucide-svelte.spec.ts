@@ -77,7 +77,7 @@ describe('Using lucide icon components', () => {
 
     expect(IconComponent).toHaveAttribute('width', '48');
     expect(IconComponent).toHaveAttribute('height', '48');
-    expect(IconComponent).toHaveAttribute('stroke', 'red');
+    expect(IconComponent).toHaveAttribute('fill', 'red');
     expect(IconComponent).toHaveAttribute('stroke-width', '1');
 
     expect(container.innerHTML).toMatchSnapshot();
@@ -90,7 +90,7 @@ describe('Using lucide icon components', () => {
 
     expect(IconComponent).toHaveAttribute('width', '32');
     expect(IconComponent).toHaveAttribute('height', '32');
-    expect(IconComponent).toHaveAttribute('stroke', 'red');
+    expect(IconComponent).toHaveAttribute('fill', 'red');
     expect(IconComponent).toHaveAttribute('stroke-width', '1');
   });
 });

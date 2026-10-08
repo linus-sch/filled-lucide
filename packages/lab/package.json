@@ -1,13 +1,14 @@
 {
-  "name": "@lucide-filled/lab",
-  "description": "Filled Lucide lab is a project with icons that are nicely designed but have unknown use cases.",
-  "version": "0.2.0",
+  "name": "@filled-lucide/lab",
+  "description": "Filled versions of the Lucide Lab icons.",
+  "version": "1.52.0",
   "license": "ISC",
-  "homepage": "https://lucide.dev",
-  "bugs": "https://github.com/lucide-icons/lucide/issues",
+  "homepage": "https://filledlucide.dev",
+  "bugs": "https://github.com/linus-sch/filled-lucide/issues",
   "repository": {
     "type": "git",
-    "url": "https://github.com/lucide-icons/lucide.git"
+    "url": "https://github.com/linus-sch/filled-lucide.git",
+    "directory": "packages/lab"
   },
   "keywords": [
     "Lucide",
@@ -40,9 +41,9 @@
     "version": "pnpm version --git-tag-version=false"
   },
   "devDependencies": {
-    "@lucide-filled/build-icons": "workspace:*",
-    "@lucide-filled/helpers": "workspace:*",
-    "@lucide-filled/rollup-plugins": "workspace:*",
+    "@filled-lucide/build-icons": "workspace:*",
+    "@filled-lucide/helpers": "workspace:*",
+    "@filled-lucide/rollup-plugins": "workspace:*",
     "@types/node": "^22.20.1",
     "prettier": "^2.3.2",
     "rollup": "^4.9.2",

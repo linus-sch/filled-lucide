@@ -23,7 +23,7 @@ describe('Using LucideProvider', () => {
 
     expect(IconComponent).toHaveAttribute('width', '24');
     expect(IconComponent).toHaveAttribute('height', '24');
-    expect(IconComponent).toHaveAttribute('stroke', 'currentColor');
+    expect(IconComponent).toHaveAttribute('fill', 'currentColor');
     expect(IconComponent).toHaveAttribute('stroke-width', '2');
   });
 
@@ -42,7 +42,7 @@ describe('Using LucideProvider', () => {
 
     expect(IconComponent).toHaveAttribute('width', '48');
     expect(IconComponent).toHaveAttribute('height', '48');
-    expect(IconComponent).toHaveAttribute('stroke', 'red');
+    expect(IconComponent).toHaveAttribute('fill', 'red');
     expect(IconComponent).toHaveAttribute('stroke-width', '4');
   });
 
@@ -81,7 +81,7 @@ describe('Using LucideProvider', () => {
 
     expect(IconComponent).toHaveAttribute('width', '24');
     expect(IconComponent).toHaveAttribute('height', '24');
-    expect(IconComponent).toHaveAttribute('stroke', 'blue');
+    expect(IconComponent).toHaveAttribute('fill', 'blue');
     expect(IconComponent).toHaveAttribute('stroke-width', '2');
   });
 

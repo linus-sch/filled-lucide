@@ -3,9 +3,10 @@
 exports[`Using Icon Component > should render icon and match snapshot 1`] = `
 <svg
   class="lucide lucide-air-vent-icon lucide-air-vent"
-  fill="none"
+  fill="red"
+  fill-rule="evenodd"
   height="48"
-  stroke="red"
+  stroke="none"
   stroke-linecap="round"
   stroke-linejoin="round"
   stroke-width="1"

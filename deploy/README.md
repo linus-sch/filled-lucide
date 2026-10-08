@@ -14,7 +14,7 @@ pnpm cdn:deploy
 ```
 
 That builds `deploy/public` and uploads it. The first deploy prints the URL
-(`https://lucide-filled.<your-subdomain>.workers.dev`). Change `name` in
+(`https://filled-lucide.<your-subdomain>.workers.dev`). Change `name` in
 `wrangler.toml` to change the subdomain, or attach a custom domain in the
 Cloudflare dashboard under **Workers & Pages → your worker → Settings → Domains**.
 

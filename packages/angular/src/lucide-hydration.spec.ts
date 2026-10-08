@@ -76,11 +76,7 @@ describe('Lucide hydration', () => {
   }
 
   function expectBadgeAlertShapeNodes(svg: SVGSVGElement) {
-    expect(Array.from(svg.children).map((child) => child.tagName.toLowerCase())).toEqual([
-      'path',
-      'line',
-      'line',
-    ]);
+    expect(Array.from(svg.children).map((child) => child.tagName.toLowerCase())).toEqual(['path']);
   }
 
   it('should hydrate static icon children without duplicating SSR nodes', async () => {

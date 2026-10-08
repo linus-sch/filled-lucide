@@ -1,5 +1,5 @@
 import { createElement, forwardRef } from 'react';
-import { mergeClasses, toKebabCase, toPascalCase } from '@lucide-filled/shared';
+import { mergeClasses, toKebabCase, toPascalCase } from '@filled-lucide/shared';
 import { IconNode, LucideProps } from './types';
 import Icon from './Icon';
 

@@ -1,4 +1,4 @@
-import { type IconAliases } from '@lucide-filled/helpers';
+import { type IconAliases } from '@filled-lucide/helpers';
 import { type CodePoints } from './allocateCodepoints.ts';
 
 export function hasMissingCodePoints(

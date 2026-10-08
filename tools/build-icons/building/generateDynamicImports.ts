@@ -1,5 +1,5 @@
 import path from 'path';
-import { resetFile, appendFile } from '@lucide-filled/helpers';
+import { resetFile, appendFile } from '@filled-lucide/helpers';
 import type { IconMetadata } from '../types.ts';
 import type { INode } from 'svgson';
 

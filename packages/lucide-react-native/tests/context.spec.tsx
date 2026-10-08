@@ -33,7 +33,7 @@ describe('Using LucideProvider', () => {
 
     expect(IconComponent).toHaveAttribute('width', '48');
     expect(IconComponent).toHaveAttribute('height', '48');
-    expect(IconComponent).toHaveAttribute('stroke', 'red');
+    expect(IconComponent).toHaveAttribute('fill', 'red');
     expect(IconComponent).toHaveAttribute('stroke-width', '4');
   });
 
@@ -74,7 +74,7 @@ describe('Using LucideProvider', () => {
 
     expect(IconComponent).toHaveAttribute('width', '32');
     expect(IconComponent).toHaveAttribute('height', '32');
-    expect(IconComponent).toHaveAttribute('stroke', 'blue');
+    expect(IconComponent).toHaveAttribute('fill', 'blue');
     expect(IconComponent).toHaveAttribute('stroke-width', '3');
   });
 });

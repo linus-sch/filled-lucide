@@ -1,13 +1,13 @@
 {
-  "name": "lucide-filled-preact",
+  "name": "@filled-lucide/preact",
   "description": "A Filled Lucide icon library package for Preact applications.",
-  "version": "0.0.1",
+  "version": "1.52.0",
   "license": "ISC",
-  "homepage": "https://lucide.dev",
-  "bugs": "https://github.com/lucide-icons/lucide/issues",
+  "homepage": "https://filledlucide.dev",
+  "bugs": "https://github.com/linus-sch/filled-lucide/issues",
   "repository": {
     "type": "git",
-    "url": "https://github.com/lucide-icons/lucide.git",
+    "url": "https://github.com/linus-sch/filled-lucide.git",
     "directory": "packages/lucide-preact"
   },
   "keywords": [
@@ -21,7 +21,6 @@
     "Fontawesome",
     "Font Awesome"
   ],
-  "author": "Eric Fennis",
   "amdName": "lucide-preact",
   "main": "dist/cjs/lucide-preact.js",
   "module": "dist/esm/lucide-preact.mjs",
@@ -47,9 +46,9 @@
     "test:watch": "vitest watch"
   },
   "devDependencies": {
-    "@lucide-filled/build-icons": "workspace:*",
-    "@lucide-filled/rollup-plugins": "workspace:*",
-    "@lucide-filled/shared": "workspace:*",
+    "@filled-lucide/build-icons": "workspace:*",
+    "@filled-lucide/rollup-plugins": "workspace:*",
+    "@filled-lucide/shared": "workspace:*",
     "@preact/preset-vite": "^2.10.5",
     "@testing-library/jest-dom": "^6.9.1",
     "@testing-library/preact": "^3.2.4",

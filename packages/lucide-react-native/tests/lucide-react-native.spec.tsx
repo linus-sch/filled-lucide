@@ -137,7 +137,7 @@ describe('Using lucide icon components', () => {
     for (let i = 0; i < children.length; i++) {
       const child = children[i];
       expect(child.getAttribute('fill')).toBe(fill);
-      expect(child.getAttribute('stroke')).toBe(color);
+      expect(child.getAttribute('stroke')).toBe('none');
       expect(child.getAttribute('stroke-width')).toBe(`${strokeWidth}`);
     }
 

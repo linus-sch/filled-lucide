@@ -1,13 +1,13 @@
 {
-  "name": "lucide-filled",
+  "name": "filled-lucide",
   "description": "A Filled Lucide icon library package for web and javascript applications.",
-  "version": "0.0.1",
+  "version": "1.52.0",
   "license": "ISC",
-  "homepage": "https://lucide.dev",
-  "bugs": "https://github.com/lucide-icons/lucide/issues",
+  "homepage": "https://filledlucide.dev",
+  "bugs": "https://github.com/linus-sch/filled-lucide/issues",
   "repository": {
     "type": "git",
-    "url": "https://github.com/lucide-icons/lucide.git",
+    "url": "https://github.com/linus-sch/filled-lucide.git",
     "directory": "packages/lucide"
   },
   "keywords": [
@@ -42,9 +42,9 @@
     "test:watch": "vitest watch"
   },
   "devDependencies": {
-    "@lucide-filled/build-icons": "workspace:*",
-    "@lucide-filled/rollup-plugins": "workspace:*",
-    "@lucide-filled/shared": "workspace:*",
+    "@filled-lucide/build-icons": "workspace:*",
+    "@filled-lucide/rollup-plugins": "workspace:*",
+    "@filled-lucide/shared": "workspace:*",
     "@rollup/plugin-replace": "^6.0.3",
     "@testing-library/jest-dom": "^6.9.1",
     "jest-serializer-html": "^7.1.0",

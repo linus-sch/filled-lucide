@@ -1,5 +1,5 @@
 import path from 'path';
-import getIconMetaData from '@lucide-filled/build-icons/utils/getIconMetaData';
+import getIconMetaData from '@filled-lucide/build-icons/utils/getIconMetaData';
 
 const ICONS_DIR = path.resolve(process.cwd(), '../../icons');
 

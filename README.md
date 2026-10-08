@@ -1,108 +1,338 @@
-<p align="center">
-  <a href="https://github.com/lucide-icons/lucide#gh-light-mode-only">
-    <img src="https://lucide.dev/lucide-logo-repo.svg#gh-light-mode-only" alt="Lucide - Beautiful & consistent icon toolkit made by the community. Open-source project and a fork of Feather Icons." width="480">
-  </a>
-  <a href="https://github.com/lucide-icons/lucide#gh-dark-mode-only">
-    <img src="https://lucide.dev/lucide-logo-repo-dark.svg#gh-dark-mode-only" alt="Lucide - Beautiful & consistent icon toolkit made by the community. Open-source project and a fork of Feather Icons." width="480">
-  </a>
-</p>
-<p align="center">
-  <a href="https://github.com/lucide-icons/lucide/blob/main/LICENSE"><img src="https://img.shields.io/badge/license-ISC-green" alt="license"></a>
-  <a href="https://www.figma.com/community/plugin/939567362549682242/Lucide-Icons"><img src="https://img.shields.io/badge/Figma-F24E1E?logo=figma&logoColor=white" alt="figma installs"></a>
-  <a href="https://github.com/lucide-icons/lucide/actions/workflows/ci.yml"><img src="https://github.com/lucide-icons/lucide/actions/workflows/ci.yml/badge.svg" alt="build status"></a>
-  <a href="https://discord.gg/EH6nSts"><img src="https://img.shields.io/discord/723074157486800936?label=chat&logo=discord&logoColor=%23ffffff&colorB=%237289DA" alt="discord chat"></a>
-</p>
-<p align="center">
-  <a href="https://lucide.dev/icons/">Icons</a>
-  ·
-  <a href="https://lucide.dev/guide/">Guide</a>
-  ·
-  <a href="https://lucide.dev/packages">Packages</a>
-  ·
-  <a href="https://lucide.dev/license">License</a>
-  ·
-  <a href="https://lucide.dev/showcase">Showcase</a>
-</p>
+# Filled Lucide
 
-# Lucide
+[![npm](https://img.shields.io/npm/v/@filled-lucide/react?label=%40filled-lucide%2Freact&color=blue)](https://www.npmjs.com/package/@filled-lucide/react)
+[![CI](https://github.com/linus-sch/filled-lucide/actions/workflows/ci.yml/badge.svg)](https://github.com/linus-sch/filled-lucide/actions/workflows/ci.yml)
+[![License](https://img.shields.io/badge/license-ISC-green)](LICENSE)
 
-Lucide is an open-source icon library that provides 1600+ vector (svg) files for displaying icons and symbols in digital and non-digital projects. The library aims to make it easier for designers and developers to incorporate icons into their projects by providing several official [packages](https://lucide.dev/packages) to make it easier to use these icons in your project.
+A solid variant of the [Lucide](https://lucide.dev) icon set: all **1,776 icons**
+(plus **355 lab icons**) redrawn as filled silhouettes, with the same names, the
+same 24×24 grid, and the same package API as upstream Lucide — for React, Vue,
+Svelte, Angular, Solid, Preact, Astro, React Native and vanilla JS.
 
-## Packages
+```bash
+pnpm add @filled-lucide/react
+```
 
-| Logo | Package | Version | Downloads | Links |
-| ---- | ------- | ------- | --------- | ----- |
-| <img src="https://lucide.dev/framework-logos/js.svg" alt="JS logo" width="48"> | **`lucide`** | [![npm](https://img.shields.io/npm/v/lucide)](https://www.npmjs.com/package/lucide) | ![NPM Downloads](https://img.shields.io/npm/dw/lucide) | [Docs](https://lucide.dev/guide/lucide) · [Source](./packages/lucide) |
-| <img src="https://lucide.dev/framework-logos/react.svg" alt="React logo" width="48"> | **`lucide-react`** | [![npm](https://img.shields.io/npm/v/lucide-react)](https://www.npmjs.com/package/lucide-react) | ![NPM Downloads](https://img.shields.io/npm/dw/lucide-react) | [Docs](https://lucide.dev/guide/react) · [Source](./packages/lucide-react) |
-| <img src="https://lucide.dev/framework-logos/vue.svg" alt="Vue logo" width="48"> | **`@lucide/vue`** | [![npm](https://img.shields.io/npm/v/@lucide/vue)](https://www.npmjs.com/package/@lucide/vue) | ![NPM Downloads](https://img.shields.io/npm/dw/@lucide/vue) | [Docs](https://lucide.dev/guide/vue) · [Source](./packages/vue) |
-| <img src="https://lucide.dev/framework-logos/svelte.svg" alt="Svelte logo" width="48"> | **`@lucide/svelte`** | [![npm](https://img.shields.io/npm/v/@lucide/svelte)](https://www.npmjs.com/package/@lucide/svelte) | ![NPM Downloads](https://img.shields.io/npm/dw/@lucide/svelte) | [Docs](https://lucide.dev/guide/svelte) · [Source](./packages/svelte) |
-| <img src="https://lucide.dev/framework-logos/solid.svg" alt="Solid logo" width="48"> | **`lucide-solid`** | [![npm](https://img.shields.io/npm/v/lucide-solid)](https://www.npmjs.com/package/lucide-solid) | ![NPM Downloads](https://img.shields.io/npm/dw/lucide-solid) | [Docs](https://lucide.dev/guide/solid) · [Source](./packages/lucide-solid) |
-| <img src="https://lucide.dev/framework-logos/preact.svg" alt="Preact logo" width="48"> | **`lucide-preact`** | [![npm](https://img.shields.io/npm/v/lucide-preact)](https://www.npmjs.com/package/lucide-preact) | ![NPM Downloads](https://img.shields.io/npm/dw/lucide-preact) | [Docs](https://lucide.dev/guide/preact) · [Source](./packages/lucide-preact) |
-| <img src="https://lucide.dev/framework-logos/react-native.svg" alt="React Native logo" width="48"> | **`lucide-react-native`** | [![npm](https://img.shields.io/npm/v/lucide-react-native)](https://www.npmjs.com/package/lucide-react-native) | ![NPM Downloads](https://img.shields.io/npm/dw/lucide-react-native) | [Docs](https://lucide.dev/guide/react-native) · [Source](./packages/lucide-react-native) |
-| <img src="https://lucide.dev/framework-logos/angular.svg" alt="Angular logo" width="48"> | **`@lucide/angular`** | [![npm](https://img.shields.io/npm/v/@lucide/angular)](https://www.npmjs.com/package/@lucide/angular) | ![NPM Downloads](https://img.shields.io/npm/dw/@lucide/angular) | [Docs](https://lucide.dev/guide/angular) · [Source](./packages/angular) |
-| <img src="https://lucide.dev/framework-logos/astro.svg" alt="Astro logo" width="48"> | **`@lucide/astro`** | [![npm](https://img.shields.io/npm/v/@lucide/astro)](https://www.npmjs.com/package/@lucide/astro) | ![NPM Downloads](https://img.shields.io/npm/dw/@lucide/astro) | [Docs](https://lucide.dev/guide/astro) · [Source](./packages/astro) |
-| <img src="https://lucide.dev/framework-logos/svg.svg" alt="SVG logo" width="48"> | **`lucide-static`** | [![npm](https://img.shields.io/npm/v/lucide-static)](https://www.npmjs.com/package/lucide-static) | ![NPM Downloads](https://img.shields.io/npm/dw/lucide-static) | [Docs](https://lucide.dev/guide/static) · [Source](./packages/lucide-static) |
+```tsx
+import { House } from '@filled-lucide/react';
 
-### Figma
+<House
+  size={32}
+  color="#e11d48"
+/>;
+```
 
-The Lucide Figma plugin.
+Every icon is also exported with a `Filled` prefix (`FilledHouse`, `FilledX`, …)
+for use next to the outline icons from `lucide-react`.
 
-Visit [Figma community page](https://www.figma.com/community/plugin/939567362549682242/Lucide-Icons) to install the plugin.
+The icons in `icons/` are generated from the untouched upstream outline sources
+in `outline/` — they are build output, not hand-edited files.
 
-<img width="420" src="https://www.figma.com/community/plugin/939567362549682242/thumbnail" alt="Figma Lucide Cover">
+## Using it
 
-## Contributing
+### From the CDN
 
-For more info on how to contribute please see the [contribution guidelines](https://github.com/lucide-icons/lucide/blob/main/CONTRIBUTING.md).
+```html
+<img
+  src="https://filledlucide.dev/icons/house.svg"
+  width="24"
+  height="24"
+  alt=""
+/>
+```
 
-Caught a mistake or want to contribute to the documentation? [Edit this page on Github](https://github.com/lucide-icons/lucide/blob/main/README.md)
+To recolour with the surrounding text colour, use it as a mask:
 
-## About brand logos
+```css
+.icon-house {
+  display: inline-block;
+  width: 1.25em;
+  height: 1.25em;
+  background: currentColor;
+  -webkit-mask: url('https://filledlucide.dev/icons/house.svg') center / contain no-repeat;
+  mask: url('https://filledlucide.dev/icons/house.svg') center / contain no-repeat;
+}
+```
 
-Lucide **does not accept** brand logos, and we do not plan to add them in the future. This is due to a combination of **legal restrictions**, **design consistency concerns**, and **practical maintenance reasons**.
+See [`deploy/README.md`](deploy/README.md) for deploying your own copy.
 
-[Click here to read our official statement about brand logos in Lucide.](./BRAND_LOGOS_STATEMENT.md)
+### From npm
 
-## Community
+| Upstream              | Filled                        | Import                                                  |
+| --------------------- | ----------------------------- | ------------------------------------------------------- |
+| `lucide`              | `filled-lucide`               | `import { House } from 'filled-lucide'`                 |
+| `lucide-react`        | `@filled-lucide/react`        | `import { House } from '@filled-lucide/react'`          |
+| `lucide-preact`       | `@filled-lucide/preact`       | `import { House } from '@filled-lucide/preact'`         |
+| `lucide-solid`        | `@filled-lucide/solid`        | `import { House } from '@filled-lucide/solid'`          |
+| `lucide-react-native` | `@filled-lucide/react-native` | `import { House } from '@filled-lucide/react-native'`   |
+| `lucide-static`       | `@filled-lucide/static`       | `import '@filled-lucide/static/font/lucide.css'`        |
+| `@lucide/vue`         | `@filled-lucide/vue`          | `import { House } from '@filled-lucide/vue'`            |
+| `@lucide/svelte`      | `@filled-lucide/svelte`       | `import House from '@filled-lucide/svelte/icons/house'` |
+| `@lucide/angular`     | `@filled-lucide/angular`      | `import { House } from '@filled-lucide/angular'`        |
+| `@lucide/astro`       | `@filled-lucide/astro`        | `import { House } from '@filled-lucide/astro'`          |
+| `@lucide/icons`       | `@filled-lucide/icons`        | core icon data                                          |
+| `@lucide/lab`         | `@filled-lucide/lab`          | lab icons, filled                                       |
 
-Join the community on our [Discord](https://discord.gg/EH6nSts) server!
+The component API is unchanged — `size`, `color`, `className`, refs and the
+context provider all behave as they do upstream. The one behavioural difference
+is that `color` now drives `fill` rather than `stroke`, since there is no stroke
+to colour; `strokeWidth` and `absoluteStrokeWidth` are still accepted and simply
+have nothing to act on.
+
+```tsx
+import { House, Heart, Settings } from '@filled-lucide/react';
+
+<House
+  size={32}
+  color="#e11d48"
+/>;
+```
+
+### As a drop-in replacement
+
+Every icon keeps its Lucide name, so installing a filled package under the
+upstream name switches a whole app to filled icons without touching a single
+import — including libraries such as shadcn/ui that import `lucide-react`:
+
+```bash
+pnpm add lucide-react@npm:@filled-lucide/react
+# npm i lucide-react@npm:@filled-lucide/react
+# yarn add lucide-react@npm:@filled-lucide/react
+```
+
+If a dependency pulls in its own copy of `lucide-react`, override it too:
+
+```json
+{
+  "pnpm": { "overrides": { "lucide-react": "npm:@filled-lucide/react" } }
+}
+```
+
+(`"overrides"` for npm, `"resolutions"` for yarn.) The same works for every
+package in the table above. Versions follow upstream: `@filled-lucide/react@1.52.0`
+has the same icons as `lucide-react@1.52.0`.
+
+### Next to the outline icons
+
+To use filled and outline icons side by side, install both and import the
+`Filled`-prefixed names, which every component package exports alongside
+`House`, `HouseIcon` and `LucideHouse`:
+
+```tsx
+import { House } from 'lucide-react';
+import { FilledHouse } from '@filled-lucide/react';
+
+<nav>{active ? <FilledHouse /> : <House />}</nav>;
+```
+
+In Angular the filled components use their own selector, so both libraries can
+be imported into the same component:
+
+```html
+<svg lucideHouse></svg>
+<!-- @lucide/angular -->
+<svg filledHouse></svg>
+<!-- @filled-lucide/angular, FilledHouse -->
+```
+
+## What "filled" means here
+
+Every icon is one `<path>` using `fill="currentColor"` and the even-odd rule:
+
+```svg
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="currentColor"
+  fill-rule="evenodd"
+>
+  <path d="m13.942 1.713 7.097 6.085c.352.342…" />
+</svg>
+```
+
+No strokes, no masks, no `id`s — so an icon can be inlined many times on a page,
+recoloured with `currentColor`, used as a CSS mask, or rasterised at any size.
+
+Average path is ~1.3 kB (the whole main set is 2.3 MB, ~460 kB over the wire).
+
+### Design rules
+
+The set is a filled icon family _in Lucide's style_, not a literal fill of each
+outline. Composition changes wherever that makes an icon read better solid:
+
+- **No halos.** Secondary symbols (a key on a book, a plus on a file, a check
+  on a calendar) sit centred on the main body as a cutout, rather than in a
+  corner with a white ring around them.
+- **Only lines that carry meaning.** Liquid levels, seams and extra rules that
+  only gave an outline icon some interior are dropped.
+- **Dividing lines divide.** A line across a body runs through its edge, with
+  the resulting corners very slightly rounded.
+- **Real holes stay holes** — a handle keeps its finger hole — and parts may
+  stay outlined where filling them would need hairline detail (the calendar's
+  header).
+- **`-off` icons are slashed**: the base icon at full size, crossed by
+  Lucide's corner-to-corner slash as one solid bar. A gap runs along the
+  bar's upper-right edge only, so the bar reads as passing over the object.
+- **File icons have no folded-corner line**; the clipped corner says "page".
+
+## How the icons are generated
+
+`tools/fill-icons/` turns each outline icon into a solid one with exact vector
+geometry — no tracing, no rasterisation, so the result stays crisp at any size.
+
+1. **Parse** (`lib/parse.mjs`) — each `<path>`, `<circle>`, `<rect>`, `<line>`,
+   `<polyline>`, `<polygon>` becomes flattened polylines. Paths that return to
+   their start without a `Z` are recognised as closed shapes.
+2. **Close badge gaps** (`lib/close.mjs`) — Lucide cuts a hole in a shape's
+   outline wherever a badge overlaps it (`folder-clock`, `cloud-download`,
+   `star-plus`, `file-scan`, …). Those paths are closed again by running the two
+   end tangents on to where they meet, which recovers the shape's real corner
+   instead of slicing a chord across it. A path only qualifies if it turns far
+   enough to be an outline rather than a corner, encloses meaningfully more area
+   than the ink it is drawn with, and has something sitting in the gap — so
+   check marks, heartbeat lines and spinner arcs are left alone.
+3. **Outline the strokes** (`lib/geom.mjs`) — every stroke is replaced by its
+   exact outline: the Minkowski sum of the polyline with a disc of radius 1,
+   computed with Clipper. Lucide's round caps and joins make this exact rather
+   than an approximation.
+4. **Work out the nesting** (`lib/solidify.mjs`) — elements are sorted into the
+   _shell_ (what becomes solid), _detail_ drawn inside it (knocked out), and
+   _badges_ laid over it (kept as their own silhouette with a gap around them).
+   Detail is solidified recursively, so the person inside `square-user-round`
+   becomes one white silhouette rather than loose outlines. Where no single
+   element encloses anything, connected clusters are tried instead — that is
+   what makes a trash can and its lid, or `table-2`'s single multi-subpath
+   drawing, fill correctly. A straight mark rooted on a drawn outline and
+   hanging free at its other end — a monitor's stand, a lamp's pole, a tree's
+   trunk — joins the silhouette rather than becoming a badge.
+5. **Refit curves** (`lib/fit.mjs`) — the boolean result is a dense polygon.
+   Long edges become `L` commands and runs of short arc chords are refitted with
+   Schneider's algorithm, so circles stay circular and straight edges stay
+   straight. SVGO then packs the path data.
+
+Geometry alone cannot decide every icon. Three sets in `lib/overrides.mjs`
+cover the broad cases:
+
+- `KEEP_OUTLINE` — letterforms (`bold`, `bitcoin`, `case-upper`, `zodiac-gemini`,
+  …) and `atom`. Filling these closes their counters and leaves a blob, so the
+  stroke _is_ the filled shape — the same choice every icon family makes for its
+  typographic marks.
+- `NO_CLOSE` — marks that only look like shapes: `at-sign`, `link`, `lasso`,
+  the `rotate-*` arrows, deliberately dashed frames.
+- `FORCE_CLOSE` — `star-half`, drawn as a lone open outline with nothing
+  overlapping the gap.
+
+Everything else that needs a human decision has a per-icon file in
+`tools/fill-icons/overrides/NAME.json` (lab icons: `overrides/lab/NAME.json`).
+An override describes the icon as a bottom-to-top stack of layers over the
+source's subpaths, so it stays a description of intent rather than hand-edited
+output, and regenerating from a new upstream outline still works:
+
+```json
+{
+  "close": [1],
+  "layers": [
+    { "units": [1, 2, 4], "mode": "fill" },
+    { "units": [0, 3], "mode": "cut" },
+    { "units": [5, 6], "mode": "fill", "gap": true }
+  ]
+}
+```
+
+| Key                                      | Effect                                                                                                                                                                                                                                                                                                                                                                                                    |
+| ---------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `layers`                                 | Replace the automatic solidify. Modes: `auto` (the automatic rules on just those units), `fill` (solid silhouette), `stroke` (2px line, never filled), `cut` (knock strokes out of what is below; a line ending near an edge runs through it), `carve` (knock a solidified shape out), `xor` (strokes knocked out where they cross the shape, solid elsewhere). `gap` clears space around an added layer. |
+| `base`                                   | Start from another icon's finished drawing — variants share their family base (`"base": "file"`). `baseScale` scales it about the centre.                                                                                                                                                                                                                                                                 |
+| `move`                                   | `[{ "units": [...], "to": [x, y], "scale": 1 }]` — relocate a group, e.g. a badge onto the middle of the body.                                                                                                                                                                                                                                                                                            |
+| `off`                                    | For `-off` icons: the base icon's name when it isn't simply the name minus `-off`, or `false` to draw the icon yourself.                                                                                                                                                                                                                                                                                  |
+| `close`                                  | Close open subpaths with a straight edge, or through `{ "unit", "via": [[x, y]] }` points (from the end back to the start).                                                                                                                                                                                                                                                                               |
+| `mitre`                                  | Close by running the end tangents on to their corner.                                                                                                                                                                                                                                                                                                                                                     |
+| `join`                                   | Merge two open subpaths end to end before closing.                                                                                                                                                                                                                                                                                                                                                        |
+| `extra`                                  | Extra path data appended as further units, for sources that draw an outline and its inner lines as one subpath (`globe-check`, `grid-2x2-*`).                                                                                                                                                                                                                                                             |
+| `keepOutline`, `noClose`, `stems: false` | Per-icon versions of the global switches.                                                                                                                                                                                                                                                                                                                                                                 |
+
+Unit indices are subpaths in document order:
+
+```bash
+node tools/fill-icons/inspect.mjs ambulance          # lists units, open/closed, endpoints
+node tools/fill-icons/index.mjs --names ambulance    # regenerate one icon
+```
+
+### Regenerating
+
+```bash
+pnpm fill          # icons/  <- outline/icons
+pnpm fill:lab      # lab/    <- outline/lab
+```
+
+Both read from `outline/` and are idempotent. Never point `--src` at `icons/`:
+solidifying an already-filled icon a second time destroys it.
+
+### Reviewing
+
+```bash
+pnpm fill:preview  # contact sheets of the whole set in ./preview
+node tools/fill-icons/preview.mjs --dir icons --out /tmp/check \
+  --compare outline/icons --names house,file-text,folder-clock
+```
+
+`--compare` draws the outline original above each filled icon, which is how the
+set was reviewed.
+
+### Approving icons
+
+```bash
+pnpm fill:review   # http://localhost:4321
+```
+
+Click an icon to approve it (click again to unapprove), or drag a box over
+several, as in Finder, and approve or unapprove the selection at once. Approving saves the
+icon's current drawing to `tools/fill-icons/approved/<icons|lab>/NAME.svg`;
+`pnpm fill` and `pnpm fill:lab` then skip that icon and restore it from the
+snapshot, so it stays exactly as approved. Unapprove it to change it again.
+
+## Repository layout
+
+The repo keeps upstream Lucide's structure, so upstream changes merge cleanly.
+
+```
+outline/            upstream Lucide outline SVGs (icons/, lab/) — the generator's input
+icons/              filled icons + upstream metadata (*.json) — generated, don't hand-edit
+lab/                filled Lucide Lab icons — generated
+categories/         upstream icon categories
+packages/           one npm package per framework (published to npm, see table above)
+  lucide/             filled-lucide              (vanilla JS)
+  lucide-react/       @filled-lucide/react
+  lucide-preact/      @filled-lucide/preact
+  lucide-solid/       @filled-lucide/solid
+  lucide-react-native/@filled-lucide/react-native
+  lucide-static/      @filled-lucide/static      (SVGs, sprite, icon font)
+  vue/ svelte/ angular/ astro/ icons/ lab/      @filled-lucide/<name>
+  shared/             internal helpers, bundled into each package
+tools/
+  fill-icons/         outline → filled generator, overrides, review page, approved snapshots
+  build-icons/        generates each package's per-icon source files
+  build-font/         icon font for @filled-lucide/static
+  build-cdn/          static site + CDN files (deploy/)
+scripts/            maintenance scripts (syncUpstream.mts, checks)
+docs/               upstream lucide.dev site source (not yet adapted)
+.github/workflows/  ci.yml, release.yml, sync-upstream.yml
+```
+
+Releasing and keeping up with upstream Lucide is described in
+[`RELEASING.md`](RELEASING.md).
+
+## Deploying
+
+```bash
+pnpm cdn:build     # -> deploy/public
+pnpm cdn:deploy    # wrangler deploy
+```
+
+See [`deploy/README.md`](deploy/README.md).
 
 ## License
 
-Lucide is totally free for commercial use and personal use, this software is licensed under the [ISC License](https://github.com/lucide-icons/lucide/blob/main/LICENSE).
-
-## Credits
-
-Thank you to all the people who contributed to Lucide!
-
-<a href="https://github.com/lucide-icons/lucide/graphs/contributors">
-
-<img src="https://opencollective.com/lucide-icons/contributors.svg?width=800" />
-</a>
-
-[//]: <> (Sponsors)
-
-## Sponsors
-
-<a href="https://vercel.com?utm_source=lucide&utm_campaign=oss">
-  <img src="docs/public/vercel.svg" alt="Powered by Vercel" width="200" />
-</a>
-
-<a href="https://www.digitalocean.com/?refcode=b0877a2caebd&utm_campaign=Referral_Invite&utm_medium=Referral_Program&utm_source=badge"><img src="docs/public/digitalocean.svg" width="200" alt="DigitalOcean Referral Badge" /></a>
-
-### Hero backers 🦸
-
-<a href="https://zephyr-cloud.io/"><img src="docs/public/sponsors/zephyr-cloud.svg" width="180" alt="Zephyr Cloud – From idea to prod: fast micro-frontend delivery!" /></a>
-
-### Awesome backers 🍺
-
-<a href="https://github.com/pdfme/pdfme"><img src="docs/public/sponsors/pdfme.svg" width="180" alt="pdfme – Open-source PDF generation library built with TypeScript and React." /></a>
-<a href="https://www.paxhistoria.co/"><img src="docs/public/sponsors/paxhistoria.svg?" width="180" alt="Pax Historia – An alternate history sandbox game" /></a>
-
-### Backers ☕
-
-<a href="https://www.fina.money/"><img src="docs/public/sponsors/fina-money.png" width="180" alt="Fina Money – Modular Finance Tracker" /></a>
-
-### Other contributors 💸
-
-You can find all our past and non-recurring financial contributors at [our Open Collective page](https://opencollective.com/lucide-icons).
+ISC, same as upstream Lucide (`LICENSE`).

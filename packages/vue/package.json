@@ -1,14 +1,13 @@
 {
-  "name": "@lucide-filled/vue",
-  "version": "0.0.1",
-  "author": "Eric Fennis",
+  "name": "@filled-lucide/vue",
+  "version": "1.52.0",
   "description": "A Filled Lucide icon library package for Vue applications.",
   "license": "ISC",
-  "homepage": "https://lucide.dev",
-  "bugs": "https://github.com/lucide-icons/lucide/issues",
+  "homepage": "https://filledlucide.dev",
+  "bugs": "https://github.com/linus-sch/filled-lucide/issues",
   "repository": {
     "type": "git",
-    "url": "https://github.com/lucide-icons/lucide.git",
+    "url": "https://github.com/linus-sch/filled-lucide.git",
     "directory": "packages/vue"
   },
   "keywords": [
@@ -41,9 +40,9 @@
     "test:watch": "vitest watch"
   },
   "devDependencies": {
-    "@lucide-filled/build-icons": "workspace:*",
-    "@lucide-filled/rollup-plugins": "workspace:*",
-    "@lucide-filled/shared": "workspace:*",
+    "@filled-lucide/build-icons": "workspace:*",
+    "@filled-lucide/rollup-plugins": "workspace:*",
+    "@filled-lucide/shared": "workspace:*",
     "@testing-library/jest-dom": "^6.9.1",
     "@testing-library/vue": "^8.1.0",
     "@vitejs/plugin-vue": "^6.0.8",

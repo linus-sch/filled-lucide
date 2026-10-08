@@ -1,13 +1,14 @@
 {
-  "name": "lucide-filled-static",
-  "description": "Filled Lucide is a community-run fork of Feather Icons, open for anyone to contribute icons.",
-  "version": "0.0.1",
+  "name": "@filled-lucide/static",
+  "description": "A Filled Lucide icon library package with static SVGs, a sprite and an icon font.",
+  "version": "1.52.0",
   "license": "ISC",
-  "homepage": "https://lucide.dev",
-  "bugs": "https://github.com/lucide-icons/lucide/issues",
+  "homepage": "https://filledlucide.dev",
+  "bugs": "https://github.com/linus-sch/filled-lucide/issues",
   "repository": {
     "type": "git",
-    "url": "https://github.com/lucide-icons/lucide.git"
+    "url": "https://github.com/linus-sch/filled-lucide.git",
+    "directory": "packages/lucide-static"
   },
   "keywords": [
     "Lucide",
@@ -37,9 +38,9 @@
     "clean": "rm -rf lib && rm -rf build && rm -rf icons && rm -f sprite.svg"
   },
   "devDependencies": {
-    "@lucide-filled/build-icons": "workspace:*",
-    "@lucide-filled/helpers": "workspace:*",
-    "@lucide-filled/rollup-plugins": "workspace:*",
+    "@filled-lucide/build-icons": "workspace:*",
+    "@filled-lucide/helpers": "workspace:*",
+    "@filled-lucide/rollup-plugins": "workspace:*",
     "@types/node": "^22.20.1",
     "prettier": "^2.8.8",
     "rollup": "^4.62.2",

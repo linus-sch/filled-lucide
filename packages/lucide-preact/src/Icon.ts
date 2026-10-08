@@ -2,8 +2,8 @@ import { h, toChildArray } from 'preact';
 import defaultAttributes from './defaultAttributes';
 import type { IconNode, LucideProps } from './types';
 import { useLucideContext } from './context';
-import { mergeClasses } from '@lucide-filled/shared';
-import { hasA11yProp } from '@lucide-filled/shared';
+import { mergeClasses } from '@filled-lucide/shared';
+import { hasA11yProp } from '@filled-lucide/shared';
 
 interface IconComponentProps extends LucideProps {
   iconNode: IconNode;

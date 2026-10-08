@@ -1,7 +1,7 @@
 import createElement from './createElement';
 import defaultAttributes from './defaultAttributes';
 import { Icons, SVGProps } from './types';
-import { hasA11yProp, mergeClasses, toPascalCase } from '@lucide-filled/shared';
+import { hasA11yProp, mergeClasses, toPascalCase } from '@filled-lucide/shared';
 
 export type CustomAttrs = { [attr: string]: unknown };
 

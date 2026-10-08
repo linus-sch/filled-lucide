@@ -1,5 +1,5 @@
 import path from 'path';
-import { writeFile, getCurrentDirPath, readAllMetadata } from '@lucide-filled/helpers';
+import { writeFile, getCurrentDirPath, readAllMetadata } from '@filled-lucide/helpers';
 
 const currentDir = getCurrentDirPath(import.meta.url);
 

@@ -1,14 +1,13 @@
 {
-  "name": "@lucide-filled/angular",
+  "name": "@filled-lucide/angular",
   "description": "A Filled Lucide icon library package for Angular applications.",
-  "version": "0.0.1",
-  "author": "karsa-mistmere",
+  "version": "1.52.0",
   "license": "ISC",
-  "homepage": "https://lucide.dev",
-  "bugs": "https://github.com/lucide-icons/lucide/issues",
+  "homepage": "https://filledlucide.dev",
+  "bugs": "https://github.com/linus-sch/filled-lucide/issues",
   "repository": {
     "type": "git",
-    "url": "https://github.com/lucide-icons/lucide.git",
+    "url": "https://github.com/linus-sch/filled-lucide.git",
     "directory": "packages/angular"
   },
   "publishConfig": {
@@ -53,8 +52,8 @@
     "@angular/platform-browser": "^21.2.19",
     "@angular/platform-server": "^21.2.19",
     "@angular/router": "^21.2.19",
-    "@lucide-filled/build-icons": "workspace:*",
-    "@lucide-filled/helpers": "workspace:*",
+    "@filled-lucide/build-icons": "workspace:*",
+    "@filled-lucide/helpers": "workspace:*",
     "@vitest/browser-playwright": "^4.1.10",
     "angular-eslint": "21.4.0",
     "ng-packagr": "^21.2.5",

@@ -1,0 +1,18 @@
+name: Icon design feedback
+description: A filled icon reads badly, differs from its outline meaning, or is missing
+labels: ['icon design']
+body:
+  - type: input
+    id: icons
+    attributes:
+      label: Icon name(s)
+      description: The Lucide name, e.g. `house`, `clipboard-check`.
+    validations:
+      required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: What looks wrong?
+      description: Screenshots of the filled icon next to the outline one help a lot.
+    validations:
+      required: true

@@ -1,6 +1,6 @@
 import { type INode, stringify } from 'svgson';
 import { format } from 'prettier';
-import { appendFile } from '@lucide-filled/helpers';
+import { appendFile } from '@filled-lucide/helpers';
 import { type SVGFile } from './readSvgs.mts';
 
 export default async function generateSprite(

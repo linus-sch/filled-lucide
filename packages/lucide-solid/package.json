@@ -1,13 +1,13 @@
 {
-  "name": "lucide-filled-solid",
+  "name": "@filled-lucide/solid",
   "description": "A Filled Lucide icon library package for Solid applications.",
-  "version": "0.0.1",
+  "version": "1.52.0",
   "license": "ISC",
-  "homepage": "https://lucide.dev",
-  "bugs": "https://github.com/lucide-icons/lucide/issues",
+  "homepage": "https://filledlucide.dev",
+  "bugs": "https://github.com/linus-sch/filled-lucide/issues",
   "repository": {
     "type": "git",
-    "url": "https://github.com/lucide-icons/lucide.git",
+    "url": "https://github.com/linus-sch/filled-lucide.git",
     "directory": "packages/lucide-solid"
   },
   "keywords": [
@@ -22,7 +22,6 @@
     "Fontawesome",
     "Font Awesome"
   ],
-  "author": "Eric Fennis",
   "source": "src/lucide-solid.ts",
   "main": "dist/cjs/lucide-solid.js",
   "module": "dist/esm/lucide-solid.mjs",
@@ -71,9 +70,9 @@
     "@babel/core": "^7.29.7",
     "@babel/preset-env": "^7.29.7",
     "@babel/preset-typescript": "^7.29.7",
-    "@lucide-filled/build-icons": "workspace:*",
-    "@lucide-filled/rollup-plugins": "workspace:*",
-    "@lucide-filled/shared": "workspace:*",
+    "@filled-lucide/build-icons": "workspace:*",
+    "@filled-lucide/rollup-plugins": "workspace:*",
+    "@filled-lucide/shared": "workspace:*",
     "@rollup/plugin-babel": "^6.1.0",
     "@solidjs/testing-library": "^0.8.10",
     "@testing-library/jest-dom": "^6.9.1",

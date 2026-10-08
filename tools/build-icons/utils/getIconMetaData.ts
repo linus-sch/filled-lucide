@@ -1,5 +1,5 @@
 import path from 'path';
-import { readSvgDirectory } from '@lucide-filled/helpers';
+import { readSvgDirectory } from '@filled-lucide/helpers';
 import { type IconMetadata } from '../types.ts';
 
 async function getIconMetaData(iconDirectory: string): Promise<Record<string, IconMetadata>> {

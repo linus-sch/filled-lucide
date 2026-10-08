@@ -1,133 +1,45 @@
-# Lucide Lab
+# Filled Lucide Lab
+
+[![npm](https://img.shields.io/npm/v/@filled-lucide/lab?color=blue)](https://www.npmjs.com/package/@filled-lucide/lab)
+[![License](https://img.shields.io/badge/license-ISC-green)](https://github.com/linus-sch/filled-lucide/blob/main/LICENSE)
+
+Filled (solid) versions of every [Lucide](https://lucide.dev) icon for the Lucide Lab icons, filled. Same icon names, same 24×24 grid and the same API as [`@lucide/lab`](https://www.npmjs.com/package/@lucide/lab).
 
 ## Installation
 
 ```sh
-npm install @lucide/lab
+pnpm add @filled-lucide/lab
 ```
 
 ```sh
-yarn add @lucide/lab
+npm install @filled-lucide/lab
 ```
-
-```sh
-pnpm install @lucide/lab
-```
-
-> [!NOTE]
-> Requires Lucide core package to be installed in your project. For more info visit [lucide installation guide](https://lucide.dev/guide/installation).
 
 ## Usage
 
-### React
-
 ```jsx
-import { burger } from '@lucide/lab';
-import { Icon } from 'lucide-react';
+import { burger } from '@filled-lucide/lab';
+import { Icon } from '@filled-lucide/react';
 
-function App() {
-  return (
-    <div>
-      <Icon iconNode={burger} />
-    </div>
-  );
+export default function App() {
+  return <Icon iconNode={burger} />;
 }
 ```
 
-### Vue
+## Drop-in replacement for `@lucide/lab`
 
-```vue
-<script setup>
-import { burger } from '@lucide/lab';
-import { Icon } from '@lucide/vue';
-</script>
+Install this package under the upstream name to switch an entire app, including libraries that import `@lucide/lab` (such as shadcn/ui), to filled icons without changing an import:
 
-<template>
-  <div>
-    <Icon :iconNode="burger" />
-  </div>
-</template>
+```sh
+pnpm add @lucide/lab@npm:@filled-lucide/lab
 ```
 
-### Angular
+Versions follow upstream: `@filled-lucide/lab@1.52.0` has the same icons as `@lucide/lab@1.52.0`.
 
-```angular
-// app.module.ts
-import { LucideAngularModule } from 'lucide-angular';
-import { atSignCircle } from '@lucide/lab';
+## Documentation
 
-@NgModule({
-  imports: [
-      LucideAngularModule.pick({ AtSignCircle: atSignCircle })
-  ],
-})
-
-// app.component.html
-<lucide-icon name = "AtSignCircle" > </lucide-icon>
-```
-
-### Svelte
-
-```svelte
-<script>
-import { Icon } from '@lucide/svelte';
-import { burger, sausage } from '@lucide/lab';
-</script>
-
-<Icon iconNode={burger} />
-<Icon iconNode={sausage} color="red"/>
-```
-
-### Solid
-
-```jsx
-import { burger } from '@lucide/lab';
-import { Icon } from 'lucide-solid';
-
-function App() {
-  return (
-    <div>
-      <Icon iconNode={burger} />
-    </div>
-  );
-}
-```
-
-### Preact
-
-```jsx
-import { burger } from '@lucide/lab';
-import { Icon } from 'lucide-preact';
-
-function App() {
-  return (
-    <div>
-      <Icon iconNode={burger} />
-    </div>
-  );
-}
-```
-
-### React Native
-
-```jsx
-
-import { burger } from '@lucide/lab';
-import { Icon } from 'lucide-react-native';
-
-function App() {
-  return (
-    <div>
-      <Icon iconNode={burger} />
-    </div>
-  );
-}
-```
-
-## Community
-
-Join the community on our [Discord](https://discord.gg/EH6nSts) server!
+The API is identical to upstream, so the [Lucide documentation](https://lucide.dev/guide/) applies. See the [Filled Lucide repository](https://github.com/linus-sch/filled-lucide) for details about the filled set.
 
 ## License
 
-Lucide is totally free for commercial and personal use; this software is licensed under the [ISC License](https://github.com/lucide-icons/lucide/blob/main/LICENSE).
+ISC. Based on [Lucide](https://github.com/lucide-icons/lucide), © Lucide Contributors.

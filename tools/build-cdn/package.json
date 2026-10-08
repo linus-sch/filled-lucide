@@ -1,5 +1,5 @@
 {
-  "name": "@lucide-filled/build-cdn",
+  "name": "@filled-lucide/build-cdn",
   "description": "Builds the static bundle deployed to Cloudflare.",
   "version": "1.0.0",
   "private": true,

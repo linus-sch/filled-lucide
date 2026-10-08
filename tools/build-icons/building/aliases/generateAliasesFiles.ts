@@ -1,6 +1,6 @@
 import path from 'path';
 import fs from 'fs';
-import { toPascalCase, resetFile, appendFile } from '@lucide-filled/helpers';
+import { toPascalCase, resetFile, appendFile } from '@filled-lucide/helpers';
 import deprecationReasonTemplate from '../../utils/deprecationReasonTemplate.ts';
 import getExportString from './getExportString.ts';
 import type { IconMetadata } from '../../types.ts';
@@ -99,6 +99,11 @@ export default async function generateAliasesFiles({
           iconName,
           aliasImportFileExtension,
         );
+        aliasPrefixesFileContent += getExportString(
+          `Filled${componentName}`,
+          iconName,
+          aliasImportFileExtension,
+        );
       }
 
       if (iconAliases != null && Array.isArray(iconAliases)) {
@@ -162,6 +167,14 @@ export default async function generateAliasesFiles({
 
               aliasPrefixesFileContent += getExportString(
                 `Lucide${componentNameAlias}`,
+                exportFileIcon,
+                aliasImportFileExtension,
+                alias.deprecated,
+                deprecationReason,
+              );
+
+              aliasPrefixesFileContent += getExportString(
+                `Filled${componentNameAlias}`,
                 exportFileIcon,
                 aliasImportFileExtension,
                 alias.deprecated,

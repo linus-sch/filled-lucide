@@ -1,6 +1,6 @@
 /// <reference types="node" />
 import { basename } from 'path';
-import { readSvg } from '@lucide-filled/helpers';
+import { readSvg } from '@filled-lucide/helpers';
 import { type INode, parseSync } from 'svgson';
 
 /**

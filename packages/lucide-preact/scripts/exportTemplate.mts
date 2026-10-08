@@ -1,5 +1,5 @@
-import base64SVG from '@lucide-filled/build-icons/utils/base64SVG';
-import defineExportTemplate from '@lucide-filled/build-icons/utils/defineExportTemplate';
+import base64SVG from '@filled-lucide/build-icons/utils/base64SVG';
+import defineExportTemplate from '@filled-lucide/build-icons/utils/defineExportTemplate';
 
 export default defineExportTemplate(async ({
   componentName,

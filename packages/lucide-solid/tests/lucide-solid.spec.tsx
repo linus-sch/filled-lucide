@@ -23,7 +23,7 @@ describe('Using lucide icon components', () => {
     const { attributes } = (await getByTestId(testId)) as unknown as {
       attributes: Record<string, { value: string }>;
     };
-    expect(attributes.stroke.value).toBe('red');
+    expect(attributes.fill.value).toBe('red');
     expect(attributes.width.value).toBe('48');
     expect(attributes.height.value).toBe('48');
     expect(attributes['stroke-width'].value).toBe('4');
@@ -71,7 +71,7 @@ describe('Using lucide icon components', () => {
     const { attributes } = getByTestId(testId) as unknown as {
       attributes: Record<string, { value: string }>;
     };
-    expect(attributes.stroke.value).toBe('red');
+    expect(attributes.fill.value).toBe('red');
     expect(attributes.width.value).toBe('48');
     expect(attributes.height.value).toBe('48');
     expect(attributes['stroke-width'].value).toBe('1');

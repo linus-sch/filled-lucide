@@ -1,4 +1,4 @@
-import plugins from '@lucide-filled/rollup-plugins';
+import plugins from '@filled-lucide/rollup-plugins';
 import dts from 'rollup-plugin-dts';
 import pkg from './package.json' with { type: 'json' };
 import getIconEntryNamesAndAliases from './scripts/getIconEntryNamesAndAliases.mts';

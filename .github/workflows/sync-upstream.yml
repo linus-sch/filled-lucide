@@ -1,0 +1,109 @@
+name: Sync upstream Lucide
+
+# Checks for a new Lucide release, pulls its outline icons into outline/,
+# regenerates the filled set and opens a PR. New and changed icons need a
+# visual review (pnpm fill:review) before merging; merge, then push a
+# `v<version>` tag to publish.
+
+on:
+  schedule:
+    - cron: '0 6 * * 1'
+
+  workflow_dispatch:
+    inputs:
+      version:
+        description: Upstream Lucide version (defaults to the latest release)
+        type: string
+
+permissions: {}
+
+jobs:
+  sync:
+    if: github.repository == 'linus-sch/filled-lucide'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write # Required to push the sync branch
+      pull-requests: write # Required to open the PR
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+
+      - name: Find upstream release
+        id: upstream
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REQUESTED: ${{ inputs.version }}
+        run: |
+          VERSION="${REQUESTED:-$(gh release view --repo lucide-icons/lucide --json tagName -q .tagName)}"
+          VERSION="${VERSION#v}"
+          CURRENT=$(node -p "require('./packages/lucide-react/package.json').version")
+          BRANCH="sync/lucide-$VERSION"
+          echo "Upstream $VERSION, filled $CURRENT"
+          echo "VERSION=$VERSION" >> "$GITHUB_OUTPUT"
+          echo "BRANCH=$BRANCH" >> "$GITHUB_OUTPUT"
+          if [ "$VERSION" = "$CURRENT" ] || git ls-remote --exit-code --heads origin "$BRANCH" > /dev/null; then
+            echo "SKIP=true" >> "$GITHUB_OUTPUT"
+            echo "::notice::Nothing to sync for $VERSION"
+          fi
+
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        if: steps.upstream.outputs.SKIP != 'true'
+        with:
+          repository: lucide-icons/lucide
+          ref: ${{ steps.upstream.outputs.VERSION }}
+          path: .upstream
+          sparse-checkout: |
+            icons
+            lab
+            categories
+
+      - uses: pnpm/action-setup@ea17c68df8912ef543352723c149a84f56e3d413 # v6.1.0
+        if: steps.upstream.outputs.SKIP != 'true'
+      - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        if: steps.upstream.outputs.SKIP != 'true'
+        with:
+          cache: 'pnpm'
+          node-version-file: 'package.json'
+
+      - name: Install dependencies
+        if: steps.upstream.outputs.SKIP != 'true'
+        run: pnpm install --frozen-lockfile
+
+      - name: Sync outline sources
+        if: steps.upstream.outputs.SKIP != 'true'
+        run: node scripts/syncUpstream.mts --upstream .upstream --version ${{ steps.upstream.outputs.VERSION }} | tee sync.log
+
+      - name: Regenerate filled icons
+        if: steps.upstream.outputs.SKIP != 'true'
+        run: |
+          rm -rf .upstream
+          pnpm fill
+          pnpm fill:lab
+          pnpm fill:check
+
+      - name: Open pull request
+        if: steps.upstream.outputs.SKIP != 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          VERSION: ${{ steps.upstream.outputs.VERSION }}
+          BRANCH: ${{ steps.upstream.outputs.BRANCH }}
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git switch -c "$BRANCH"
+          git add outline icons lab categories packages/*/package.json
+          git commit -m "chore: sync with Lucide $VERSION"
+          git push origin "$BRANCH"
+          {
+            echo "Syncs the outline sources with [Lucide $VERSION](https://github.com/lucide-icons/lucide/releases/tag/$VERSION) and regenerates the filled icons."
+            echo
+            echo '```'
+            cat sync.log
+            echo '```'
+            echo
+            echo 'Review new and changed icons with `pnpm fill:review` and add overrides where needed. After merging, publish with:'
+            echo
+            echo '```bash'
+            echo "git tag v$VERSION && git push origin v$VERSION"
+            echo '```'
+          } > body.md
+          gh pr create --title "chore: sync with Lucide $VERSION" --body-file body.md --base main --head "$BRANCH"
