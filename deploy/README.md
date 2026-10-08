@@ -8,7 +8,7 @@ including Free, so the site costs nothing to run regardless of traffic.
 ## Deploy
 
 ```bash
-npm install -g wrangler   # or: pnpm add -g wrangler
+npm install -g wrangler
 wrangler login
 pnpm cdn:deploy
 ```
@@ -26,18 +26,23 @@ pnpm cdn:dev
 
 ## What gets served
 
-| Path | Contents |
-| --- | --- |
-| `/` | Browsable, searchable gallery of every icon |
-| `/icons/<name>.svg` | One filled icon, ~1.3 kB |
-| `/lab/<name>.svg` | Lab icons, filled |
-| `/icons.json` | `{ "<name>": "<path data>" }` for all 1,776 icons |
-| `/icons-index.json` | `[{ n: name, t: tags, c: categories, a: aliases }]` — the search index |
-| `/sprite.svg` | One `<symbol>` per icon, for same-origin `<use>` |
-| `/categories.json` | Category slug → display title |
-| `/meta.json` | Set sizes and build timestamp |
+| Path                                         | Contents                                                               |
+| -------------------------------------------- | ---------------------------------------------------------------------- |
+| `/`                                          | Landing page, searchable icon browser, and copy drawer                 |
+| `/icons`                                     | Redirect to the single page at `/`                                     |
+| `/icons/<name>.svg`                          | One filled icon, ~1.3 kB                                               |
+| `/lab/<name>.svg`                            | Lab icons, filled                                                      |
+| `/outline/icons/<name>.svg`                  | Original Lucide outline icon                                           |
+| `/outline/lab/<name>.svg`                    | Original Lucide Lab outline icon                                       |
+| `/icons.json`                                | `{ "<name>": "<path data>" }` for all 1,776 icons                      |
+| `/icons-index.json`                          | `[{ n: name, t: tags, c: categories, a: aliases }]` — the search index |
+| `/sprite.svg`                                | One `<symbol>` per icon, for same-origin `<use>`                       |
+| `/sprite-outline.svg`                        | Outline symbols with configurable stroke width                         |
+| `/sprite-lab.svg`, `/sprite-outline-lab.svg` | Filled and outline Lab symbols                                         |
+| `/categories.json`                           | Category slug → display title                                          |
+| `/meta.json`                                 | Set sizes and build timestamp                                          |
 
-2,142 files, ~5 MB total. Cloudflare's limits for Workers assets are 20,000
+About 4,300 files with both styles. Cloudflare's limits for Workers assets are 20,000
 files and 25 MiB per file, so there is plenty of headroom.
 
 ## Caching
@@ -59,7 +64,12 @@ the npm package instead.
 
 ```html
 <!-- simplest: a plain image -->
-<img src="https://cdn.example.com/icons/house.svg" width="24" height="24" alt="">
+<img
+  src="https://cdn.example.com/icons/house.svg"
+  width="24"
+  height="24"
+  alt=""
+/>
 ```
 
 ```css
@@ -72,12 +82,19 @@ the npm package instead.
   -webkit-mask: var(--icon) center / contain no-repeat;
   mask: var(--icon) center / contain no-repeat;
 }
-.icon-house { --icon: url("https://cdn.example.com/icons/house.svg"); }
+.icon-house {
+  --icon: url('https://cdn.example.com/icons/house.svg');
+}
 ```
 
 ```html
 <!-- same-origin only: browsers block cross-origin <use> -->
-<svg width="24" height="24"><use href="/sprite.svg#house" /></svg>
+<svg
+  width="24"
+  height="24"
+>
+  <use href="/sprite.svg#house" />
+</svg>
 ```
 
 ```js

@@ -87,6 +87,31 @@ export default defineConfig([
     },
   },
   {
+    files: ['tools/build-cdn/site/*.js'],
+    languageOptions: {
+      globals: {
+        document: 'readonly',
+        window: 'readonly',
+        navigator: 'readonly',
+        localStorage: 'readonly',
+        location: 'readonly',
+        history: 'readonly',
+        fetch: 'readonly',
+        URL: 'readonly',
+        URLSearchParams: 'readonly',
+        Blob: 'readonly',
+        DOMParser: 'readonly',
+        XMLSerializer: 'readonly',
+        MutationObserver: 'readonly',
+        IntersectionObserver: 'readonly',
+        getComputedStyle: 'readonly',
+      },
+    },
+    rules: {
+      'import-x/extensions': ['error', { pattern: { js: 'always' } }],
+    },
+  },
+  {
     rules: {
       // Omitting a property by destructuring it away (`const { key, ...attrs } = node`) leaves the
       // omitted binding unused on purpose, so don't report it.

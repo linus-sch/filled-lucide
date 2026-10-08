@@ -9,6 +9,7 @@
     "fill:review": "node ./tools/fill-icons/review.mjs",
     "fill:check": "node ./tools/fill-icons/check-approved.mjs",
     "cdn:build": "node ./tools/build-cdn/index.mjs --out ./deploy/public",
+    "cdn:test": "node --test ./tools/build-cdn/index.test.mjs",
     "cdn:dev": "pnpm cdn:build && wrangler dev --config deploy/wrangler.toml",
     "cdn:deploy": "pnpm cdn:build && wrangler deploy --config deploy/wrangler.toml",
     "test": "pnpm -r --filter './packages/**' test",
