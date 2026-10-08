@@ -1,0 +1,138 @@
+<!doctype html>
+<!--
+  Source of banner.png, the README hero. It mirrors the landing page hero.
+  Regenerate with:
+    "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" --headless=new \
+      --hide-scrollbars --force-device-scale-factor=2 --window-size=1280,440 \
+      --screenshot=.github/assets/banner.png .github/assets/banner.html
+-->
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <style>
+      body {
+        margin: 0;
+        width: 1280px;
+        height: 440px;
+        position: relative;
+        overflow: hidden;
+        color: #ffffff;
+        background: #c43232;
+        font-family:
+          Inter,
+          -apple-system,
+          BlinkMacSystemFont,
+          'Segoe UI',
+          sans-serif;
+        -webkit-font-smoothing: antialiased;
+      }
+      .brand {
+        position: absolute;
+        top: 40px;
+        left: 72px;
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        font-size: 32px;
+        font-weight: 500;
+      }
+      .copy {
+        position: absolute;
+        top: 158px;
+        left: 72px;
+      }
+      .copy p {
+        margin: 0 0 18px;
+        color: #f1b4b4;
+        font-size: 24px;
+        font-weight: 500;
+      }
+      .copy h1 {
+        margin: 0;
+        font-size: 60px;
+        font-weight: 650;
+        line-height: 1.18;
+        letter-spacing: -0.02em;
+      }
+      .frameworks {
+        position: absolute;
+        right: 120px;
+        bottom: 40px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+        color: #f1b4b4;
+        font-size: 16px;
+        font-weight: 500;
+      }
+      .frameworks div {
+        display: flex;
+        gap: 16px;
+      }
+      .frameworks img {
+        width: 30px;
+        height: 30px;
+        object-fit: contain;
+      }
+      svg {
+        position: absolute;
+        inset: 0;
+        fill: #f56565;
+      }
+    </style>
+  </head>
+  <body>
+    <svg
+      width="1280"
+      height="440"
+      viewBox="0 0 1920 671"
+      preserveAspectRatio="none"
+    >
+      <rect
+        x="1825"
+        y="0"
+        width="95"
+        height="232"
+      />
+      <rect
+        x="1791"
+        y="232"
+        width="129"
+        height="294"
+      />
+      <rect
+        x="1841"
+        y="526"
+        width="79"
+        height="145"
+      />
+    </svg>
+    <div class="brand">
+      <img
+        src="../../tools/build-cdn/site/filed-lucide-logo.svg"
+        width="36"
+        height="36"
+        alt=""
+      />Filled Lucide
+    </div>
+    <div class="copy">
+      <p>Community project</p>
+      <h1>Beautiful &amp; Filled<br />Lucide Icons</h1>
+    </div>
+    <div class="frameworks">
+      Available for:
+      <div>
+        <img src="../../tools/build-cdn/site/framework-logos/js.svg" /><img
+          src="../../tools/build-cdn/site/framework-logos/react.svg"
+        /><img src="../../tools/build-cdn/site/framework-logos/vue.svg" /><img
+          src="../../tools/build-cdn/site/framework-logos/svelte.svg"
+        /><img src="../../tools/build-cdn/site/framework-logos/solid.svg" /><img
+          src="../../tools/build-cdn/site/framework-logos/preact.svg"
+        /><img src="../../tools/build-cdn/site/framework-logos/angular.svg" /><img
+          src="../../tools/build-cdn/site/framework-logos/astro-dark.svg"
+        /><img src="../../tools/build-cdn/site/framework-logos/react-native.svg" />
+      </div>
+    </div>
+  </body>
+</html>
