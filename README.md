@@ -182,3 +182,14 @@ docs/               upstream lucide.dev site source (not yet adapted)
 ## License
 
 ISC, same as upstream Lucide ([`LICENSE`](LICENSE)).
+
+## Credits
+
+Filled Lucide is built on [Lucide](https://lucide.dev). Every icon starts from
+an outline drawn by the Lucide community, and Lucide itself grew out of
+[Feather](https://feathericons.com) by Cole Bemis. Thank you to everyone who
+contributed to Lucide:
+
+<a href="https://github.com/lucide-icons/lucide/graphs/contributors">
+  <img src="https://opencollective.com/lucide-icons/contributors.svg?width=800" alt="Lucide contributors" />
+</a>
