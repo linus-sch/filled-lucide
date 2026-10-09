@@ -36,7 +36,7 @@ Install this package under the upstream name to switch an entire app, including 
 pnpm add lucide@npm:@filled-lucide/js@next
 ```
 
-The first organization release is `1.52.1-filled.2`, available under `next`.
+The current filled-only release is `1.52.1-filled.3`, available under `next`.
 It uses the icon set from `lucide@1.52.0` with the filled icon improvements.
 Stable releases follow upstream Lucide versions.
 
