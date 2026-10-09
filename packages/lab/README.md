@@ -43,3 +43,5 @@ The API is identical to upstream, so the [Lucide documentation](https://lucide.d
 ## License
 
 ISC. Based on [Lucide](https://github.com/lucide-icons/lucide), © Lucide Contributors.
+
+Filled Lucide is an independent project, not affiliated with or endorsed by the Lucide team. Report problems with the filled icons at [linus-sch/filled-lucide](https://github.com/linus-sch/filled-lucide/issues), not to upstream Lucide.

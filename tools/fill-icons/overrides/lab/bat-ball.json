@@ -1,0 +1,8 @@
+{
+  "close": [2],
+  "layers": [
+    { "units": [2], "mode": "fill" },
+    { "units": [1], "mode": "cut" },
+    { "units": [0], "mode": "fill", "gap": true }
+  ]
+}

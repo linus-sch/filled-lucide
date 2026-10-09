@@ -1,0 +1,24 @@
+{
+  "noClose": true,
+  "close": [0],
+  "layers": [
+    {
+      "units": [0],
+      "mode": "fill"
+    },
+    {
+      "units": [3],
+      "mode": "fill",
+      "gap": true
+    },
+    {
+      "units": [6, 7],
+      "mode": "carve"
+    },
+    {
+      "units": [4, 5],
+      "mode": "cut"
+    }
+  ],
+  "extra": ["M9 8.6v.6", "M15 8.6v.6"]
+}

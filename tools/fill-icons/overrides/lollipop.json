@@ -1,0 +1,9 @@
+{
+  "noClose": true,
+  "extra": ["M11 11a2 2 0 0 0 4 0 4 4 0 0 0-8 0 6 6 0 0 0 6 6"],
+  "layers": [
+    { "units": [0], "mode": "fill" },
+    { "units": [3], "mode": "carve" },
+    { "units": [1], "mode": "stroke" }
+  ]
+}

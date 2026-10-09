@@ -1,0 +1,8 @@
+{
+  "extra": ["M10 12h4v4h-4z"],
+  "layers": [
+    { "units": [0], "mode": "fill" },
+    { "units": [1], "mode": "carve" },
+    { "units": [3], "mode": "fill", "area": true }
+  ]
+}

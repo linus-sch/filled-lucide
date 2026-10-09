@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width,initial-scale=1"
+    />
+    <title>{{title}}</title>
+    <meta
+      name="description"
+      content="{{description}}"
+    />
+    <!-- seo -->
+    <link
+      rel="icon"
+      href="/filed-lucide-logo.svg?v=3"
+      type="image/svg+xml"
+    />
+    <link
+      rel="stylesheet"
+      href="/styles.css"
+    />
+    <link
+      rel="stylesheet"
+      href="/pages.css"
+    />
+    <script src="/theme.js"></script>
+    <script
+      type="module"
+      src="/pages.js"
+    ></script>
+    <script
+      async
+      src="https://scripts.simpleanalyticscdn.com/latest.js"
+    ></script>
+  </head>
+  <body class="content-page">
+    <a
+      class="skip-link"
+      href="#content"
+      >Skip to content</a
+    >
+    <header class="site-header site-header-compact">
+      <!-- page-nav -->
+      <div class="hero-copy page-width">
+        <p>{{eyebrow}}</p>
+        <h1>{{heading}}</h1>
+      </div>
+    </header>
+    <main
+      class="page-width"
+      id="content"
+    >
+      {{breadcrumbs}} {{content}}
+      <!-- page-footer -->
+    </main>
+    <div
+      class="toast"
+      id="toast"
+      role="status"
+      hidden
+    ></div>
+  </body>
+</html>

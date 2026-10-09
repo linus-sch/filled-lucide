@@ -1,1 +1,28 @@
-{"noClose": true, "extra": ["M3 8v8c0 3.3 3.1 6 7 6s7-2.7 7-6V8Z", "M17 8c0 2.2 2.2 4 5 4v8c-2.8 0-5-1.8-5-4Z", "M3 8c0 3.3 3.1 6 7 6s7-2.7 7-6", "M17 8v8.5"], "layers": [{"units": [5, 6, 1], "mode": "fill"}, {"units": [7, 8], "mode": "cut"}, {"units": [0], "mode": "carve"}]}
+{
+  "noClose": true,
+  "extra": [
+    "M3 8v8c0 3.3 3.1 6 7 6s7-2.7 7-6V8Z",
+    "M17 8c0 2.2 2.2 4 5 4v8c-2.8 0-5-1.8-5-4Z",
+    "M2.4 7.4a7.6 6 0 0 0 15.2 0v1.2a7.6 6 0 0 1-15.2 0z",
+    "M17 8v8.5"
+  ],
+  "layers": [
+    {
+      "units": [5, 6, 1],
+      "mode": "fill"
+    },
+    {
+      "units": [7],
+      "mode": "carve",
+      "area": true
+    },
+    {
+      "units": [8],
+      "mode": "cut"
+    },
+    {
+      "units": [0],
+      "mode": "carve"
+    }
+  ]
+}

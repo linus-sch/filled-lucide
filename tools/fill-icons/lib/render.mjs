@@ -16,12 +16,21 @@ import { finish, solidify, STROKE_RADIUS } from './solidify.mjs';
 import { applyOverride, iconOptions } from './overrides.mjs';
 
 /** The `-off` slash (Lucide's `m2 2 20 20`), the gap cut beside it, and the side it is cut on. */
-const OFF_BAR = [[2, 2], [22, 22]];
+const OFF_BAR = [
+  [2, 2],
+  [22, 22],
+];
 const OFF_GAP = 1.5;
-const OFF_GAP_SIDE = [[-12, -12], [36, -12], [36, 36]];
+const OFF_GAP_SIDE = [
+  [-12, -12],
+  [36, -12],
+  [36, 36],
+];
 
-const scaleAbout = (s, [ox, oy] = [12, 12]) => ([x, y]) => [ox + (x - ox) * s, oy + (y - oy) * s];
-const compose = (f, g) => (f && g ? (p) => g(f(p)) : (f ?? g));
+const scaleAbout =
+  (s, [ox, oy] = [12, 12]) =>
+  ([x, y]) => [ox + (x - ox) * s, oy + (y - oy) * s];
+const compose = (f, g) => (f && g ? (p) => g(f(p)) : f ?? g);
 
 /** Is this unit the folded corner of a page (`M14 2v4a2 2 0 0 0 2 2h4`)? */
 function isFileFold(unit) {
@@ -42,6 +51,21 @@ function offBase(name, src, rule) {
   return existsSync(join(src, `${base}.svg`)) ? base : null;
 }
 
+/** Cross `object` with the `-off` bar; reverse mirrors the bar and its gap together. */
+function slash(object, transform, reverse = false) {
+  const orient = reverse ? ([x, y]) => [24 - x, y] : (p) => p;
+  const t = compose(orient, transform);
+  const bar = strokeRegion([{ pts: OFF_BAR.map(t), closed: false }], STROKE_RADIUS);
+  // The bar stays one solid stroke from end to end. A gap runs along its
+  // upper edge where it crosses the object, so it reads as passing
+  // over it, rather than a white outline on both sides.
+  const gap = intersection(
+    inflate(bar, OFF_GAP),
+    fillRegion([{ pts: OFF_GAP_SIDE.map(t), closed: true }]),
+  );
+  return finish(unionAll([bar, difference(object, gap)]));
+}
+
 export function makeRenderer(src) {
   const cache = new Map();
 
@@ -57,19 +81,16 @@ export function makeRenderer(src) {
 
     const off = offBase(name, src, rule);
     if (off) {
-      const object = render(off, transform, seen);
-      const t = transform ?? ((p) => p);
-      const bar = strokeRegion([{ pts: OFF_BAR.map(t), closed: false }], STROKE_RADIUS);
-      // The bar stays one solid stroke from end to end. A gap runs along its
-      // upper-right edge where it crosses the object, so it reads as passing
-      // over it, rather than a white outline on both sides.
-      const gap = intersection(inflate(bar, OFF_GAP), fillRegion([{ pts: OFF_GAP_SIDE.map(t), closed: true }]));
-      region = finish(unionAll([bar, difference(object, gap)]));
+      region = slash(render(off, transform, seen), transform, rule.slash === 'reverse');
     } else {
       const svg = readFileSync(join(src, `${name}.svg`), 'utf8');
       const elements = applyOverride(name, parseIcon(svg));
       const start = rule.base
-        ? render(rule.base, compose(rule.baseScale ? scaleAbout(rule.baseScale) : null, transform), seen)
+        ? render(
+            rule.base,
+            compose(rule.baseScale ? scaleAbout(rule.baseScale) : null, transform),
+            seen,
+          )
         : null;
       region = solidify(elements, {
         ...options,
@@ -77,6 +98,9 @@ export function makeRenderer(src) {
         start,
         drop: isFileIcon(name) && rule.keepFold !== true ? isFileFold : null,
       });
+      // `slash: true` draws the object from the override's own layers (leave
+      // the source's slash out of them); `slash: "reverse"` uses the other diagonal.
+      if (rule.slash) region = slash(region, transform, rule.slash === 'reverse');
     }
     if (!transform) cache.set(key, region);
     return region;
@@ -84,4 +108,3 @@ export function makeRenderer(src) {
 
   return render;
 }
-

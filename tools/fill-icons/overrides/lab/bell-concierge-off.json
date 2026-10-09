@@ -1,0 +1,16 @@
+{
+  "off": false,
+  "slash": true,
+  "extra": [
+    "M20 16a8 8 0 1 0-16 0z",
+    "M4 16h15v4H2v-2a2 2 0 0 1 2-2z",
+    "M12 4v4",
+    "M10 4h4",
+    "M0 16h24"
+  ],
+  "layers": [
+    { "units": [6, 7], "mode": "fill" },
+    { "units": [10], "mode": "cut" },
+    { "units": [8, 9], "mode": "stroke" }
+  ]
+}

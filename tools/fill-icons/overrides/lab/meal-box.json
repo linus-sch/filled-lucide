@@ -1,0 +1,11 @@
+{
+  "extra": [
+    "M22.6 12c0 3.6-3 6.6-6.6 6.6H8c-3.6 0-6.6-3-6.6-6.6h1.2c0 2.9 2.5 5.4 5.4 5.4h8c2.9 0 5.4-2.5 5.4-5.4z"
+  ],
+  "layers": [
+    { "units": [0], "mode": "fill" },
+    { "units": [5], "mode": "carve", "area": true },
+    { "units": [2], "mode": "cut" },
+    { "units": [3, 4], "mode": "carve" }
+  ]
+}

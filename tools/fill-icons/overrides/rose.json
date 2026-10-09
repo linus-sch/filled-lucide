@@ -1,1 +1,10 @@
-{ "close": [1], "layers": [{ "units": [1, 0], "mode": "fill" }, { "units": [0, 4], "mode": "cut" }, { "units": [3], "mode": "stroke" }, { "units": [2], "mode": "fill" }] }
+{
+  "close": [1],
+  "extra": ["M17 10h-1a3.6 3.6 0 0 1 0-7.2", "M20 6a4 4 0 1 1-8 0 4 4 0 1 1 8 0z"],
+  "layers": [
+    { "units": [1, 0], "mode": "fill" },
+    { "units": [5], "mode": "carve" },
+    { "units": [3], "mode": "stroke" },
+    { "units": [2], "mode": "fill" }
+  ]
+}

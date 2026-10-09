@@ -1,7 +1,7 @@
 {
   "name": "@filled-lucide/svelte",
   "description": "A Filled Lucide icon library package for Svelte applications.",
-  "version": "1.52.0",
+  "version": "1.52.1-filled.2",
   "license": "ISC",
   "homepage": "https://filledlucide.dev",
   "bugs": "https://github.com/linus-sch/filled-lucide/issues",

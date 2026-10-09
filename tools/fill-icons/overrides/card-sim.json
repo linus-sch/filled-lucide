@@ -1,1 +1,9 @@
-{"noClose":true,"layers":[{"units":[1],"mode":"fill"},{"units":[3],"mode":"carve"},{"units":[0,2],"mode":"stroke"}]}
+{
+  "noClose": true,
+  "extra": ["M6 14h12", "M12 14v6"],
+  "layers": [
+    { "units": [1], "mode": "fill" },
+    { "units": [3], "mode": "carve" },
+    { "units": [4, 5], "mode": "stroke" }
+  ]
+}

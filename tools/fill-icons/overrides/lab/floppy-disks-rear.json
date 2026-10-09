@@ -1,0 +1,9 @@
+{
+  "extra": ["M14 16v3"],
+  "layers": [
+    { "units": [0], "mode": "fill" },
+    { "units": [1], "mode": "carve" },
+    { "units": [4], "mode": "carve" },
+    { "units": [3], "mode": "stroke" }
+  ]
+}

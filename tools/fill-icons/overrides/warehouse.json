@@ -1,28 +1,12 @@
 {
   "extra": [
     "M6 21V10a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v11z",
-    "M5 13h14",
-    "M5 17h14"
+    "M4 12.4h16v1.2H4z",
+    "M4 16.4h16v1.2H4z"
   ],
   "layers": [
-    {
-      "units": [
-        1
-      ],
-      "mode": "fill"
-    },
-    {
-      "units": [
-        4
-      ],
-      "mode": "carve"
-    },
-    {
-      "units": [
-        5,
-        6
-      ],
-      "mode": "stroke"
-    }
+    { "units": [1], "mode": "fill" },
+    { "units": [4], "mode": "fill", "gap": true },
+    { "units": [5, 6], "mode": "carve", "area": true }
   ]
 }

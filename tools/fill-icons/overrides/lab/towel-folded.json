@@ -1,28 +1,21 @@
 {
- "noClose": true,
- "extra": [
-  "M7 3h10a4 4 0 0 1 4 4v10a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4V7a4 4 0 0 1 4-4Z",
-  "M7 13h10a4 4 0 0 1 4 4"
- ],
- "layers": [
-  {
-   "units": [
-    2
-   ],
-   "mode": "fill"
-  },
-  {
-   "units": [
-    1,
-    3
-   ],
-   "mode": "cut"
-  },
-  {
-   "units": [
-    2
-   ],
-   "mode": "stroke"
-  }
- ]
+  "noClose": true,
+  "extra": [
+    "M7 3h10a4 4 0 0 1 4 4v10a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4V7a4 4 0 0 1 4-4Z",
+    "M7 13h10a4 4 0 0 1 4 4"
+  ],
+  "layers": [
+    {
+      "units": [2],
+      "mode": "fill"
+    },
+    {
+      "units": [3],
+      "mode": "cut"
+    },
+    {
+      "units": [1],
+      "mode": "cut"
+    }
+  ]
 }

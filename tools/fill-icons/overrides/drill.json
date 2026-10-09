@@ -1,0 +1,20 @@
+{
+  "noClose": true,
+  "close": [
+    { "unit": 1, "via": [[9, 10]] },
+    2,
+    {
+      "unit": 4,
+      "via": [
+        [7, 18],
+        [9, 10]
+      ]
+    }
+  ],
+  "extra": ["M9.75 11h2l-.5 2h-2z"],
+  "layers": [
+    { "units": [0, 1, 2, 4], "mode": "fill" },
+    { "units": [3], "mode": "stroke" },
+    { "units": [6], "mode": "carve", "area": true }
+  ]
+}

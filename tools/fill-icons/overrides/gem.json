@@ -1,0 +1,7 @@
+{
+  "extra": ["M10.5 3 8 9", "M13.5 3 16 9"],
+  "layers": [
+    { "units": [1], "mode": "fill" },
+    { "units": [2, 3, 4], "mode": "cut" }
+  ]
+}

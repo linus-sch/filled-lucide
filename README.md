@@ -1,6 +1,6 @@
 <p align="center">
   <a href="https://filledlucide.dev">
-    <img src=".github/assets/banner.png" alt="Filled Lucide — Beautiful &amp; Filled Lucide Icons. A community project." width="100%">
+    <img src=".github/assets/banner.png" alt="Filled Lucide — Beautiful &amp; Filled Lucide Icons. An unofficial community project." width="100%">
   </a>
 </p>
 
@@ -27,6 +27,10 @@
 A solid variant of the [Lucide](https://lucide.dev) icon set: all **1,776 icons**
 (plus **355 lab icons**) redrawn as filled silhouettes, with the same names, the
 same 24×24 grid and the same package API as upstream Lucide.
+
+> [!NOTE]
+> Filled Lucide is an independent community project. It is not affiliated with
+> or endorsed by the Lucide team.
 
 ## Packages
 
@@ -89,6 +93,10 @@ If a dependency pulls in its own copy of `lucide-react`, override it too:
 (`"overrides"` for npm, `"resolutions"` for yarn.) The same works for every
 package in the table. Versions follow upstream: `@filled-lucide/react@1.52.0`
 has the same icons as `lucide-react@1.52.0`.
+
+Your code will still say `lucide-react`, but the icons come from Filled Lucide:
+report problems with them [here](https://github.com/linus-sch/filled-lucide/issues),
+not to upstream Lucide.
 
 ### Next to the outline icons
 

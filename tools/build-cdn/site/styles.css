@@ -686,6 +686,32 @@ p {
   max-height: none;
   padding-bottom: clamp(48px, 4.6vw, 112px);
 }
+.footer-navigation {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px 28px;
+  font-size: 13px;
+  color: var(--muted);
+  margin-top: 64px;
+  padding-top: 32px;
+  border-top: 1px solid var(--line);
+}
+.footer-navigation a:hover {
+  color: var(--ink);
+}
+.drawer-title {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 8px 24px;
+}
+.drawer-title a {
+  font-size: 13px;
+  color: var(--muted);
+}
+.drawer-title a:hover {
+  color: var(--accent);
+}
 .site-header-compact .hero-copy {
   position: static;
   margin-top: clamp(56px, 5.2vw, 128px);

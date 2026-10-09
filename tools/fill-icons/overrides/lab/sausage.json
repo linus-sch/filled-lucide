@@ -1,1 +1,7 @@
-{"noClose":true,"layers":[{"units":[0],"mode":"fill"},{"units":[1,2],"mode":"xor"}]}
+{
+  "noClose": true,
+  "layers": [
+    { "units": [0], "mode": "fill" },
+    { "units": [1, 2], "mode": "stroke", "gap": 1 }
+  ]
+}

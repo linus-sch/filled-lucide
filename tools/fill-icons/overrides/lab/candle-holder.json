@@ -1,6 +1,31 @@
 {
+  "extra": [
+    "M2 18h16a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4z",
+    "M18 16a2 2 0 1 0 4 0 2 2 0 1 0-4 0z",
+    "M18 18h2",
+    "M7 15.9h6v1.1H7z"
+  ],
   "layers": [
-    {"units": [1, 0], "mode": "fill"},
-    {"units": [2], "mode": "stroke"}
+    {
+      "units": [3],
+      "mode": "fill"
+    },
+    {
+      "units": [4, 5],
+      "mode": "stroke"
+    },
+    {
+      "units": [0],
+      "mode": "fill"
+    },
+    {
+      "units": [6],
+      "mode": "carve",
+      "area": true
+    },
+    {
+      "units": [2],
+      "mode": "stroke"
+    }
   ]
 }

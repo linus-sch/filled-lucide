@@ -1,1 +1,8 @@
-{"extra":["M2 8h18a2 2 0 0 1 2 2v7H2z","M22 17v3"],"layers":[{"units":[4],"mode":"fill"},{"units":[0,5],"mode":"stroke"}]}
+{
+  "extra": ["M2 8h18a2 2 0 0 1 2 2v7H2z", "M22 17v3"],
+  "layers": [
+    { "units": [4], "mode": "fill" },
+    { "units": [3], "mode": "cut" },
+    { "units": [0, 5], "mode": "stroke" }
+  ]
+}

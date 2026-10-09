@@ -1,10 +1,10 @@
 {
   "noClose": true,
-  "close": [{ "unit": 2, "via": [[4, 19], [3, 18.73], [2.27, 18], [2, 17], [2, 9.5], [2.2, 8.1], [2.7, 7], [3.5, 6], [4.6, 5.3], [5.5, 5.05]] }],
+  "extra": ["M6.5 5C9 5 11 7 11 9.5V17a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V9.5C2 7 4 5 6.5 5z"],
   "layers": [
     { "units": [0], "mode": "fill" },
     { "units": [1], "mode": "cut" },
-    { "units": [2], "mode": "fill", "gap": true },
+    { "units": [4], "mode": "fill", "gap": true },
     { "units": [3], "mode": "cut" }
   ]
 }

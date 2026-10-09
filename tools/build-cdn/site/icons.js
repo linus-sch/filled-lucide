@@ -533,6 +533,8 @@ function updateDrawer() {
   if (!icon) return;
   $('selected-name').textContent =
     `${state.style === 'filled' ? 'Filled' : 'Outline'} ${icon.n} icon`;
+  $('selected-page').hidden = icon.set === 'lab';
+  $('selected-page').href = `/icons/${icon.n}/`;
   $('selected-preview').replaceChildren(iconSvg(icon.n, { style: state.style, set: icon.set }));
 }
 

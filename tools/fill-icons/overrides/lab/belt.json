@@ -1,9 +1,12 @@
 {
-  "close": [{"unit": 5, "via": [[12.2, 16], [21.6, 8.8]]}],
+  "noClose": true,
+  "close": [0, 4],
+  "extra": ["M10.5 10 21.6 8.8 12.2 16 2.4 16.2z"],
   "layers": [
-    { "units": [3], "mode": "fill" },
-    { "units": [1, 2], "mode": "cut" },
-    { "units": [0, 4], "mode": "stroke" },
-    { "units": [5, 7], "mode": "fill" }
+    { "units": [7], "mode": "fill" },
+    { "units": [8], "mode": "fill", "gap": 1 },
+    { "units": [0, 4], "mode": "fill" },
+    { "units": [3], "mode": "fill", "gap": 1 },
+    { "units": [1, 2], "mode": "cut" }
   ]
 }

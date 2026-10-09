@@ -6,14 +6,15 @@
       name="viewport"
       content="width=device-width,initial-scale=1"
     />
-    <title>Lucide Filled — Beautiful &amp; Filled Lucide Icons</title>
+    <title>Filled Lucide — Beautiful Filled &amp; Solid Lucide Icons</title>
     <meta
       name="description"
-      content="A community project bringing filled and outline Lucide icons together. Search, resize, customize, and copy SVG or JSX."
+      content="Filled versions of all {{iconCount}} Lucide icons, plus {{labCount}} lab icons. Free, open-source solid SVG icons with Lucide's names and API, for React, Vue, Svelte, Angular and more."
     />
+    <!-- seo -->
     <link
       rel="icon"
-      href="/filed-lucide-logo.svg?v=2"
+      href="/filed-lucide-logo.svg?v=3"
       type="image/svg+xml"
     />
     <link
@@ -50,7 +51,7 @@
           href="/"
           aria-label="Filled Lucide home"
           ><img
-            src="/filed-lucide-logo.svg?v=2"
+            src="/filed-lucide-logo.svg?v=3"
             width="48"
             height="48"
             alt=""
@@ -67,11 +68,7 @@
               aria-hidden="true"
             >
               <use href="/sprite-outline.svg#arrow-up-right" /></svg></a
-          ><a
-            href="https://github.com/linus-sch/filled-lucide#readme"
-            target="_blank"
-            rel="noreferrer"
-            >Guide</a
+          ><a href="/categories/">Categories</a><a href="/docs/">Docs</a
           ><a href="/packages/">Packages</a
           ><a
             class="github-link"
@@ -91,7 +88,7 @@
         </div>
       </nav>
       <div class="hero-copy page-width">
-        <p>Community project</p>
+        <p>Unofficial community project</p>
         <h1>Beautiful &amp; Filled<br />Lucide Icons</h1>
       </div>
       <a
@@ -320,8 +317,11 @@
             Try again
           </button>
         </div>
+        <!-- footer-navigation -->
         <footer>
-          <span>Filled Lucide · Community project</span
+          <span
+            >Filled Lucide · Independent project, not affiliated with or endorsed by the Lucide
+            team</span
           ><a
             href="https://lucide.dev"
             target="_blank"
@@ -353,7 +353,14 @@
         </svg>
       </button>
       <div class="drawer-inner page-width">
-        <h2 id="selected-name"></h2>
+        <div class="drawer-title">
+          <h2 id="selected-name"></h2>
+          <a
+            id="selected-page"
+            href="/icons/heart/"
+            >View icon page ↗</a
+          >
+        </div>
         <div class="drawer-content">
           <div
             class="drawer-preview"

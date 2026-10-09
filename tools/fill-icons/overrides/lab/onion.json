@@ -1,3 +1,8 @@
 {
-  "stems": false
+  "stems": false,
+  "layers": [
+    { "units": [2], "mode": "fill" },
+    { "units": [0, 1], "mode": "cut" },
+    { "units": [3, 4, 5], "mode": "stroke" }
+  ]
 }

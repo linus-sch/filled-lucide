@@ -1,11 +1,13 @@
 {
   "noClose": true,
-  "extra": ["M7 13V22"],
+  "extra": ["M7.8 0h1.4v23h-1.4z", "M9 12h13v2H9z", "M9.25 13a5.75 5.75 0 0 1 11.5 0z"],
   "close": [{ "unit": 5, "via": [[7, 13]] }, 2],
+  "move": [{ "units": [0, 1], "translate": [1, 0] }],
   "layers": [
     { "units": [5], "mode": "fill" },
-    { "units": [4, 6], "mode": "cut" },
-    { "units": [3], "mode": "fill", "gap": true },
+    { "units": [8], "mode": "fill", "area": true },
+    { "units": [4], "mode": "carve" },
+    { "units": [6, 7], "mode": "carve", "area": true },
     { "units": [2], "mode": "carve" },
     { "units": [0, 1], "mode": "stroke" }
   ]

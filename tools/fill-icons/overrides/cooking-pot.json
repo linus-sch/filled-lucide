@@ -1,0 +1,8 @@
+{
+  "noClose": true,
+  "close": [1],
+  "layers": [
+    { "units": [1], "mode": "fill" },
+    { "units": [0, 2, 3], "mode": "stroke" }
+  ]
+}

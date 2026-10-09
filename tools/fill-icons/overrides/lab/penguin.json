@@ -1,1 +1,34 @@
-{"noClose":true,"close":[{"unit":0,"via":[[8.7,21],[12,22],[15.3,21]]}],"move":[{"units":[2],"to":[12,10.5],"scale":0.6}],"layers":[{"units":[0,5,4,6],"mode":"fill"},{"units":[1,3],"mode":"stroke"},{"units":[2],"mode":"carve"}]}
+{
+  "noClose": true,
+  "close": [
+    {
+      "unit": 0,
+      "via": [
+        [8.7, 21],
+        [12, 22],
+        [15.3, 21]
+      ]
+    }
+  ],
+  "extra": [],
+  "layers": [
+    {
+      "units": [0, 5],
+      "mode": "fill"
+    },
+    {
+      "units": [2],
+      "mode": "carve",
+      "area": true
+    },
+    {
+      "units": [1, 3],
+      "mode": "stroke"
+    },
+    {
+      "units": [4, 6],
+      "mode": "fill",
+      "gap": 0.8
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "noClose": true,
+  "extra": [
+    "M5 3h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2z",
+    "M0 8h7v2H0z",
+    "M17 8h7v2h-7z",
+    "M0 14h7v2H0z",
+    "M17 14h7v2h-7z",
+    "M7 0h2v6.5H7z",
+    "M15 0h2v6.5h-2z",
+    "M7 19.5h2V24H7z",
+    "M15 19.5h2V24h-2z"
+  ],
+  "move": [{ "units": [3], "to": [12, 12.5], "scale": 0.9 }],
+  "layers": [
+    { "units": [8], "mode": "fill" },
+    { "units": [9, 10, 11, 12, 13, 14, 15, 16], "mode": "carve", "area": true },
+    { "units": [3], "mode": "carve", "area": true, "grow": 0.2 }
+  ]
+}

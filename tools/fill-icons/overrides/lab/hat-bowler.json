@@ -1,0 +1,23 @@
+{
+  "noClose": true,
+  "close": [2],
+  "layers": [
+    {
+      "units": [2],
+      "mode": "fill"
+    },
+    {
+      "units": [0],
+      "mode": "fill",
+      "gap": true
+    },
+    {
+      "units": [3],
+      "mode": "carve",
+      "area": true
+    }
+  ],
+  "extra": [
+    "M4.6 8.6c0 2 3.3 3.6 7.4 3.6s7.4-1.6 7.4-3.6v1.2c0 2-3.3 3.6-7.4 3.6s-7.4-1.6-7.4-3.6z"
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "noClose": true,
+  "extra": ["M17.4 23.4 16.5 20.93a5 5 0 1 1-.6-9 7 7 0 0 0-13.9.6L1.6 15"],
+  "layers": [
+    { "units": [0], "mode": "fill" },
+    { "units": [2], "mode": "carve" }
+  ]
+}

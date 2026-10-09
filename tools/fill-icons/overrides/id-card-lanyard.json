@@ -3,47 +3,39 @@
     "M16.899 21A5 5 0 0 0 7.1 21z",
     "M12 11.6a3.4 3.4 0 1 0 0 6.8 3.4 3.4 0 1 0 0-6.8z",
     "M7 4h10a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z",
-    "M15 2l-1 2",
-    "M9 2l1 2"
+    "M9 1l3 6",
+    "M15 1l-1.5 3"
   ],
   "layers": [
     {
-      "units": [
-        7
-      ],
+      "units": [7],
       "mode": "fill"
     },
     {
-      "units": [
-        8,
-        9
-      ],
+      "units": [9],
       "mode": "stroke"
     },
     {
-      "units": [
-        0
-      ],
+      "units": [0],
       "mode": "cut"
     },
     {
-      "units": [
-        5
-      ],
+      "units": [5],
       "mode": "carve"
     },
     {
-      "units": [
-        6
-      ],
+      "units": [6],
       "mode": "fill"
     },
     {
-      "units": [
-        4
-      ],
+      "units": [4],
       "mode": "carve",
       "gap": -0.6
+    },
+    {
+      "units": [8],
+      "mode": "stroke",
+      "gap": 1
     }
   ]
 }

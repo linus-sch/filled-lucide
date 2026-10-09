@@ -1,21 +1,9 @@
 {
-  "close": [
-    0
-  ],
+  "close": [0],
+  "extra": ["M11 7a4 4 0 1 0 8 0 4 4 0 1 0-8 0z", "M10 21v-2a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v2z"],
   "layers": [
-    {
-      "units": [
-        0,
-        3
-      ],
-      "mode": "fill"
-    },
-    {
-      "units": [
-        1,
-        2
-      ],
-      "mode": "stroke"
-    }
+    { "units": [4, 5], "mode": "fill" },
+    { "units": [0], "mode": "fill", "gap": true },
+    { "units": [3], "mode": "fill", "gap": true }
   ]
 }

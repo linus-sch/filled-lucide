@@ -1,0 +1,10 @@
+{
+  "noClose": true,
+  "extra": ["M12 22a5 5 0 1 0 0-10 5 5 0 1 1 0-10A10 10 0 0 1 12 22z"],
+  "layers": [
+    { "units": [0], "mode": "stroke" },
+    { "units": [4], "mode": "fill", "area": true },
+    { "units": [1], "mode": "carve" },
+    { "units": [3], "mode": "fill" }
+  ]
+}

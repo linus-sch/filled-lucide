@@ -30,6 +30,12 @@ pnpm cdn:dev
 | -------------------------------------------- | ---------------------------------------------------------------------- |
 | `/`                                          | Landing page, searchable icon browser, and copy drawer                 |
 | `/icons`                                     | Redirect to the single page at `/`                                     |
+| `/icons/<name>/`                             | Icon details, previews, SVG export and framework examples              |
+| `/categories/`, `/categories/<category>/`    | Category directory and searchable icon collections                     |
+| `/react/`, `/vue/`, `/svelte/`, `/svg/`      | Installation and usage guides                                          |
+| `/lucide-filled-vs-outline/`                 | Filled and outline comparison                                          |
+| `/docs/`, `/changelog/`                      | Getting started, common questions and project updates                  |
+| `/packages/`                                 | All published framework packages                                       |
 | `/icons/<name>.svg`                          | One filled icon, ~1.3 kB                                               |
 | `/lab/<name>.svg`                            | Lab icons, filled                                                      |
 | `/outline/icons/<name>.svg`                  | Original Lucide outline icon                                           |
@@ -42,7 +48,7 @@ pnpm cdn:dev
 | `/categories.json`                           | Category slug → display title                                          |
 | `/meta.json`                                 | Set sizes and build timestamp                                          |
 
-About 4,300 files with both styles. Cloudflare's limits for Workers assets are 20,000
+About 6,200 files including both styles and the generated HTML pages. Cloudflare's limits for Workers assets are 20,000
 files and 25 MiB per file, so there is plenty of headroom.
 
 ## Caching

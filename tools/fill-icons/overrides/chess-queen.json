@@ -1,0 +1,7 @@
+{
+  "extra": ["M5 19h14v2H5z"],
+  "layers": [
+    { "units": [0, 1, 2, 3, 4, 5, 6, 7], "mode": "auto" },
+    { "units": [8], "mode": "carve", "area": true }
+  ]
+}

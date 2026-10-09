@@ -1,1 +1,25 @@
-{"noClose":true,"layers":[{"units":[0,1],"mode":"stroke"},{"units":[2],"mode":"fill"},{"units":[3],"mode":"cut"},{"units":[4],"mode":"carve"}]}
+{
+  "noClose": true,
+  "layers": [
+    {
+      "units": [0, 1],
+      "mode": "stroke"
+    },
+    {
+      "units": [2],
+      "mode": "fill"
+    },
+    {
+      "units": [5],
+      "mode": "carve",
+      "area": true
+    },
+    {
+      "units": [4],
+      "mode": "carve"
+    }
+  ],
+  "extra": [
+    "M19 12.4h-1c0 2.8-2.2 5-5 5h-2c-2.8 0-5-2.2-5-5H5v1.2h1c0 2.8 2.2 5 5 5h2c2.8 0 5-2.2 5-5h1z"
+  ]
+}
