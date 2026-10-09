@@ -66,8 +66,8 @@
     "@filled-lucide/js": "workspace:*",
     "@filled-lucide/react": "workspace:*",
     "motion-v": "1.10.3",
-    "react": "18.2.0",
-    "react-dom": "18.2.0",
+    "react": "19.3.0",
+    "react-dom": "19.3.0",
     "sandpack-vue3": "3.1.12",
     "vue": "^3.5.41"
   }
