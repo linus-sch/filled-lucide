@@ -6,7 +6,7 @@ when a `v<version>` tag is pushed. Versions follow upstream Lucide:
 
 | Package                       | Directory                      |
 | ----------------------------- | ------------------------------ |
-| `filled-lucide`               | `packages/lucide`              |
+| `@filled-lucide/js`           | `packages/lucide`              |
 | `@filled-lucide/react`        | `packages/lucide-react`        |
 | `@filled-lucide/react-native` | `packages/lucide-react-native` |
 | `@filled-lucide/preact`       | `packages/lucide-preact`       |
@@ -75,6 +75,7 @@ For **each of the 12 packages** on npmjs.com
    - Repository: `filled-lucide`
    - Workflow filename: `release.yml`
    - Environment: leave empty
+   - Allowed actions: enable direct publishing with `npm publish`
 2. **Publishing access → Require two-factor authentication and disallow
    tokens**, then save.
 
@@ -142,3 +143,27 @@ gh workflow run release.yml -f version=1.52.1-filled.1 -f tag=next
 ## Deploying the website / CDN
 
 See [`deploy/README.md`](deploy/README.md) (`pnpm cdn:deploy`).
+
+## JavaScript package migration
+
+The JavaScript package is now `@filled-lucide/js` in the npm organization. The
+unscoped `filled-lucide` package remains available for existing installations.
+New installs and imports should use `@filled-lucide/js`.
+
+The new name needs a first publish before npm can configure its trusted
+publisher. Bootstrap just this package with a local npm login:
+
+```bash
+npm login
+pnpm --filter @filled-lucide/js build
+pnpm --filter @filled-lucide/js publish --access public --no-git-checks --ignore-scripts --tag next
+```
+
+Then set up its trusted publisher with the same settings as the other packages
+(owner `linus-sch`, repository `filled-lucide`, workflow `release.yml`, no
+environment, direct publishing allowed). Future releases run through GitHub
+Actions. To release only the JavaScript package:
+
+```bash
+gh workflow run release.yml -f version=1.52.1-filled.3 -f tag=next -f package=@filled-lucide/js
+```

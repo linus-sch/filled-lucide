@@ -71,7 +71,7 @@ test('CDN bundle serves the unified browser and both icon styles', async (t) => 
     }
     const names = [...page.querySelectorAll('.package-card h2')].map((h2) => h2.textContent);
     assert.deepEqual([...names].sort(), published.sort());
-    assert.equal(names[0], 'filled-lucide');
+    assert.equal(names[0], '@filled-lucide/js');
     const logos = [
       ...page.querySelectorAll('.package-logo img'),
       ...home.querySelectorAll('.hero-framework-logos img'),

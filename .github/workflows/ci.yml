@@ -40,7 +40,7 @@ jobs:
       matrix:
         package:
           [
-            'filled-lucide',
+            '@filled-lucide/js',
             '@filled-lucide/react',
             '@filled-lucide/react-native',
             '@filled-lucide/preact',

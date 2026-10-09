@@ -15,7 +15,7 @@
     "test": "pnpm -r --filter './packages/**' test",
     "test:update": "pnpm -r --filter './packages/**' --filter '!./packages/angular' test -- -u",
     "test:font": "pnpm --filter build-font test",
-    "lucide": "pnpm --filter filled-lucide",
+    "lucide": "pnpm --filter @filled-lucide/js",
     "lucide-angular": "pnpm --filter @filled-lucide/angular",
     "lucide-react": "pnpm --filter @filled-lucide/react",
     "lucide-react-native": "pnpm --filter @filled-lucide/react-native",
