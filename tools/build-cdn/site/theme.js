@@ -15,7 +15,10 @@
       button.title = `Switch to ${dark ? 'light' : 'dark'} mode`;
       button
         .querySelector('use')
-        .setAttribute('href', `/sprite-outline.svg#${dark ? 'moon' : 'sun'}`);
+        .setAttribute(
+          'href',
+          `/assets/{{assetRevision}}/sprite-outline.svg#${dark ? 'moon' : 'sun'}`,
+        );
     });
   };
   apply();

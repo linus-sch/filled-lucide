@@ -1,5 +1,9 @@
 let toastTimer;
 
+export function assetUrl(path) {
+  return `/assets/{{assetRevision}}${path}`;
+}
+
 export function toast(message) {
   const element = document.getElementById('toast');
   element.textContent = message;
@@ -35,7 +39,7 @@ export function iconSvg(name, { style = 'filled', set = 'icons', className = '',
   svg.setAttribute('aria-hidden', 'true');
   if (className) svg.setAttribute('class', className);
   const use = document.createElementNS('http://www.w3.org/2000/svg', 'use');
-  use.setAttribute('href', `/${sprite}${suffix}.svg#${name}`);
+  use.setAttribute('href', assetUrl(`/${sprite}${suffix}.svg`) + `#${name}`);
   svg.append(use);
   return svg;
 }

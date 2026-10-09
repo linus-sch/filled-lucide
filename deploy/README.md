@@ -53,18 +53,18 @@ files and 25 MiB per file, so there is plenty of headroom.
 
 ## Caching
 
-`public/_headers` sets `max-age=604800, stale-while-revalidate=2592000` on the
-icons and JSON indexes: a week of freshness, then a month during which a stale
-copy is served while a fresh one is fetched in the background. In practice a
-browser fetches an icon once and the edge fetches it from storage once.
+The browser loads sprites, indexes, scripts, styles and logos from
+`/assets/<content-revision>/`. Their URLs change when the assets change, so a
+visitor with an older sprite cached still gets the updated icons on reload.
+`public/_headers` sets `max-age=31536000, immutable` on these versioned assets.
 `Access-Control-Allow-Origin: *` is set so the files can be used cross-origin as
 `<img>` sources, CSS masks, or `fetch()` targets.
 
-Because the paths are stable rather than content-hashed, a redeploy that changes
-an icon can take up to a week to reach browsers that already cached it. If you
-need an update to land immediately, purge the cache from the Cloudflare
-dashboard (**Caching → Configuration → Purge Everything**), or pin consumers to
-the npm package instead.
+HTML and stable URLs such as `/icons/leaf.svg`, `/icons.json` and `/sprite.svg`
+use Cloudflare's default `public, max-age=0, must-revalidate` policy and content
+ETags. Browsers can reuse unchanged files after checking their freshness. The
+copy drawer also includes the content revision in its SVG source requests to
+bypass copies cached under the previous week-long policy.
 
 ## Using it from a page
 

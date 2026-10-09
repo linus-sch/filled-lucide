@@ -6,6 +6,7 @@
 // Everything here is a plain file: no Worker code runs at request time, so the
 // whole site is served from Cloudflare's edge for free at any traffic level.
 import { cp, mkdir, readFile, readdir, rm, writeFile } from 'node:fs/promises';
+import { createHash } from 'node:crypto';
 import { basename, join, resolve } from 'node:path';
 import { buildPages, footerNavigation, pageFooter, pageNavigation } from './pages.mjs';
 
@@ -352,6 +353,45 @@ Allow: /
 Sitemap: ${SITE}/sitemap.xml
 `;
 
+// A changed sprite, index, logo or script gets a new URL even in browsers that
+// cached the old stable URLs before this deployment.
+async function buildVersionedAssets() {
+  const files = (await readdir(out, { withFileTypes: true }))
+    .filter(
+      (entry) => entry.isFile() && /\.(svg|json|js|css|png|ico|webmanifest)$/.test(entry.name),
+    )
+    .map((entry) => entry.name)
+    .filter((file) => file !== 'meta.json');
+  files.push(
+    ...(await readdir(join(out, 'framework-logos'))).map((file) => `framework-logos/${file}`),
+  );
+  const assets = await Promise.all(
+    files.sort().map(async (file) => [file, await readFile(join(out, file))]),
+  );
+  const hash = createHash('sha256');
+  for (const [file, content] of assets) hash.update(file).update('\0').update(content).update('\0');
+  const revision = hash.digest('hex').slice(0, 16);
+  const base = `/assets/${revision}`;
+  const paths = new Set(files.map((file) => `/${file}`));
+  const rewriteReferences = (source) =>
+    source.replace(
+      /((?:src|href)="|"src":\s*")(\/[^"?#]*)(?:\?[^"#]*)?(#[^"]*)?"/g,
+      (match, attribute, path, fragment = '') =>
+        paths.has(path) ? `${attribute}${base}${path}${fragment}"` : match,
+    );
+
+  for (const [file, content] of assets) {
+    const body = /\.(js|css|webmanifest)$/.test(file)
+      ? rewriteReferences(content.toString().replaceAll('{{assetRevision}}', revision))
+      : content;
+    const target = join(out, 'assets', revision, file);
+    await mkdir(resolve(target, '..'), { recursive: true });
+    await writeFile(target, body);
+    await writeFile(join(out, file), body);
+  }
+  return { revision, rewriteReferences };
+}
+
 async function main() {
   await rm(out, { recursive: true, force: true });
   await mkdir(out, { recursive: true });
@@ -406,18 +446,24 @@ async function main() {
   );
   await writeFile(join(out, 'categories.json'), JSON.stringify(categories), 'utf8');
 
+  await cp(join(root, 'tools/build-cdn/site'), out, { recursive: true });
+  const { revision, rewriteReferences } = await buildVersionedAssets();
   const total = summary.reduce((s, x) => s + x.count, 0);
   await writeFile(
     join(out, 'meta.json'),
     JSON.stringify(
-      { name: 'filled-lucide', total, sets: summary, generated: new Date().toISOString() },
+      {
+        name: 'filled-lucide',
+        total,
+        sets: summary,
+        revision,
+        generated: new Date().toISOString(),
+      },
       null,
       2,
     ),
     'utf8',
   );
-
-  await cp(join(root, 'tools/build-cdn/site'), out, { recursive: true });
 
   const packages = await readPackages();
   const count = (prefix) => summary.find((s) => s.prefix === prefix).count.toLocaleString('en-US');
@@ -430,7 +476,7 @@ async function main() {
       .replace('<!-- footer-navigation -->', footerNavigation)
       .replace('<!-- package-cards -->', buildPackageCards(packages));
     html = html.replace('<!-- seo -->', seoHead(html, path, data));
-    await writeFile(page, html, 'utf8');
+    await writeFile(page, rewriteReferences(html), 'utf8');
   }
   const template = await readFile(join(out, 'page.html'), 'utf8');
   const navigationTemplate = await readFile(join(out, 'packages/index.html'), 'utf8');
@@ -448,8 +494,10 @@ async function main() {
       .replace('{{breadcrumbs}}', () => page.breadcrumbs)
       .replace('{{content}}', () => page.content);
     html = html.replace('<!-- seo -->', seoHead(html, page.path, { ...data, page }));
-    await writeFile(join(dir, 'index.html'), html, 'utf8');
+    await writeFile(join(dir, 'index.html'), rewriteReferences(html), 'utf8');
   }
+  const notFound = join(out, '404.html');
+  await writeFile(notFound, rewriteReferences(await readFile(notFound, 'utf8')), 'utf8');
   await rm(join(out, 'page.html'));
   await writeFile(
     join(out, 'sitemap.xml'),

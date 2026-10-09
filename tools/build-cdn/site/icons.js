@@ -1,4 +1,4 @@
-import { copyText, iconSvg, toast } from './common.js';
+import { assetUrl, copyText, iconSvg, toast } from './common.js';
 
 const $ = (id) => document.getElementById(id);
 const params = new URLSearchParams(location.search);
@@ -118,7 +118,7 @@ const componentName = (name) =>
   name.replace(/(^|-)([a-z0-9])/g, (_, separator, letter) => letter.toUpperCase());
 
 async function getJson(url) {
-  const response = await fetch(url);
+  const response = await fetch(assetUrl(url));
   if (!response.ok) throw new Error(`Could not load ${url}`);
   return response.json();
 }
@@ -251,7 +251,7 @@ function syncCustomization() {
 }
 
 function sourceUrl(icon, style) {
-  return `${style === 'outline' ? '/outline' : ''}/${icon.set}/${icon.n}.svg`;
+  return `${style === 'outline' ? '/outline' : ''}/${icon.set}/${icon.n}.svg?v={{assetRevision}}`;
 }
 
 async function getSource(icon, style) {

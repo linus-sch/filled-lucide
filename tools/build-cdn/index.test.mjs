@@ -1,6 +1,6 @@
 import assert from 'node:assert/strict';
 import { execFile } from 'node:child_process';
-import { mkdtemp, readFile, readdir, rm } from 'node:fs/promises';
+import { cp, mkdtemp, readFile, readdir, rm, symlink, writeFile } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
 import { join, resolve } from 'node:path';
 import { test } from 'node:test';
@@ -47,6 +47,62 @@ test('CDN bundle serves the unified browser and both icon styles', async (t) => 
         }),
       );
     }
+  });
+
+  await t.test('an icon correction changes cached site asset URLs', async () => {
+    const meta = JSON.parse(await readFile(join(output, 'meta.json'), 'utf8'));
+    assert.match(meta.revision, /^[a-f0-9]{16}$/);
+    const spriteUrl = (html) =>
+      new JSDOM(html).window.document.querySelector('use[href$="#diamond"]').getAttribute('href');
+    const before = spriteUrl(await readFile(join(output, 'index.html'), 'utf8'));
+    assert.equal(before, `/assets/${meta.revision}/sprite.svg#diamond`);
+    assert.equal(
+      await readFile(join(output, 'assets', meta.revision, 'sprite.svg'), 'utf8'),
+      await readFile(join(output, 'sprite.svg'), 'utf8'),
+    );
+    const manifest = JSON.parse(
+      await readFile(join(output, 'assets', meta.revision, 'manifest.webmanifest'), 'utf8'),
+    );
+    assert.ok(manifest.icons.every((icon) => icon.src.startsWith(`/assets/${meta.revision}/`)));
+    const headers = await readFile(join(output, '_headers'), 'utf8');
+    assert.match(headers, /\/assets\/\*\n  Cache-Control: public, max-age=31536000, immutable/);
+    assert.doesNotMatch(headers, /stale-while-revalidate|max-age=300\b|max-age=604800/);
+
+    const fixture = await mkdtemp(join(tmpdir(), 'lucide-filled-cache-'));
+    t.after(() => rm(fixture, { recursive: true, force: true }));
+    await cp(join(root, 'icons'), join(fixture, 'icons'), { recursive: true });
+    await cp(join(root, 'tools/build-cdn/site'), join(fixture, 'tools/build-cdn/site'), {
+      recursive: true,
+    });
+    for (const dir of ['lab', 'outline', 'categories', 'packages'])
+      await symlink(join(root, dir), join(fixture, dir));
+    const rebuilt = join(fixture, 'public');
+    const build = () =>
+      run(process.execPath, [
+        join(import.meta.dirname, 'index.mjs'),
+        '--root',
+        fixture,
+        '--out',
+        rebuilt,
+      ]);
+    await build();
+    assert.equal(
+      JSON.parse(await readFile(join(rebuilt, 'meta.json'), 'utf8')).revision,
+      meta.revision,
+    );
+    const corrected = await readFile(join(root, 'icons/house.svg'), 'utf8');
+    await writeFile(join(fixture, 'icons/leaf.svg'), corrected);
+    await build();
+    const updated = JSON.parse(await readFile(join(rebuilt, 'meta.json'), 'utf8'));
+    assert.notEqual(updated.revision, meta.revision);
+    assert.notEqual(spriteUrl(await readFile(join(rebuilt, 'index.html'), 'utf8')), before);
+    const sprite = xml(
+      await readFile(join(rebuilt, 'assets', updated.revision, 'sprite.svg'), 'utf8'),
+    );
+    assert.equal(
+      sprite.getElementById('leaf').querySelector('path').getAttribute('d'),
+      xml(corrected).querySelector('path').getAttribute('d'),
+    );
   });
 
   await t.test('packages page lists every published package and the hero links to it', async () => {
@@ -353,8 +409,13 @@ test('CDN bundle serves the unified browser and both icon styles', async (t) => 
       }
       observe() {}
     };
+    const requests = [];
     window.fetch = async (url) => {
-      const source = await readFile(join(output, url), 'utf8');
+      requests.push(url);
+      const source = await readFile(
+        join(output, new URL(url, window.location.href).pathname),
+        'utf8',
+      );
       return { ok: true, json: async () => JSON.parse(source), text: async () => source };
     };
     window.eval((await readFile(join(output, 'common.js'), 'utf8')).replace(/^export /gm, ''));
@@ -367,6 +428,14 @@ test('CDN bundle serves the unified browser and both icon styles', async (t) => 
       assert.ok(predicate());
     };
     await settle(() => document.querySelectorAll('.icon-cell').length === 1776);
+    const { revision } = JSON.parse(await readFile(join(output, 'meta.json'), 'utf8'));
+    assert.ok(requests.every((url) => url.startsWith(`/assets/${revision}/`)));
+    assert.ok(
+      document
+        .querySelector('.icon-cell use')
+        .getAttribute('href')
+        .startsWith(`/assets/${revision}/`),
+    );
     assert.equal(document.querySelector('.icon-cell').title, 'heart');
     const search = document.getElementById('search');
     search.value = 'heart';
@@ -404,6 +473,7 @@ test('CDN bundle serves the unified browser and both icon styles', async (t) => 
       return copied.at(-1);
     };
     const svg = xml(await copy('svg'));
+    assert.ok(requests.includes(`/outline/icons/heart.svg?v=${revision}`));
     assert.equal(svg.documentElement.getAttribute('width'), '32');
     assert.equal(svg.documentElement.getAttribute('fill'), 'none');
     assert.equal(svg.documentElement.getAttribute('stroke'), 'currentColor');
